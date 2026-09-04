@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>A Note From the Founder | Business & Brand Intelligence</title>
+
+<style>
+
+:root{
+  --navy:#102b37;
+  --cream:#f7f4ec;
+  --card:#fffdf8;
+  --teal:#2f7773;
+  --muted:#59676d;
+  --text:#142128;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--text);
+  font-family:Inter,Arial,sans-serif;
+  line-height:1.65;
+}
+
+a{
+  text-decoration:none;
+}
+
+.container{
+  max-width:1000px;
+  margin:0 auto;
+  padding:0 28px;
+}
+
+
+/* HEADER */
+
+header{
+  padding:22px 0;
+  border-bottom:1px solid #d7d1c5;
+}
+
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:.09em;
+  color:var(--navy);
+}
+
+.full{
+  font-size:11px;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:#657078;
+  margin-top:4px;
+}
+
+.back-button{
+  border:1.5px solid var(--teal);
+  color:var(--teal);
+  padding:10px 16px;
+  border-radius:9px;
+  font-size:14px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.back-button:hover{
+  background:var(--teal);
+  color:white;
+}
+
+
+/* INTRO */
+
+.intro-section{
+  background:var(--navy);
+  color:white;
+  padding:68px 0 64px;
+}
+
+.eyebrow{
+  color:#a7d0cc;
+  font-size:13px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+}
+
+h1{
+  font-size:clamp(42px,6vw,68px);
+  line-height:1;
+  letter-spacing:-.045em;
+  margin:12px 0 22px;
+  max-width:780px;
+}
+
+.intro-section p{
+  font-size:20px;
+  line-height:1.6;
+  color:#dce7e5;
+  max-width:720px;
+}
+
+
+/* STORY */
+
+.story{
+  padding:65px 0 75px;
+}
+
+.story-content{
+  max-width:760px;
+  margin:0 auto;
+}
+
+.story p{
+  font-size:18px;
+  color:#44545b;
+  margin:0 0 22px;
+}
+
+.story .lead{
+  font-size:24px;
+  line-height:1.5;
+  font-weight:800;
+  color:var(--navy);
+}
+
+.highlight{
+  margin:32px 0;
+  padding:26px 28px;
+  background:#e5efeb;
+  border-left:5px solid var(--teal);
+  border-radius:0 14px 14px 0;
+}
+
+.highlight p{
+  margin:0 0 10px;
+  color:var(--navy);
+  font-weight:800;
+}
+
+.highlight p:last-child{
+  margin-bottom:0;
+}
+
+.quote{
+  margin:38px 0;
+  padding:28px 10px;
+  text-align:center;
+  color:var(--navy);
+  font-size:27px;
+  line-height:1.45;
+  font-weight:900;
+  border-top:1px solid #d8d3c8;
+  border-bottom:1px solid #d8d3c8;
+}
+
+.closing{
+  font-size:22px !important;
+  line-height:1.55 !important;
+  font-weight:900;
+  color:var(--navy) !important;
+  margin-top:34px !important;
+}
+
+.signature{
+  margin-top:38px;
+  padding-top:25px;
+  border-top:1px solid #d8d3c8;
+}
+
+.signature strong{
+  display:block;
+  font-size:21px;
+  color:var(--navy);
+}
+
+.signature span{
+  font-size:15px;
+  color:var(--muted);
+}
+
+
+/* BOTTOM LINK */
+
+.return-section{
+  background:#e5efeb;
+  text-align:center;
+  padding:48px 0;
+}
+
+.return-section h2{
+  color:var(--navy);
+  font-size:32px;
+  margin:0 0 13px;
+}
+
+.return-section p{
+  color:var(--muted);
+  margin:0 auto 20px;
+  max-width:620px;
+}
+
+.return-button{
+  display:inline-block;
+  background:var(--teal);
+  color:white;
+  font-weight:800;
+  padding:14px 22px;
+  border-radius:9px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .container{
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .header-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .back-button{
+    width:100%;
+    text-align:center;
+  }
+
+  .logo{
+    font-size:21px;
+  }
+
+  .intro-section{
+    padding:48px 0;
+  }
+
+  h1{
+    font-size:40px;
+  }
+
+  .intro-section p{
+    font-size:18px;
+  }
+
+  .story{
+    padding:48px 0;
+  }
+
+  .story p{
+    font-size:16px;
+  }
+
+  .story .lead{
+    font-size:21px;
+  }
+
+  .quote{
+    font-size:22px;
+  }
+
+  .closing{
+    font-size:19px !important;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="container header-inner">
+
+  <div>
+
+    <div class="logo">
+      Business & Brand Intelligence
+    </div>
+
+    <div class="full">
+      Business Optimization Diagnostics & Intelligence
+    </div>
+
+  </div>
+
+
+  <a href="index.html" class="back-button">
+    ← Back to Business & Brand Intelligence
+  </a>
+
+</div>
+
+</header>
+
+
+
+<section class="intro-section">
+
+<div class="container">
+
+  <div class="eyebrow">
+    A Note From the Founder
+  </div>
+
+  <h1>
+    Why I Built Business & Brand Intelligence
+  </h1>
+
+  <p>
+    This business didn’t begin because I thought business owners needed
+    more advice. It began because I knew what it felt like to need answers.
+  </p>
+
+</div>
+
+</section>
+
+
+
+<section class="story">
+
+<div class="container">
+
+<div class="story-content">
+
+
+  <p class="lead">
+    I know what it feels like to have an idea you genuinely believe in.
+  </p>
+
+
+  <p>
+    To spend weeks, months, sometimes years building something. To create
+    the website, develop the product or service, make the content, post on
+    social media, tell people about it — and wait for the business to finally
+    start moving.
+  </p>
+
+
+  <div class="quote">
+    And then it doesn’t.
+  </div>
+
+
+  <p>
+    I’ve been that business owner.
+  </p>
+
+
+  <p>
+    I’ve tried building businesses on my own. I’ve spent money I really
+    didn’t have to waste on things I hoped would finally make the difference,
+    without truly knowing whether I was fixing the right problem.
+  </p>
+
+
+  <p>
+    And I know how disheartening that can become.
+  </p>
+
+
+  <p>
+    Because eventually, you start asking yourself:
+  </p>
+
+
+  <div class="highlight">
+
+    <p>
+      Is my idea just not good enough?
+    </p>
+
+    <p>
+      Is my product the problem?
+    </p>
+
+    <p>
+      Do people even want what I’ve created?
+    </p>
+
+  </div>
+
+
+  <p>
+    But sometimes a business simply may not have enough information yet
+    to answer those questions.
+  </p>
+
+
+  <p>
+    Reaching customers and growing sales is one of the most common challenges
+    small businesses face, and many businesses close within their first
+    several years.
+  </p>
+
+
+  <p>
+    Behind those numbers are real people.
+  </p>
+
+
+  <p>
+    People who believed in something.
+  </p>
+
+
+  <p>
+    People who invested their savings, evenings, weekends, creativity,
+    and hope into trying to make it work.
+  </p>
+
+
+  <p>
+    And I can’t help but wonder how many good ideas never had the opportunity
+    to reach enough of the right people for the owner to truly understand
+    their potential.
+  </p>
+
+
+  <p>
+    When a business isn’t working, there is no shortage of advice:
+  </p>
+
+
+  <p>
+    <em>
+      Run more ads. Post more. Change your website. Lower your price.
+      Get on another platform. Create more content. Spend more money.
+    </em>
+  </p>
+
+
+  <div class="quote">
+    You don’t need another guess.<br>
+    You need clarity.
+  </div>
+
+
+  <p>
+    You need to understand:
+  </p>
+
+
+  <div class="highlight">
+
+    <p>
+      What is actually working?
+    </p>
+
+    <p>
+      What isn’t?
+    </p>
+
+    <p>
+      Are people finding you?
+    </p>
+
+    <p>
+      Are they finding you but not buying?
+    </p>
+
+    <p>
+      Is the problem your offer, your positioning, your customer journey,
+      your operations — or something completely different?
+    </p>
+
+  </div>
+
+
+  <p>
+    That’s why I created
+    <strong>Business & Brand Intelligence.</strong>
+  </p>
+
+
+  <p>
+    I wanted to build the kind of service I wish I’d had — a place where a
+    business owner could stop throwing solutions at an unidentified problem
+    and first get a clearer picture of the business as a whole.
+  </p>
+
+
+  <p>
+    Because your business may represent far more than a product, service,
+    or website.
+  </p>
+
+
+  <p>
+    It may represent your independence. Your family’s future. A second chance.
+    A dream you’ve carried for years. Or simply the hope that everything
+    you’ve poured into it can become something sustainable.
+  </p>
+
+
+  <p>
+    I can’t promise that every business or every idea will succeed.
+  </p>
+
+
+  <p>
+    But I do believe business owners deserve the opportunity to make
+    decisions based on
+
+    <strong>
+      evidence and understanding instead of continuing to spend their limited
+      time, energy, and money guessing.
+    </strong>
+  </p>
+
+
+  <p class="closing">
+    Before you give up on what you’ve built — or spend more money trying
+    to save it — let’s understand what your business is actually telling us.
+  </p>
+
+
+  <p>
+    <strong>
+      That’s why I built B&amp;BI.
+    </strong>
+  </p>
+
+
+  <div class="signature">
+
+    <strong>
+      Tracy Clinscales
+    </strong>
+
+    <span>
+      Founder, Business & Brand Intelligence
+    </span>
+
+  </div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="return-section">
+
+<div class="container">
+
+  <h2>
+    Ready to learn what your business actually needs?
+  </h2>
+
+  <p>
+    Return to Business & Brand Intelligence to learn about the
+    $297 Founding Client Business Optimization Diagnostic.
+  </p>
+
+
+  <a href="index.html" class="return-button">
+    Explore the Business Optimization Diagnostic
+  </a>
+
+</div>
+
+</section>
+
+
+</body>
+
+</html>

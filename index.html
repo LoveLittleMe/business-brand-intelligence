@@ -76,6 +76,26 @@ header{
   margin-top:3px;
 }
 
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.fit-call-top{
+  color:var(--teal);
+  font-size:14px;
+  font-weight:800;
+  white-space:nowrap;
+  border-bottom:1px solid #9fc8c4;
+  padding-bottom:3px;
+}
+
+.fit-call-top:hover{
+  color:var(--navy);
+  border-bottom-color:var(--navy);
+}
+
 .founder-button{
   display:inline-block;
   background:transparent;
@@ -164,6 +184,32 @@ h1{
   margin:0;
   color:#dbe7e5;
   font-size:13px;
+}
+
+.price-fit-call{
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.18);
+}
+
+.price-fit-call .question{
+  color:#c9dad8;
+  font-size:13px;
+  margin-bottom:10px;
+}
+
+.price-fit-call a{
+  display:inline-block;
+  background:white;
+  color:var(--teal);
+  font-size:13px;
+  font-weight:800;
+  padding:11px 15px;
+  border-radius:8px;
+}
+
+.price-fit-call a:hover{
+  background:#edf5f3;
 }
 
 
@@ -452,6 +498,36 @@ h2{
   background:#286763;
 }
 
+.cta-options{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:16px;
+  margin-top:18px;
+}
+
+.fit-call-bottom{
+  display:inline-block;
+  background:transparent;
+  border:1px solid #8db8b4;
+  color:#d8e8e6;
+  font-weight:800;
+  padding:14px 20px;
+  border-radius:10px;
+}
+
+.fit-call-bottom:hover{
+  background:white;
+  color:var(--teal);
+  border-color:white;
+}
+
+.fit-call-note{
+  margin-top:12px;
+  font-size:13px;
+  color:#b9cecc;
+}
+
 
 /* =========================
    FOOTER
@@ -560,6 +636,10 @@ h2{
     align-items:flex-start;
   }
 
+  .header-actions{
+    flex-wrap:wrap;
+  }
+
   h1{
     font-size:48px;
   }
@@ -590,6 +670,13 @@ h2{
     gap:16px;
   }
 
+  .header-actions{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+    width:100%;
+  }
+
   .logo{
     font-size:22px;
     line-height:1.15;
@@ -605,6 +692,10 @@ h2{
   .founder-button{
     font-size:13px;
     padding:10px 14px;
+  }
+
+  .fit-call-top{
+    font-size:13px;
   }
 
   .hero{
@@ -654,6 +745,11 @@ h2{
   .price-card p{
     font-size:15px;
     line-height:1.45;
+  }
+
+  .price-fit-call a{
+    width:100%;
+    text-align:center;
   }
 
   .statement{
@@ -779,7 +875,13 @@ h2{
     line-height:1.55;
   }
 
-  .cta{
+  .cta-options{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .cta,
+  .fit-call-bottom{
     width:100%;
     text-align:center;
     padding:15px 18px;
@@ -825,9 +927,22 @@ h2{
 
     </div>
 
-    <a href="founder.html" class="founder-button">
-      A Note From the Founder
-    </a>
+    <div class="header-actions">
+
+      <a
+        href="https://forms.gle/KWDLhyNrDRT7Pgde8"
+        class="fit-call-top"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Free 15-Minute Fit Call
+      </a>
+
+      <a href="founder.html" class="founder-button">
+        A Note From the Founder
+      </a>
+
+    </div>
 
   </div>
 
@@ -880,6 +995,22 @@ h2{
       The complete diagnostic experience.<br>
       <strong>Not a reduced version.</strong>
     </p>
+
+    <div class="price-fit-call">
+
+      <div class="question">
+        Not ready to purchase yet?
+      </div>
+
+      <a
+        href="https://forms.gle/KWDLhyNrDRT7Pgde8"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Request a Free 15-Minute Fit Call
+      </a>
+
+    </div>
 
   </aside>
 
@@ -1367,18 +1498,41 @@ h2{
       for <strong>$297</strong>. Start with evidence—not guesswork.
     </p>
 
-    <a
-      class="cta"
-      href="https://buy.stripe.com/9B6dR2d5rcso7vhczddQQ01"
-      target="_blank"
-      rel="noopener"
-    >
-      Become a Founding Client — $297
-    </a>
+
+    <div class="cta-options">
+
+      <a
+        class="cta"
+        href="https://buy.stripe.com/9B6dR2d5rcso7vhczddQQ01"
+        target="_blank"
+        rel="noopener"
+      >
+        Become a Founding Client — $297
+      </a>
+
+
+      <a
+        class="fit-call-bottom"
+        href="https://forms.gle/KWDLhyNrDRT7Pgde8"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Request a Free 15-Minute Fit Call
+      </a>
+
+    </div>
+
+
+    <div class="fit-call-note">
+      Not sure whether the diagnostic is right for your business?
+      The free 15-minute Fit Call is designed to help determine whether
+      the $297 diagnostic is an appropriate next step.
+    </div>
+
 
     <div
       style="
-        margin-top:12px;
+        margin-top:16px;
         font-size:14px;
         line-height:1.5;
         color:#c8d8d6;

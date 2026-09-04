@@ -18,15 +18,10 @@
   --teal-soft:#dceceb;
   --text:#142128;
   --muted:#59676d;
-  --warm:#eee8dc;
 }
 
 *{
   box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
 }
 
 body{
@@ -48,93 +43,62 @@ a{
 }
 
 
-/* =========================
-   HEADER + NAVIGATION
-========================= */
+/* HEADER */
 
 header{
-  background:var(--cream);
+  padding:22px 0;
   border-bottom:1px solid #d7d1c5;
-  position:sticky;
-  top:0;
-  z-index:1000;
 }
 
-.header-inner{
-  max-width:1160px;
-  margin:0 auto;
-  padding:18px 28px;
-}
-
-.brand-row{
+.brand{
   display:flex;
   justify-content:space-between;
-  align-items:center;
   gap:30px;
-}
-
-.brand-block{
-  min-width:260px;
+  align-items:center;
 }
 
 .logo{
-  font-size:24px;
+  font-size:30px;
   font-weight:900;
-  letter-spacing:.09em;
+  letter-spacing:.14em;
   color:var(--navy);
-  line-height:1.15;
 }
 
 .full{
-  font-size:11px;
-  letter-spacing:.13em;
+  font-size:13px;
+  letter-spacing:.14em;
   text-transform:uppercase;
   color:#657078;
-  margin-top:5px;
+  margin-top:3px;
 }
 
-nav{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:22px;
-  flex-wrap:wrap;
-}
-
-nav a{
-  color:var(--navy);
+.founder-button{
+  display:inline-block;
+  background:transparent;
+  border:1.5px solid var(--teal);
+  color:var(--teal);
   font-size:14px;
-  font-weight:700;
+  font-weight:800;
+  padding:11px 17px;
+  border-radius:9px;
+  white-space:nowrap;
   transition:.2s ease;
 }
 
-nav a:hover{
-  color:var(--teal);
-}
-
-nav .nav-cta{
+.founder-button:hover{
   background:var(--teal);
   color:white;
-  padding:11px 16px;
-  border-radius:9px;
-}
-
-nav .nav-cta:hover{
-  background:#286a66;
-  color:white;
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
   display:grid;
   grid-template-columns:minmax(0,1.55fr) minmax(250px,.45fr);
   gap:44px;
   align-items:end;
-  padding:68px 0 54px;
+  padding:64px 0 50px;
 }
 
 .kicker,
@@ -160,6 +124,9 @@ h1{
   color:#44545b;
   max-width:820px;
 }
+
+
+/* PRICE */
 
 .price-card{
   background:var(--navy);
@@ -192,15 +159,13 @@ h1{
 }
 
 
-/* =========================
-   MORE ISN'T ALWAYS THE ANSWER
-========================= */
+/* STATEMENT */
 
 .statement{
   background:var(--navy2);
   color:white;
   border-top:5px solid var(--teal);
-  padding:36px 0;
+  padding:34px 0;
 }
 
 .statement .inner{
@@ -225,13 +190,10 @@ h1{
 }
 
 
-/* =========================
-   GENERAL SECTIONS
-========================= */
+/* GENERAL */
 
 .section{
-  padding:60px 0;
-  scroll-margin-top:110px;
+  padding:58px 0;
 }
 
 h2{
@@ -250,9 +212,7 @@ h2{
 }
 
 
-/* =========================
-   DIAGNOSTIC CARDS
-========================= */
+/* CARDS */
 
 .cards{
   display:grid;
@@ -295,9 +255,7 @@ h2{
 }
 
 
-/* =========================
-   DELIVERABLES
-========================= */
+/* DELIVERABLES */
 
 .deliverables{
   display:grid;
@@ -330,9 +288,7 @@ h2{
 }
 
 
-/* =========================
-   WHO IT IS FOR
-========================= */
+/* AUDIENCE */
 
 .audience{
   background:#e5efeb;
@@ -351,9 +307,7 @@ h2{
 }
 
 
-/* =========================
-   HOW IT WORKS
-========================= */
+/* STEPS */
 
 .steps{
   display:grid;
@@ -381,160 +335,33 @@ h2{
 }
 
 
-/* =========================
-   FOUNDER STORY
-========================= */
-
-.founder-section{
-  background:var(--navy);
-  color:white;
-  padding:78px 0;
-  scroll-margin-top:100px;
-}
-
-.founder-layout{
-  display:grid;
-  grid-template-columns:.65fr 1.35fr;
-  gap:58px;
-  align-items:start;
-}
-
-.founder-intro{
-  position:sticky;
-  top:130px;
-}
-
-.founder-eyebrow{
-  color:#a7d0cc;
-  font-size:13px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.15em;
-}
-
-.founder-intro h2{
-  color:white;
-  font-size:46px;
-  line-height:1.03;
-  margin:12px 0 22px;
-}
-
-.founder-intro .personal-line{
-  color:#dbe7e5;
-  font-size:18px;
-  line-height:1.65;
-}
-
-.founder-story-card{
-  background:#fffdf8;
-  color:var(--text);
-  border-radius:22px;
-  padding:42px 44px;
-  box-shadow:0 18px 45px rgba(0,0,0,.16);
-}
-
-.founder-story-card .lead{
-  font-size:24px;
-  line-height:1.5;
-  color:var(--navy);
-  font-weight:800;
-  margin-top:0;
-}
-
-.founder-story-card p{
-  font-size:17px;
-  line-height:1.72;
-  color:#44545b;
-  margin:0 0 20px;
-}
-
-.story-highlight{
-  margin:30px 0;
-  padding:25px 28px;
-  background:#e7efec;
-  border-left:5px solid var(--teal);
-  border-radius:0 14px 14px 0;
-}
-
-.story-highlight p{
-  color:var(--navy);
-  font-weight:800;
-  font-size:18px;
-  margin:0 0 9px;
-}
-
-.story-highlight p:last-child{
-  margin-bottom:0;
-}
-
-.big-quote{
-  margin:32px 0;
-  padding:30px;
-  text-align:center;
-  border-top:1px solid #d8d3c8;
-  border-bottom:1px solid #d8d3c8;
-  color:var(--navy);
-  font-size:25px;
-  line-height:1.45;
-  font-weight:900;
-}
-
-.closing-line{
-  font-size:21px !important;
-  line-height:1.55 !important;
-  color:var(--navy) !important;
-  font-weight:900;
-  margin-top:30px !important;
-}
-
-.signature{
-  margin-top:30px;
-  padding-top:24px;
-  border-top:1px solid #ded8cc;
-}
-
-.signature strong{
-  display:block;
-  color:var(--navy);
-  font-size:20px;
-}
-
-.signature span{
-  color:var(--muted);
-  font-size:15px;
-}
-
-
-/* =========================
-   CTA
-========================= */
+/* CTA */
 
 .cta-wrap{
-  background:#e6efeb;
-  padding:65px 0;
-  text-align:center;
-  scroll-margin-top:100px;
+  background:var(--navy);
+  color:white;
+  padding:54px 0;
+  margin-top:10px;
 }
 
 .cta-wrap h2{
-  margin:8px auto 16px;
-  max-width:800px;
+  color:white;
+  margin-top:0;
+  max-width:760px;
 }
 
 .cta-wrap p{
-  color:#526169;
+  color:#d6e3e1;
   max-width:720px;
-  margin:0 auto;
-  font-size:17px;
 }
 
 .cta{
   display:inline-block;
-  margin-top:24px;
+  margin-top:18px;
   background:var(--teal);
   color:white;
   font-weight:800;
-  padding:17px 27px;
+  padding:16px 24px;
   border-radius:10px;
 }
 
@@ -543,20 +370,18 @@ h2{
 }
 
 .payment-note{
-  margin:14px auto 0;
-  font-size:13px;
+  margin-top:12px;
+  font-size:14px;
   line-height:1.5;
-  color:#68757b;
+  color:#c8d8d6;
   max-width:720px;
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 .footer{
-  padding:40px 0 48px;
+  padding:34px 0 44px;
   font-size:14px;
   color:#68757b;
 }
@@ -564,7 +389,7 @@ h2{
 .footer-grid{
   display:grid;
   grid-template-columns:1.2fr 1fr 1fr;
-  gap:30px;
+  gap:26px;
 }
 
 .footer h3{
@@ -576,75 +401,55 @@ h2{
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
-@media(max-width:1050px){
+@media(max-width:1000px){
+
+  .steps{
+    grid-template-columns:repeat(2,1fr);
+  }
 
   .deliverables{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .steps{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .brand-row{
-    align-items:flex-start;
-    flex-direction:column;
-  }
-
-  nav{
-    justify-content:flex-start;
-  }
 }
 
-
-@media(max-width:850px){
-
-  header{
-    position:relative;
-  }
-
-  nav{
-    gap:14px 18px;
-  }
+@media(max-width:820px){
 
   .hero,
   .statement .inner,
-  .founder-layout,
   .footer-grid{
     grid-template-columns:1fr;
   }
 
-  .hero{
-    padding:44px 0;
-  }
-
-  .price-card{
-    max-width:380px;
-  }
-
+  .steps,
   .cards,
-  .deliverables,
-  .steps{
+  .deliverables{
     grid-template-columns:1fr;
   }
 
-  .founder-intro{
-    position:static;
+  .hero{
+    padding:42px 0;
   }
 
-  .founder-intro h2{
-    font-size:38px;
+  .price-card{
+    max-width:360px;
   }
 
-  .founder-layout{
-    gap:30px;
+  .brand{
+    align-items:flex-start;
   }
+
+  h1{
+    font-size:48px;
+  }
+
+  h2{
+    font-size:34px;
+  }
+
 }
-
 
 @media(max-width:600px){
 
@@ -653,39 +458,32 @@ h2{
     padding-right:20px;
   }
 
-  .header-inner{
-    padding:18px 20px;
+  header{
+    padding:18px 0;
+  }
+
+  .brand{
+    flex-direction:column;
+    gap:16px;
   }
 
   .logo{
-    font-size:21px;
+    font-size:22px;
+    line-height:1.15;
+    letter-spacing:.08em;
   }
 
   .full{
-    font-size:10px;
+    font-size:11px;
   }
 
-  nav{
-    width:100%;
-  }
-
-  nav a{
-    font-size:13px;
-  }
-
-  nav .nav-cta{
+  .founder-button{
     width:100%;
     text-align:center;
-    margin-top:4px;
   }
 
   h1{
-    font-size:40px;
-    line-height:1;
-  }
-
-  h2{
-    font-size:31px;
+    font-size:38px;
   }
 
   .hero p{
@@ -693,65 +491,18 @@ h2{
   }
 
   .price{
-    font-size:58px;
-  }
-
-  .statement h2{
-    font-size:29px;
-  }
-
-  .statement p{
-    font-size:15px;
+    font-size:56px;
   }
 
   .section{
-    padding:46px 0;
-  }
-
-  .founder-section{
-    padding:52px 0;
-  }
-
-  .founder-intro h2{
-    font-size:34px;
-  }
-
-  .founder-story-card{
-    padding:28px 22px;
-  }
-
-  .founder-story-card .lead{
-    font-size:21px;
-  }
-
-  .founder-story-card p{
-    font-size:16px;
-  }
-
-  .story-highlight{
-    padding:21px 19px;
-  }
-
-  .story-highlight p{
-    font-size:16px;
-  }
-
-  .big-quote{
-    font-size:21px;
-    padding:24px 8px;
-  }
-
-  .closing-line{
-    font-size:19px !important;
-  }
-
-  .cta-wrap{
-    padding:50px 0;
+    padding:44px 0;
   }
 
   .cta{
     width:100%;
+    text-align:center;
   }
+
 }
 
 </style>
@@ -761,56 +512,28 @@ h2{
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<header>
 
-<header id="home">
+<div class="container brand">
 
-  <div class="header-inner">
+  <div>
 
-    <div class="brand-row">
+    <div class="logo">
+      Business & Brand Intelligence
+    </div>
 
-      <div class="brand-block">
-
-        <div class="logo">
-          Business & Brand Intelligence
-        </div>
-
-        <div class="full">
-          Business Optimization Diagnostics & Intelligence
-        </div>
-
-      </div>
-
-
-      <nav>
-
-        <a href="#home">
-          Home
-        </a>
-
-        <a href="#what-you-get">
-          What You Get
-        </a>
-
-        <a href="#how-it-works">
-          How It Works
-        </a>
-
-        <a href="#founder-story">
-          Founder Story
-        </a>
-
-        <a href="#start" class="nav-cta">
-          Start Your Diagnostic
-        </a>
-
-      </nav>
-
+    <div class="full">
+      Business Optimization Diagnostics & Intelligence
     </div>
 
   </div>
+
+
+  <a href="founder.html" class="founder-button">
+    A Note From the Founder
+  </a>
+
+</div>
 
 </header>
 
@@ -818,10 +541,6 @@ h2{
 
 <main>
 
-
-<!-- =========================
-     HERO
-========================= -->
 
 <section class="container hero">
 
@@ -837,12 +556,11 @@ h2{
 
     <p>
       No two businesses are built the same—and that includes creator-led,
-      solo, online, service-based, and traditional businesses.
-
-      Your Business Optimization Diagnostic examines your individual business
-      to uncover where time, money, effort, and opportunities may be getting
-      lost, what is already working in your favor, and where the strongest
-      opportunities for improvement actually are.
+      solo, online, service-based, and traditional businesses. Your Business
+      Optimization Diagnostic examines your individual business to uncover
+      where time, money, effort, and opportunities may be getting lost, what
+      is already working in your favor, and where the strongest opportunities
+      for improvement actually are.
     </p>
 
   </div>
@@ -870,838 +588,525 @@ h2{
 
 
 
-<!-- =========================
-     MORE ISN'T ALWAYS THE ANSWER
-========================= -->
-
 <section class="statement">
 
-  <div class="container inner">
+<div class="container inner">
 
-    <h2>
-      More Isn’t Always the Answer.
-    </h2>
+  <h2>
+    More Isn’t Always the Answer.
+  </h2>
+
+  <p>
+
+    <strong>
+      More advertising. More content. More views. More software.
+      More automation. More leads. More help.
+    </strong>
+
+    <br><br>
+
+    Before you add more, find out what the evidence inside your own business
+    actually shows.
+
+  </p>
+
+</div>
+
+</section>
+
+
+
+<section class="section">
+
+<div class="container">
+
+  <div class="section-label">
+    What the diagnostic can reveal
+  </div>
+
+  <h2>
+    See what’s helping, hurting, or being overlooked in the way you earn,
+    operate, and grow.
+  </h2>
+
+  <p class="intro">
+
+    Whether you run a traditional company, service business, creator brand,
+    solo practice, online business, personal brand, e-commerce operation, or
+    something built around your own expertise or audience, the diagnostic
+    looks for where
+
+    <strong>
+      time, money, attention, customers, audience, resources, and opportunities
+    </strong>
+
+    may not be working as hard as they could.
+
+  </p>
+
+
+  <div class="cards">
+
+
+    <div class="card">
+
+      <div class="num">01</div>
+
+      <b>Revenue & Opportunity Leaks</b>
+
+      <span>
+        Where sales, leads, customers, clients, viewers, followers, subscribers,
+        partnerships, or other opportunities may be falling through the cracks.
+      </span>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="num">02</div>
+
+      <b>Time & Resource Drains</b>
+
+      <span>
+        Where unnecessary work, repeated tasks, poor workflows, unused tools,
+        or competing priorities may be consuming more time, money, or energy
+        than they should.
+      </span>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="num">03</div>
+
+      <b>Growth Constraints</b>
+
+      <span>
+        What may be limiting your ability to reach more people, convert
+        attention into revenue, serve more customers, increase capacity,
+        or grow sustainably.
+      </span>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="num">04</div>
+
+      <b>Risks & Weak Points</b>
+
+      <span>
+        Areas that may be overly dependent on one person, one platform,
+        one customer source, one process, or another fragile part of the operation.
+      </span>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="num">05</div>
+
+      <b>Underused Strengths & Opportunities</b>
+
+      <span>
+        What you already have—audience, expertise, offers, relationships,
+        systems, content, customers, assets, or momentum—that may have more
+        value than you are currently getting from it.
+      </span>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="num">06</div>
+
+      <b>What Deserves Your Attention First</b>
+
+      <span>
+        Which findings could make the greatest difference, what can wait,
+        and where spending more time or money may
+
+        <strong>not</strong>
+
+        be the right next move.
+      </span>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+
+<section class="section" style="padding-top:0">
+
+<div class="container">
+
+  <div class="section-label">
+    What you receive
+  </div>
+
+  <h2>
+    Clear findings you can actually use.
+  </h2>
+
+  <p class="intro">
+
+    You are not paying for a generic checklist or a long list of things
+    you could try. Your diagnostic narrows the evidence down to the few
+    areas that matter most in your business.
+
+  </p>
+
+
+  <div class="deliverables">
+
+
+    <div class="deliverable">
+
+      <strong>
+        3–5 Priority Findings
+      </strong>
+
+      <span>
+        The most important problems, risks, strengths, inefficiencies,
+        or opportunities uncovered in your business.
+      </span>
+
+    </div>
+
+
+    <div class="deliverable">
+
+      <strong>
+        Personalized Diagnostic Report
+      </strong>
+
+      <span>
+        A written explanation of what the evidence shows, why each finding
+        matters, and what it means for your business.
+      </span>
+
+    </div>
+
+
+    <div class="deliverable">
+
+      <strong>
+        90-Day Optimization Roadmap
+      </strong>
+
+      <span>
+        A practical plan showing what deserves your attention first,
+        so you are not trying to fix everything at once.
+      </span>
+
+    </div>
+
+
+    <div class="deliverable">
+
+      <strong>
+        30-Minute Findings Review
+      </strong>
+
+      <span>
+        A walkthrough of your report and roadmap so you understand exactly
+        what was uncovered and what to focus on next.
+      </span>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+
+<section class="section" style="padding-top:10px">
+
+<div class="container">
+
+  <div class="audience">
+
+    <div class="section-label" style="margin-bottom:9px">
+      Built for businesses in many forms
+    </div>
 
     <p>
 
       <strong>
-        More advertising. More content. More views. More software.
-        More automation. More leads. More help.
+        Small businesses. Creator businesses. Personal brands. Influencers.
+        Solo operations. Online businesses. Service businesses. E-commerce.
+        Freelancers. Writers. Independent professionals. Companies with employees.
       </strong>
 
       <br><br>
 
-      Before you add more, find out what the evidence inside your own business
-      actually shows.
+      You do not need to fit a certain industry, size, or business model.
+
+      If you are deciding where to put your time, money, energy, or resources,
+      Business & Brand Intelligence helps you base that decision on
+
+      <strong>your business</strong>
+
+      —not generic advice or guesswork.
 
     </p>
 
   </div>
 
+</div>
+
 </section>
 
 
-
-<!-- =========================
-     WHAT THE DIAGNOSTIC REVEALS
-========================= -->
 
 <section class="section">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-label">
-      What the diagnostic can reveal
-    </div>
+  <div class="section-label">
+    What happens after you become a client
+  </div>
 
-    <h2>
-      See what’s helping, hurting, or being overlooked in the way you earn,
-      operate, and grow.
-    </h2>
+  <h2>
+    You’ll know what was found, why it matters, and what to focus on next.
+  </h2>
 
-    <p class="intro">
+  <p class="intro">
 
-      Whether you run a traditional company, service business, creator brand,
-      solo practice, online business, personal brand, e-commerce operation,
-      or something built around your own expertise or audience, the diagnostic
-      looks for where
+    The diagnostic takes you from the information you already know about
+    your business to a clear, evidence-based picture of the areas that
+    deserve your attention most.
 
-      <strong>
-        time, money, attention, customers, audience, resources, and opportunities
-      </strong>
-
-      may not be working as hard as they could.
-
-    </p>
+  </p>
 
 
-    <div class="cards">
+  <div class="steps">
 
 
-      <div class="card">
+    <div class="step">
 
-        <div class="num">
-          01
-        </div>
+      <b>
+        1. Complete Your Business Intake
+      </b>
 
-        <b>
-          Revenue & Opportunity Leaks
-        </b>
-
-        <span>
-          Where sales, leads, customers, clients, viewers, followers,
-          subscribers, partnerships, or other opportunities may be falling
-          through the cracks.
-        </span>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="num">
-          02
-        </div>
-
-        <b>
-          Time & Resource Drains
-        </b>
-
-        <span>
-          Where unnecessary work, repeated tasks, poor workflows, unused tools,
-          or competing priorities may be consuming more time, money, or energy
-          than they should.
-        </span>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="num">
-          03
-        </div>
-
-        <b>
-          Growth Constraints
-        </b>
-
-        <span>
-          What may be limiting your ability to reach more people, convert
-          attention into revenue, serve more customers, increase capacity,
-          or grow sustainably.
-        </span>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="num">
-          04
-        </div>
-
-        <b>
-          Risks & Weak Points
-        </b>
-
-        <span>
-          Areas that may be overly dependent on one person, one platform,
-          one customer source, one process, or another fragile part of the
-          operation.
-        </span>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="num">
-          05
-        </div>
-
-        <b>
-          Underused Strengths & Opportunities
-        </b>
-
-        <span>
-          What you already have—audience, expertise, offers, relationships,
-          systems, content, customers, assets, or momentum—that may have more
-          value than you are currently getting from it.
-        </span>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="num">
-          06
-        </div>
-
-        <b>
-          What Deserves Your Attention First
-        </b>
-
-        <span>
-          Which findings could make the greatest difference, what can wait,
-          and where spending more time or money may
-
-          <strong>not</strong>
-
-          be the right next move.
-        </span>
-
-      </div>
-
+      <span>
+        You’ll answer questions about how your business operates, where you
+        spend time and money, what is working, what is frustrating you,
+        and where you believe opportunities may exist.
+      </span>
 
     </div>
+
+
+    <div class="step">
+
+      <b>
+        2. 60-Minute Diagnostic Interview
+      </b>
+
+      <span>
+        We go deeper into your answers, clarify what is happening, and explore
+        the areas that need more context so the analysis reflects your real
+        business—not assumptions.
+      </span>
+
+    </div>
+
+
+    <div class="step">
+
+      <b>
+        3. Your Business Is Analyzed
+      </b>
+
+      <span>
+        Your intake and interview are reviewed together to identify patterns,
+        gaps, inefficiencies, risks, strengths, and opportunities across
+        the business.
+      </span>
+
+    </div>
+
+
+    <div class="step">
+
+      <b>
+        4. Receive Your Personalized Report
+      </b>
+
+      <span>
+        You receive 3–5 priority findings showing what the evidence indicates,
+        why each finding matters, and a practical 90-day roadmap showing
+        where to focus first.
+      </span>
+
+    </div>
+
+
+    <div class="step">
+
+      <b>
+        5. Review Your Findings Together
+      </b>
+
+      <span>
+        Your diagnostic concludes with a 30-minute review session where we
+        walk through the findings and roadmap so you understand exactly
+        what was uncovered.
+      </span>
+
+    </div>
+
 
   </div>
+
+</div>
 
 </section>
 
 
 
-<!-- =========================
-     WHAT YOU GET
-========================= -->
+<section class="cta-wrap">
 
-<section class="section" id="what-you-get" style="padding-top:10px">
+<div class="container">
 
-  <div class="container">
+  <div class="section-label" style="color:#9fc8c4">
+    Founding Client Business Optimization Diagnostic
+  </div>
 
-    <div class="section-label">
-      What you receive
-    </div>
+  <h2>
+    Before You Invest in the Next Thing, Know What Deserves the Investment.
+  </h2>
 
-    <h2>
-      Clear findings you can actually use.
-    </h2>
+  <p>
 
-    <p class="intro">
+    Founding Clients receive the complete Business Optimization Diagnostic
+    for <strong>$297</strong>. Start with evidence—not guesswork.
 
-      You are not paying for a generic checklist or a long list of things you
-      could try.
-
-      Your diagnostic narrows the evidence down to the few areas that matter
-      most in your business.
-
-    </p>
+  </p>
 
 
-    <div class="deliverables">
+  <a
+    class="cta"
+    href="https://buy.stripe.com/9B6dR2d5rcso7vhczddQQ01"
+    target="_blank"
+    rel="noopener">
+
+    Become a Founding Client — $297
+
+  </a>
 
 
-      <div class="deliverable">
+  <div class="payment-note">
 
-        <strong>
-          3–5 Priority Findings
-        </strong>
+    Payments are currently processed securely through Love Little Me via Stripe.
 
-        <span>
-          The most important problems, risks, strengths, inefficiencies,
-          or opportunities uncovered in your business.
-        </span>
+    The charge may appear as
 
-      </div>
+    <strong style="color:white;">
+      LOVE LITTLE ME
+    </strong>
 
-
-      <div class="deliverable">
-
-        <strong>
-          Personalized Diagnostic Report
-        </strong>
-
-        <span>
-          A written explanation of what the evidence shows, why each finding
-          matters, and what it means for your business.
-        </span>
-
-      </div>
-
-
-      <div class="deliverable">
-
-        <strong>
-          90-Day Optimization Roadmap
-        </strong>
-
-        <span>
-          A practical plan showing what deserves your attention first,
-          so you are not trying to fix everything at once.
-        </span>
-
-      </div>
-
-
-      <div class="deliverable">
-
-        <strong>
-          30-Minute Findings Review
-        </strong>
-
-        <span>
-          A walkthrough of your report and roadmap so you understand exactly
-          what was uncovered and what to focus on next.
-        </span>
-
-      </div>
-
-
-    </div>
+    on your card or bank statement.
 
   </div>
 
-</section>
-
-
-
-<!-- =========================
-     WHO IT IS FOR
-========================= -->
-
-<section class="section" style="padding-top:10px">
-
-  <div class="container">
-
-    <div class="audience">
-
-      <div class="section-label" style="margin-bottom:9px">
-        Built for businesses in many forms
-      </div>
-
-      <p>
-
-        <strong>
-
-          Small businesses. Creator businesses. Personal brands. Influencers.
-          Solo operations. Online businesses. Service businesses. E-commerce.
-          Freelancers. Writers. Independent professionals. Companies with employees.
-
-        </strong>
-
-        <br><br>
-
-        You do not need to fit a certain industry, size, or business model.
-
-        If you are deciding where to put your time, money, energy, or resources,
-        Business & Brand Intelligence helps you base that decision on
-
-        <strong>your business</strong>
-
-        —not generic advice or guesswork.
-
-      </p>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
-
-
-
-<!-- =========================
-     HOW IT WORKS
-========================= -->
-
-<section class="section" id="how-it-works">
-
-  <div class="container">
-
-    <div class="section-label">
-      What happens after you become a client
-    </div>
-
-    <h2>
-      You’ll know what was found, why it matters, and what to focus on next.
-    </h2>
-
-    <p class="intro">
-
-      The diagnostic takes you from the information you already know about
-      your business to a clear, evidence-based picture of the areas that
-      deserve your attention most.
-
-    </p>
-
-
-    <div class="steps">
-
-
-      <div class="step">
-
-        <b>
-          1. Complete Your Business Intake
-        </b>
-
-        <span>
-          You’ll answer questions about how your business operates, where you
-          spend time and money, what is working, what is frustrating you,
-          and where you believe opportunities may exist.
-        </span>
-
-      </div>
-
-
-      <div class="step">
-
-        <b>
-          2. 60-Minute Diagnostic Interview
-        </b>
-
-        <span>
-          We go deeper into your answers, clarify what is happening, and
-          explore the areas that need more context so the analysis reflects
-          your real business—not assumptions.
-        </span>
-
-      </div>
-
-
-      <div class="step">
-
-        <b>
-          3. Your Business Is Analyzed
-        </b>
-
-        <span>
-          Your intake and interview are reviewed together to identify patterns,
-          gaps, inefficiencies, risks, strengths, and opportunities across the business.
-        </span>
-
-      </div>
-
-
-      <div class="step">
-
-        <b>
-          4. Receive Your Personalized Report
-        </b>
-
-        <span>
-          You receive 3–5 priority findings showing what the evidence indicates,
-          why each finding matters, and a practical 90-day roadmap showing where
-          to focus first.
-        </span>
-
-      </div>
-
-
-      <div class="step">
-
-        <b>
-          5. Review Your Findings Together
-        </b>
-
-        <span>
-          Your diagnostic concludes with a 30-minute review session where
-          we walk through the findings and roadmap so you understand exactly
-          what was uncovered.
-        </span>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     FOUNDER STORY
-========================= -->
-
-<section class="founder-section" id="founder-story">
-
-  <div class="container founder-layout">
-
-
-    <div class="founder-intro">
-
-      <div class="founder-eyebrow">
-        A Note From the Founder
-      </div>
-
-      <h2>
-        Why I Built Business & Brand Intelligence
-      </h2>
-
-      <p class="personal-line">
-        This business didn’t begin because I thought business owners needed
-        more advice.
-      </p>
-
-      <p class="personal-line">
-        It began because I knew what it felt like to need answers.
-      </p>
-
-    </div>
-
-
-
-    <div class="founder-story-card">
-
-
-      <p class="lead">
-        I know what it feels like to have an idea you genuinely believe in.
-      </p>
-
-
-      <p>
-        To spend weeks, months, sometimes years building something.
-        To create the website, develop the product or service, make the content,
-        post on social media, tell people about it — and wait for the business
-        to finally start moving.
-      </p>
-
-
-      <div class="big-quote">
-        And then it doesn’t.
-      </div>
-
-
-      <p>
-        I’ve been that business owner.
-      </p>
-
-
-      <p>
-        I’ve tried building businesses on my own. I’ve spent money I really
-        didn’t have to waste on things I hoped would finally make the difference,
-        without truly knowing whether I was fixing the right problem.
-      </p>
-
-
-      <p>
-        And I know how disheartening that can become.
-      </p>
-
-
-      <p>
-        Because eventually, you start asking yourself:
-      </p>
-
-
-      <div class="story-highlight">
-
-        <p>
-          Is my idea just not good enough?
-        </p>
-
-        <p>
-          Is my product the problem?
-        </p>
-
-        <p>
-          Do people even want what I’ve created?
-        </p>
-
-      </div>
-
-
-      <p>
-        But sometimes a business simply may not have enough information yet
-        to answer those questions.
-      </p>
-
-
-      <p>
-        Reaching customers and growing sales is one of the most common
-        challenges small businesses face, and many businesses close within
-        their first several years.
-      </p>
-
-
-      <p>
-        Behind those numbers are real people.
-      </p>
-
-
-      <p>
-        People who believed in something.
-      </p>
-
-
-      <p>
-        People who invested their savings, evenings, weekends, creativity,
-        and hope into trying to make it work.
-      </p>
-
-
-      <p>
-        And I can’t help but wonder how many good ideas never had the opportunity
-        to reach enough of the right people for the owner to truly understand
-        their potential.
-      </p>
-
-
-      <p>
-        When a business isn’t working, there is no shortage of advice:
-      </p>
-
-
-      <p>
-        <em>
-          Run more ads. Post more. Change your website. Lower your price.
-          Get on another platform. Create more content. Spend more money.
-        </em>
-      </p>
-
-
-      <div class="big-quote">
-        You don’t need another guess.<br>
-        You need clarity.
-      </div>
-
-
-      <p>
-        You need to understand:
-      </p>
-
-
-      <div class="story-highlight">
-
-        <p>
-          What is actually working?
-        </p>
-
-        <p>
-          What isn’t?
-        </p>
-
-        <p>
-          Are people finding you?
-        </p>
-
-        <p>
-          Are they finding you but not buying?
-        </p>
-
-        <p>
-          Is the problem your offer, your positioning, your customer journey,
-          your operations — or something completely different?
-        </p>
-
-      </div>
-
-
-      <p>
-        That’s why I created
-        <strong>Business & Brand Intelligence.</strong>
-      </p>
-
-
-      <p>
-        I wanted to build the kind of service I wish I’d had — a place where
-        a business owner could stop throwing solutions at an unidentified
-        problem and first get a clearer picture of the business as a whole.
-      </p>
-
-
-      <p>
-        Because your business may represent far more than a product,
-        service, or website.
-      </p>
-
-
-      <p>
-        It may represent your independence. Your family’s future.
-        A second chance. A dream you’ve carried for years.
-        Or simply the hope that everything you’ve poured into it can become
-        something sustainable.
-      </p>
-
-
-      <p>
-        I can’t promise that every business or every idea will succeed.
-      </p>
-
-
-      <p>
-        But I do believe business owners deserve the opportunity to make
-        decisions based on
-
-        <strong>
-          evidence and understanding instead of continuing to spend their
-          limited time, energy, and money guessing.
-        </strong>
-      </p>
-
-
-      <p class="closing-line">
-
-        Before you give up on what you’ve built — or spend more money trying
-        to save it — let’s understand what your business is actually telling us.
-
-      </p>
-
-
-      <p>
-        <strong>
-          That’s why I built B&amp;BI.
-        </strong>
-      </p>
-
-
-      <div class="signature">
-
-        <strong>
-          Tracy Clinscales
-        </strong>
-
-        <span>
-          Founder, Business & Brand Intelligence
-        </span>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     FINAL CTA
-========================= -->
-
-<section class="cta-wrap" id="start">
-
-  <div class="container">
-
-    <div class="section-label">
-      Founding Client Business Optimization Diagnostic
-    </div>
-
-    <h2>
-      Before You Invest in the Next Thing, Know What Deserves the Investment.
-    </h2>
-
-    <p>
-      Founding Clients receive the complete Business Optimization Diagnostic
-      for <strong>$297</strong>.
-      Start with evidence—not guesswork.
-    </p>
-
-
-    <a
-      class="cta"
-      href="https://buy.stripe.com/9B6dR2d5rcso7vhczddQQ01"
-      target="_blank"
-      rel="noopener">
-
-      Become a Founding Client — $297
-
-    </a>
-
-
-    <div class="payment-note">
-
-      Payments are currently processed securely through Love Little Me via Stripe.
-
-      The charge may appear as
-
-      <strong>LOVE LITTLE ME</strong>
-
-      on your card or bank statement.
-
-    </div>
-
-  </div>
-
-</section>
-
 
 
 </main>
 
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer class="footer">
 
-  <div class="container footer-grid">
+<div class="container footer-grid">
 
 
-    <div>
+  <div>
 
-      <h3>
-        Business & Brand Intelligence
-      </h3>
-
-      <div>
-        Business Optimization Diagnostics & Intelligence
-      </div>
-
-      <div style="margin-top:7px">
-
-        Business optimization diagnostic services for businesses, brands,
-        creators, and independent professionals.
-
-      </div>
-
-    </div>
-
-
+    <h3>
+      Business & Brand Intelligence
+    </h3>
 
     <div>
-
-      <h3>
-        Customer Support
-      </h3>
-
-      <div>
-        Email:
-        support@businessbrandintelligence.com
-      </div>
-
+      Business Optimization Diagnostics & Intelligence
     </div>
 
+    <div style="margin-top:7px">
 
-
-    <div>
-
-      <h3>
-        Policies
-      </h3>
-
-      <div>
-
-        <strong>
-          Refund & Cancellation Policy
-        </strong>
-
-        <br>
-
-        Full refunds are available only before the Business Intake is submitted.
-
-        Once the Business Intake has been submitted, the diagnostic fee is
-        non-refundable.
-
-        Diagnostic interviews may be rescheduled with at least 24 hours’ notice.
-
-        If Business & Brand Intelligence needs to reschedule a session,
-        a replacement appointment will be provided.
-
-        Policy is subject to applicable law.
-
-      </div>
+      Business optimization diagnostic services for businesses, brands,
+      creators, and independent professionals.
 
     </div>
-
 
   </div>
+
+
+
+  <div>
+
+    <h3>
+      Customer Support
+    </h3>
+
+    <div>
+      Email: support@businessbrandintelligence.com
+    </div>
+
+  </div>
+
+
+
+  <div>
+
+    <h3>
+      Policies
+    </h3>
+
+    <div>
+
+      <strong>
+        Refund & Cancellation Policy
+      </strong>
+
+      <br>
+
+      Full refunds are available only before the Business Intake is submitted.
+
+      Once the Business Intake has been submitted, the diagnostic fee is
+      non-refundable.
+
+      Diagnostic interviews may be rescheduled with at least 24 hours’ notice.
+
+      If Business & Brand Intelligence needs to reschedule a session,
+      a replacement appointment will be provided.
+
+      Policy is subject to applicable law.
+
+    </div>
+
+  </div>
+
+
+</div>
 
 </footer>
 

@@ -18,7 +18,7 @@
 
 <meta
   name="description"
-  content="Practical business insights from Business & Brand Intelligence to help business owners understand growth, conversion, positioning, customer acquisition, operations, and what may deserve attention before spending more."
+  content="Practical business insights for owners, founders, creators, and entrepreneurs who want to understand growth, sales, marketing, capacity, conversion, and what may actually need attention before spending more."
 >
 
 <meta name="robots" content="index, follow">
@@ -31,7 +31,7 @@
 <meta property="og:title" content="Business Insights | Business & Brand Intelligence">
 <meta
   property="og:description"
-  content="Practical guidance for business owners who want to understand what may be limiting growth before spending more time or money trying random fixes."
+  content="Business guidance for owners who want to understand what may be limiting growth before spending more time or money trying another fix."
 >
 <meta property="og:url" content="https://businessbrandintelligence.com/insights.html">
 
@@ -40,7 +40,7 @@
 <meta name="twitter:title" content="Business Insights | Business & Brand Intelligence">
 <meta
   name="twitter:description"
-  content="Practical business growth and diagnostic insights from Business & Brand Intelligence."
+  content="Practical business growth, sales, marketing, capacity, and diagnostic insights from Business & Brand Intelligence."
 >
 
 <!-- Structured Data -->
@@ -53,7 +53,7 @@
       "@id": "https://businessbrandintelligence.com/insights.html#collection",
       "url": "https://businessbrandintelligence.com/insights.html",
       "name": "Business Insights",
-      "description": "Practical business growth and diagnostic insights from Business & Brand Intelligence.",
+      "description": "Practical business growth, sales, marketing, capacity, and diagnostic insights from Business & Brand Intelligence.",
       "isPartOf": {
         "@type": "WebSite",
         "@id": "https://businessbrandintelligence.com/#website",
@@ -71,13 +71,37 @@
       "@type": "ItemList",
       "@id": "https://businessbrandintelligence.com/insights.html#articles",
       "name": "Business Insights Articles",
-      "numberOfItems": 1,
+      "numberOfItems": 5,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "url": "https://businessbrandintelligence.com/why-is-my-business-not-growing.html",
           "name": "Why Is My Business Not Growing?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://businessbrandintelligence.com/business-not-working-what-i-learned.html",
+          "name": "Trying to Build a Business That Wasn’t Working: What I Learned Along the Way"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://businessbrandintelligence.com/why-is-my-business-not-getting-sales.html",
+          "name": "I Need More Sales. But Is That Actually the Problem?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://businessbrandintelligence.com/small-business-marketing-before-spending-more.html",
+          "name": "Before You Spend More on Marketing, Find Out What Kind of Marketing Your Business Actually Needs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://businessbrandintelligence.com/starting-a-business-as-a-parent.html",
+          "name": "Building a Business While Raising a Family: Your Strategy Has to Fit Your Life Too"
         }
       ]
     }
@@ -97,6 +121,7 @@
   --cream:#faf7f1;
   --paper:#fffdf9;
   --warm:#f2eadf;
+  --warm-deep:#e9ddcd;
   --soft-teal:#e4efeb;
   --gold:#b89a68;
   --text:#3f4e52;
@@ -105,6 +130,7 @@
 }
 
 *{box-sizing:border-box;}
+
 html{scroll-behavior:smooth;}
 
 body{
@@ -184,7 +210,7 @@ header{
 
 /* HERO */
 .hero{
-  padding:76px 0 58px;
+  padding:78px 0 58px;
   text-align:center;
 }
 
@@ -222,110 +248,266 @@ h1{
   margin:28px auto 0;
 }
 
-/* FEATURED */
-.insights-section{
-  padding:12px 0 80px;
+/* FEATURED STORY */
+.featured-section{
+  padding:15px 0 75px;
 }
 
 .section-intro{
-  max-width:800px;
-  margin:0 auto 28px;
+  max-width:900px;
+  margin:0 auto 30px;
 }
 
 .section-intro h2{
   margin:0 0 9px;
   color:var(--navy);
   font-family:"Playfair Display", Georgia, serif;
-  font-size:34px;
+  font-size:35px;
+  line-height:1.2;
   font-weight:600;
 }
 
 .section-intro p{
   margin:0;
   color:var(--muted);
+  font-size:16px;
 }
 
-.article-card{
-  max-width:900px;
+.featured-shell{
+  max-width:1000px;
   margin:0 auto;
+  background:var(--teal-dark);
+  border-radius:22px;
+  padding:52px 52px 0;
+  box-shadow:0 24px 55px rgba(16,43,55,.12);
+}
+
+.featured-top{
   display:grid;
-  grid-template-columns:220px 1fr;
-  background:var(--paper);
-  border:1px solid var(--border);
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 15px 40px rgba(34,48,48,.06);
+  grid-template-columns:.7fr 1.3fr;
+  gap:45px;
+  align-items:start;
 }
 
-.card-mark{
-  background:var(--soft-teal);
-  min-height:280px;
-  padding:28px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-
-.card-mark .category{
-  color:var(--teal-dark);
-  text-transform:uppercase;
-  letter-spacing:.15em;
-  font-size:11px;
-  font-weight:800;
-}
-
-.card-mark .question{
-  color:var(--navy);
+.featured-question{
+  color:#c8dedb;
   font-family:"Playfair Display", Georgia, serif;
-  font-size:34px;
-  line-height:1.15;
+  font-size:35px;
+  line-height:1.2;
   font-weight:600;
 }
 
-.card-content{
-  padding:38px 40px;
-}
-
-.card-content .label{
-  color:var(--gold);
+.featured-copy .label{
+  color:#b7d4d0;
   text-transform:uppercase;
-  letter-spacing:.15em;
+  letter-spacing:.16em;
   font-size:11px;
   font-weight:800;
   margin-bottom:12px;
 }
 
-.card-content h2{
-  margin:0 0 15px;
-  color:var(--navy);
+.featured-copy h2{
+  margin:0 0 16px;
+  color:white;
   font-family:"Playfair Display", Georgia, serif;
-  font-size:34px;
-  line-height:1.2;
+  font-size:40px;
+  line-height:1.16;
   font-weight:600;
 }
 
-.card-content p{
+.featured-copy p{
+  color:#dce9e7;
   margin:0 0 24px;
-  color:#59676a;
-  font-size:16px;
 }
 
-.read-link{
+.featured-link{
   display:inline-block;
-  background:var(--teal);
-  color:white;
+  background:white;
+  color:var(--teal-dark);
   padding:13px 18px;
   border-radius:8px;
   font-weight:800;
   font-size:14px;
 }
 
-.read-link:hover{background:var(--teal-dark);}
+.featured-paper{
+  position:relative;
+  top:30px;
+  margin:0 40px;
+  background:var(--paper);
+  padding:30px 34px;
+  border-radius:15px;
+  border:1px solid var(--border);
+  box-shadow:0 16px 35px rgba(16,43,55,.12);
+}
 
-/* ABOUT INSIGHTS */
+.featured-paper p{
+  margin:0;
+  color:var(--navy);
+  font-family:"Playfair Display", Georgia, serif;
+  font-size:24px;
+  line-height:1.5;
+}
+
+/* LIBRARY */
+.library-section{
+  padding:65px 0 78px;
+}
+
+.library-title{
+  max-width:900px;
+  margin:0 auto 28px;
+}
+
+.library-title .eyebrow{
+  margin-bottom:10px;
+}
+
+.library-title h2{
+  margin:0 0 10px;
+  color:var(--navy);
+  font-family:"Playfair Display", Georgia, serif;
+  font-size:38px;
+  line-height:1.2;
+  font-weight:600;
+}
+
+.library-title p{
+  margin:0;
+  max-width:760px;
+  color:var(--muted);
+}
+
+.article-grid{
+  max-width:1000px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+
+.article-card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:18px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  box-shadow:0 12px 28px rgba(34,48,48,.045);
+}
+
+.card-band{
+  padding:28px 28px 25px;
+  min-height:185px;
+}
+
+.card-band.teal{
+  background:var(--soft-teal);
+}
+
+.card-band.warm{
+  background:var(--warm);
+}
+
+.card-band.navy{
+  background:var(--navy);
+}
+
+.card-band.gold{
+  background:#eee5d8;
+}
+
+.card-category{
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-size:10px;
+  font-weight:800;
+  margin-bottom:18px;
+}
+
+.teal .card-category,
+.warm .card-category,
+.gold .card-category{
+  color:var(--teal-dark);
+}
+
+.navy .card-category{
+  color:#a9ccc8;
+}
+
+.card-band h3{
+  margin:0;
+  font-family:"Playfair Display", Georgia, serif;
+  font-size:29px;
+  line-height:1.22;
+  font-weight:600;
+}
+
+.teal h3,
+.warm h3,
+.gold h3{
+  color:var(--navy);
+}
+
+.navy h3{
+  color:white;
+}
+
+.card-body{
+  padding:28px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.card-body p{
+  margin:0 0 24px;
+  color:#59676a;
+  font-size:15.5px;
+}
+
+.card-body .read-link{
+  margin-top:auto;
+  display:inline-block;
+  align-self:flex-start;
+  color:var(--teal-dark);
+  font-weight:800;
+  font-size:14px;
+  border-bottom:1px solid #b4cbc7;
+  padding-bottom:3px;
+}
+
+/* QUOTE */
+.editorial-break{
+  padding:0 0 75px;
+}
+
+.quote-panel{
+  max-width:900px;
+  margin:0 auto;
+  background:var(--navy);
+  border-radius:18px;
+  padding:45px 50px;
+  text-align:center;
+}
+
+.quote-panel p{
+  margin:0;
+  color:white;
+  font-family:"Playfair Display", Georgia, serif;
+  font-size:31px;
+  line-height:1.45;
+}
+
+.quote-panel span{
+  color:#9fc8c4;
+}
+
+/* WHY INSIGHTS */
 .about-section{
   background:var(--warm);
-  padding:60px 0;
+  padding:65px 0;
 }
 
 .about-grid{
@@ -351,7 +533,9 @@ h1{
   color:#556367;
 }
 
-.about-grid p:last-child{margin-bottom:0;}
+.about-grid p:last-child{
+  margin-bottom:0;
+}
 
 /* CTA */
 .cta-section{
@@ -363,7 +547,7 @@ h1{
   margin:0 auto;
   background:var(--navy);
   border-radius:18px;
-  padding:42px;
+  padding:45px;
   text-align:center;
 }
 
@@ -408,9 +592,17 @@ h1{
   color:white;
 }
 
+.primary:hover{
+  background:var(--teal-dark);
+}
+
 .secondary{
   border:1px solid #8eb4b1;
   color:white;
+}
+
+.secondary:hover{
+  background:rgba(255,255,255,.06);
 }
 
 /* FOOTER */
@@ -428,10 +620,18 @@ footer{
   flex-wrap:wrap;
 }
 
-footer strong{color:var(--navy);}
-footer a{color:var(--teal-dark);font-weight:700;}
+footer strong{
+  color:var(--navy);
+}
 
+footer a{
+  color:var(--teal-dark);
+  font-weight:700;
+}
+
+/* MOBILE */
 @media(max-width:760px){
+
   .container{
     padding-left:20px;
     padding-right:20px;
@@ -451,25 +651,54 @@ footer a{color:var(--teal-dark);font-weight:700;}
     font-size:43px;
   }
 
-  .article-card{
+  .featured-shell{
+    padding:35px 24px 0;
+  }
+
+  .featured-top{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+
+  .featured-question{
+    font-size:29px;
+  }
+
+  .featured-copy h2{
+    font-size:32px;
+  }
+
+  .featured-paper{
+    margin:0;
+    padding:27px 24px;
+  }
+
+  .featured-paper p{
+    font-size:22px;
+  }
+
+  .article-grid{
     grid-template-columns:1fr;
   }
 
-  .card-mark{
+  .library-title h2{
+    font-size:32px;
+  }
+
+  .card-band{
     min-height:auto;
-    gap:38px;
   }
 
-  .card-mark .question{
-    font-size:30px;
+  .card-band h3{
+    font-size:27px;
   }
 
-  .card-content{
-    padding:30px 25px;
+  .quote-panel{
+    padding:34px 25px;
   }
 
-  .card-content h2{
-    font-size:29px;
+  .quote-panel p{
+    font-size:25px;
   }
 
   .about-grid{
@@ -489,6 +718,7 @@ footer a{color:var(--teal-dark);font-weight:700;}
     flex-direction:column;
   }
 }
+
 </style>
 
 </head>
@@ -504,6 +734,7 @@ footer a{color:var(--teal-dark);font-weight:700;}
     </div>
 
     <div class="header-links">
+
       <a href="https://businessbrandintelligence.com/" class="header-link">
         Business Optimization Diagnostic
       </a>
@@ -511,6 +742,7 @@ footer a{color:var(--teal-dark);font-weight:700;}
       <a href="https://businessbrandintelligence.com/founder.html" class="header-button">
         A Note From the Founder
       </a>
+
     </div>
 
   </div>
@@ -518,114 +750,357 @@ footer a{color:var(--teal-dark);font-weight:700;}
 
 <main>
 
+<!-- HERO -->
 <section class="hero">
+
   <div class="container">
-    <div class="eyebrow">Business &amp; Brand Intelligence</div>
+
+    <div class="eyebrow">
+      Business &amp; Brand Intelligence
+    </div>
 
     <h1>Business Insights</h1>
 
     <p>
-      Practical guidance to help business owners understand growth, conversion,
-      positioning, customer acquisition, operations, and what may deserve attention
-      before spending more time or money trying another fix.
+      Practical guidance for business owners, founders, creators, and entrepreneurs
+      who want to understand what their business may actually need before spending
+      more time, money, or energy trying another fix.
     </p>
 
     <div class="line"></div>
+
   </div>
+
 </section>
 
-<section class="insights-section">
+
+<!-- FEATURED ARTICLE -->
+<section class="featured-section">
+
   <div class="container">
 
     <div class="section-intro">
-      <h2>Start with the problem, not the tactic.</h2>
+
+      <h2>
+        Start with the problem, not the tactic.
+      </h2>
+
       <p>
-        These articles are designed to help you ask better questions about what your
-        business is actually telling you.
+        Business problems often show up as symptoms: low sales, slow growth,
+        inconsistent demand, poor conversion, or too much work. These articles
+        are designed to help you ask better questions before deciding what to fix.
       </p>
+
     </div>
 
-    <article class="article-card">
+    <div class="featured-shell">
 
-      <div class="card-mark">
-        <div class="category">Business Growth</div>
+      <div class="featured-top">
 
-        <div class="question">
-          Why isn’t the business growing?
+        <div class="featured-question">
+          What if “not growing” is only the symptom?
         </div>
+
+        <div class="featured-copy">
+
+          <div class="label">
+            Featured Business Insight
+          </div>
+
+          <h2>
+            Why Is My Business Not Growing?
+          </h2>
+
+          <p>
+            When sales are not growing, it is easy to assume the answer is more
+            marketing. But the real constraint may be visibility, positioning,
+            conversion, follow-up, customer experience, operations, or something
+            else entirely.
+          </p>
+
+          <a
+            href="https://businessbrandintelligence.com/why-is-my-business-not-growing.html"
+            class="featured-link"
+          >
+            Read the Article →
+          </a>
+
+        </div>
+
       </div>
 
-      <div class="card-content">
-        <div class="label">Featured Insight</div>
-
-        <h2>
-          Why Is My Business Not Growing?
-        </h2>
+      <div class="featured-paper">
 
         <p>
-          When sales are not growing, it is easy to assume the answer is more marketing.
-          But the real constraint may be visibility, positioning, conversion, follow-up,
-          customer experience, operations, or something else entirely. This guide explains
-          how to start separating the symptom from the underlying problem.
+          “Low sales tell you there is a problem.
+          They do not tell you what the problem is.”
         </p>
 
-        <a
-          href="https://businessbrandintelligence.com/why-is-my-business-not-growing.html"
-          class="read-link"
-        >
-          Read the Article →
-        </a>
       </div>
 
-    </article>
+    </div>
 
   </div>
+
 </section>
 
+
+<!-- ARTICLE LIBRARY -->
+<section class="library-section">
+
+  <div class="container">
+
+    <div class="library-title">
+
+      <div class="eyebrow">
+        Explore the Library
+      </div>
+
+      <h2>
+        Business questions worth understanding before you act.
+      </h2>
+
+      <p>
+        Growth, sales, marketing, entrepreneurship, founder capacity, and the
+        decisions that can shape what happens next.
+      </p>
+
+    </div>
+
+    <div class="article-grid">
+
+
+      <!-- ARTICLE 2 -->
+      <article class="article-card">
+
+        <div class="card-band warm">
+
+          <div class="card-category">
+            Founder Perspective
+          </div>
+
+          <h3>
+            Trying to Build a Business That Wasn’t Working: What I Learned Along the Way
+          </h3>
+
+        </div>
+
+        <div class="card-body">
+
+          <p>
+            What happens when you believe in your business, spend time and money
+            trying to make it work, and the traction still does not come? A founder's
+            perspective on what can happen when uncertainty turns into a series of
+            random fixes.
+          </p>
+
+          <a
+            href="https://businessbrandintelligence.com/business-not-working-what-i-learned.html"
+            class="read-link"
+          >
+            Read the Article →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- ARTICLE 3 -->
+      <article class="article-card">
+
+        <div class="card-band teal">
+
+          <div class="card-category">
+            Sales &amp; Conversion
+          </div>
+
+          <h3>
+            “I Need More Sales.” But Is That Actually the Problem?
+          </h3>
+
+        </div>
+
+        <div class="card-body">
+
+          <p>
+            Wanting more sales is completely understandable. But “I need more sales”
+            describes the outcome you want—not necessarily the reason the business is
+            not producing enough sales now.
+          </p>
+
+          <a
+            href="https://businessbrandintelligence.com/why-is-my-business-not-getting-sales.html"
+            class="read-link"
+          >
+            Read the Article →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- ARTICLE 4 -->
+      <article class="article-card">
+
+        <div class="card-band navy">
+
+          <div class="card-category">
+            Marketing Strategy
+          </div>
+
+          <h3>
+            Before You Spend More on Marketing, Find Out What Kind of Marketing Your Business Actually Needs
+          </h3>
+
+        </div>
+
+        <div class="card-body">
+
+          <p>
+            Ads, social media, SEO, content, email, and marketing tools can all have
+            value. But there is no universally best tactic. The better question is:
+            what problem are you actually trying to solve?
+          </p>
+
+          <a
+            href="https://businessbrandintelligence.com/small-business-marketing-before-spending-more.html"
+            class="read-link"
+          >
+            Read the Article →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- ARTICLE 5 -->
+      <article class="article-card">
+
+        <div class="card-band gold">
+
+          <div class="card-category">
+            Entrepreneurship &amp; Family
+          </div>
+
+          <h3>
+            Building a Business While Raising a Family: Your Strategy Has to Fit Your Life Too
+          </h3>
+
+        </div>
+
+        <div class="card-body">
+
+          <p>
+            Parents are not building businesses with identical amounts of time,
+            money, childcare, support, or financial flexibility. Your available
+            capacity can be part of the business model itself.
+          </p>
+
+          <a
+            href="https://businessbrandintelligence.com/starting-a-business-as-a-parent.html"
+            class="read-link"
+          >
+            Read the Article →
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- EDITORIAL BREAK -->
+<section class="editorial-break">
+
+  <div class="container">
+
+    <div class="quote-panel">
+
+      <p>
+        Before asking <span>“What else should I try?”</span>,
+        it may be more useful to ask
+        <span>“What do I need to understand?”</span>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- WHY BUSINESS INSIGHTS -->
 <section class="about-section">
+
   <div class="container">
 
     <div class="about-grid">
+
       <h2>
         Why Business Insights?
       </h2>
 
       <div>
+
         <p>
-          Business owners are constantly told to post more, advertise more, change platforms,
-          lower prices, buy software, or try another strategy.
+          Business owners are constantly told to post more, advertise more,
+          change platforms, lower prices, buy software, automate, rebrand,
+          launch another offer, or try another strategy.
         </p>
 
         <p>
           But a tactic is only useful when it addresses the right problem.
-          Business Insights focuses on understanding the business before jumping to the solution.
         </p>
 
         <p>
-          As this library grows, you will find practical guidance on business growth,
-          customer acquisition, conversion, operations, positioning, customer experience,
-          and other areas that can affect performance.
+          Business Insights is designed to help owners think more clearly about
+          what is happening inside the business before jumping to another solution.
         </p>
+
+        <p>
+          You will find perspectives on business growth, sales, marketing,
+          customer acquisition, conversion, founder capacity, operations,
+          positioning, customer experience, and the realities of trying to build
+          something of your own.
+        </p>
+
       </div>
+
     </div>
 
   </div>
+
 </section>
 
+
+<!-- CTA -->
 <section class="cta-section">
+
   <div class="container">
 
     <div class="cta">
-      <div class="eyebrow">Need More Than an Article?</div>
+
+      <div class="eyebrow">
+        Need More Than an Article?
+      </div>
 
       <h2>
         Find out what may actually need attention in your business.
       </h2>
 
       <p>
-        The $297 Founding Client Business Optimization Diagnostic examines the business
-        as a whole and provides priority findings, a personalized report, a practical
-        90-day roadmap, and a 30-minute findings review.
+        The $297 Founding Client Business Optimization Diagnostic examines the
+        business as a whole and provides priority findings, a personalized report,
+        a practical 90-day roadmap, and a 30-minute findings review.
       </p>
 
       <div class="cta-actions">
@@ -649,19 +1124,25 @@ footer a{color:var(--teal-dark);font-weight:700;}
         </a>
 
       </div>
+
     </div>
 
   </div>
+
 </section>
 
 </main>
 
+
 <footer>
+
   <div class="container footer-inner">
 
     <div>
       <strong>Business &amp; Brand Intelligence</strong><br>
-      Business optimization diagnostic services throughout the Inland Empire and Southern California.
+      Business optimization diagnostic services for businesses, brands,
+      creators, and independent professionals throughout the Inland Empire
+      and Southern California.
     </div>
 
     <div>
@@ -675,6 +1156,7 @@ footer a{color:var(--teal-dark);font-weight:700;}
     </div>
 
   </div>
+
 </footer>
 
 </body>

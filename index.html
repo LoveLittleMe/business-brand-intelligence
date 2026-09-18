@@ -159,27 +159,32 @@
   .reason-label span{font-size:clamp(0.55rem,1.4vw,0.65rem);letter-spacing:.08em;font-weight:800;color:#fff;}
 
   /* NOT ALONE */
-  .not-alone{padding:80px 0;background:#faf2ea;}
-  .split-two{display:grid;grid-template-columns:1fr;gap:44px;align-items:start;}
+  .not-alone{padding:64px 0 40px;background:#F6F1EA;}
+  .split-two{display:grid;grid-template-columns:1fr;gap:40px;align-items:start;}
   @media(min-width:900px){.split-two{grid-template-columns:1fr 1.05fr;}}
-  .split-two h2{font-size:clamp(1.9rem,4.4vw,2.6rem);margin-bottom:6px;letter-spacing:-.015em;}
+  .split-two h2{font-size:clamp(1.9rem,4.4vw,2.6rem);margin-bottom:14px;letter-spacing:-.015em;position:relative;padding-bottom:14px;}
+  .split-two h2::after{content:"";position:absolute;left:0;bottom:0;width:56px;height:3px;background:#B26126;}
+  .founder-panel{background:#fff;border-left:4px solid #B26126;border-radius:4px;padding:36px 40px;}
   .split-two p.lead{
-    font-family:'Caveat',cursive;font-weight:700;color:var(--rust);
-    font-size:clamp(1.7rem,3.6vw,2.1rem);line-height:1.1;margin:6px 0 22px;
+    font-family:'Caveat',cursive;font-weight:700;color:#B26126;
+    font-size:clamp(1.7rem,3.6vw,2.1rem);line-height:1.1;margin:0 0 22px;
   }
   .split-two p{margin:0 0 18px;font-family:'Lora',Georgia,serif;font-size:1.08rem;line-height:1.75;color:var(--ink);}
   .split-two p strong{color:var(--navy);}
-  .doubt-list{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:12px;}
+  .doubt-block{background:#FBF6EF;border-left:3px solid #B26126;border-radius:4px;padding:18px 22px;margin:0 0 22px;}
+  .doubt-list{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
   .doubt-list li{
-    font-family:'Lora',Georgia,serif;font-style:italic;color:var(--rust-dark);
-    font-size:clamp(1.05rem,2.2vw,1.2rem);padding-left:22px;position:relative;line-height:1.4;
+    font-family:'Lora',Georgia,serif;font-style:italic;color:#8a4a1f;
+    font-size:clamp(1.02rem,2.1vw,1.15rem);padding-left:20px;position:relative;line-height:1.4;
   }
-  .doubt-list li::before{content:"\2014";position:absolute;left:0;color:var(--rust);}
-  .founder-sign{margin-top:28px;}
-  .founder-sign .name{font-family:'Caveat',cursive;font-weight:700;font-size:2.3rem;color:var(--rust);}
+  .doubt-list li::before{content:"\2014";position:absolute;left:0;color:#B26126;}
+  .founder-sign{margin-top:8px;}
+  .sign-rule{width:100%;max-width:220px;height:1px;background:#e2d6c4;margin:0 0 18px;}
+  .founder-sign .name{font-family:'Caveat',cursive;font-weight:700;font-size:2.3rem;color:#B26126;}
   .founder-sign .role{font-size:0.7rem;letter-spacing:.06em;color:var(--ink-soft);font-weight:700;margin-top:2px;}
 
-  .testi-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:36px 38px;position:relative;box-shadow:0 24px 50px -32px rgba(10,16,68,.4);}
+  .testi-side{background:#EFE8DF;border-radius:8px;padding:32px;}
+  .testi-card{background:#fff;border:1px solid #e4d9c8;border-radius:8px;padding:36px 38px;position:relative;box-shadow:0 20px 44px -32px rgba(10,16,68,.3);}
   .testi-card h3{font-size:1.35rem;margin-bottom:20px;letter-spacing:-.01em;}
   .testi-grid{display:grid;grid-template-columns:1fr;gap:26px;}
   .testi-item .mark{font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);line-height:1;margin-bottom:6px;}
@@ -188,7 +193,8 @@
   .testi-item .attrib strong{display:block;color:var(--navy);font-weight:700;font-size:0.82rem;}
   .testi-dots{display:flex;gap:8px;justify-content:center;margin-top:22px;}
   .testi-dots span{width:8px;height:8px;border-radius:50%;background:var(--line);display:inline-block;}
-  .testi-dots span.active{background:var(--rust);}
+  .testi-dots span.active{background:#B26126;}
+  @media(max-width:640px){.founder-panel{padding:28px 24px;}.testi-side{padding:20px;}}
 
   /* COMPASS */
   .compass{position:relative;aspect-ratio:3.6/1;max-height:440px;min-height:260px;display:flex;align-items:center;overflow:hidden;}
@@ -437,35 +443,42 @@
 <!-- YOU'RE NOT ALONE -->
 <section class="not-alone" id="client-results">
   <div class="wrap split-two">
-    <div>
+    <div class="founder-side">
       <h2>You&rsquo;re Not Alone.</h2>
-      <p class="lead">I&rsquo;ve been that business owner.</p>
-      <p>I&rsquo;ve tried building businesses on my own. I&rsquo;ve spent money I really didn&rsquo;t have to waste on things I hoped would finally make the difference, without truly knowing whether I was fixing the right problem.</p>
-      <p>And I know how disheartening that can become.</p>
-      <p>Because eventually, the doubt starts creeping in:</p>
-      <ul class="doubt-list">
-        <li>Is my idea just not good enough?</li>
-        <li>Is my product the problem?</li>
-        <li>Do people even want what I&rsquo;ve created?</li>
-      </ul>
-      <p>And when you care deeply about what you&rsquo;re building, those questions can start to feel personal.</p>
-      <p>That is one of the reasons I built Business &amp; Brand Intelligence.</p>
-      <p>I wanted business owners to have a way to step back, look at the evidence, and understand what is actually happening before spending more money, more time, and more energy trying to fix the wrong thing.</p>
-      <div class="founder-sign">
-        <div class="name">Tracy</div>
-        <div class="role">FOUNDER<br>BUSINESS &amp; BRAND INTELLIGENCE</div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <h3>What Clients Are Saying</h3>
-      <div class="testi-grid">
-        <div class="testi-item">
-          <div class="mark">&ldquo;</div>
-          <p>I had been open for months and was struggling to convert visitors into sales. I didn&rsquo;t want to waste any more time or money on ads and promotions if that wasn&rsquo;t actually the problem. The Business Optimization Diagnostic helped me better understand what could be holding the business back and gave me a clearer path forward without wasting more time guessing.</p>
-          <div class="attrib"><strong>Founder, Love Little Me</strong>Inner-Child Healing Brand</div>
+      <div class="founder-panel">
+        <p class="lead">I&rsquo;ve been that business owner.</p>
+        <p>I&rsquo;ve tried building businesses on my own. I&rsquo;ve spent money I really didn&rsquo;t have to waste on things I hoped would finally make the difference, without truly knowing whether I was fixing the right problem.</p>
+        <p>And I know how disheartening that can become.</p>
+        <p>Because eventually, the doubt starts creeping in:</p>
+        <div class="doubt-block">
+          <ul class="doubt-list">
+            <li>Is my idea just not good enough?</li>
+            <li>Is my product the problem?</li>
+            <li>Do people even want what I&rsquo;ve created?</li>
+          </ul>
+        </div>
+        <p>And when you care deeply about what you&rsquo;re building, those questions can start to feel personal.</p>
+        <p>That is one of the reasons I built Business &amp; Brand Intelligence.</p>
+        <p>I wanted business owners to have a way to step back, look at the evidence, and understand what is actually happening before spending more money, more time, and more energy trying to fix the wrong thing.</p>
+        <div class="founder-sign">
+          <div class="sign-rule"></div>
+          <div class="name">Tracy</div>
+          <div class="role">FOUNDER<br>BUSINESS &amp; BRAND INTELLIGENCE</div>
         </div>
       </div>
-      <div class="testi-dots"><span class="active"></span></div>
+    </div>
+    <div class="testi-side">
+      <div class="testi-card">
+        <h3>What Clients Are Saying</h3>
+        <div class="testi-grid">
+          <div class="testi-item">
+            <div class="mark">&ldquo;</div>
+            <p>I had been open for months and was struggling to convert visitors into sales. I didn&rsquo;t want to waste any more time or money on ads and promotions if that wasn&rsquo;t actually the problem. The Business Optimization Diagnostic helped me better understand what could be holding the business back and gave me a clearer path forward without wasting more time guessing.</p>
+            <div class="attrib"><strong>Founder, Love Little Me</strong>Inner-Child Healing Brand</div>
+          </div>
+        </div>
+        <div class="testi-dots"><span class="active"></span></div>
+      </div>
     </div>
   </div>
 </section>

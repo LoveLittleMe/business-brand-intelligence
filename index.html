@@ -156,7 +156,11 @@
   .split-two h2{font-size:clamp(1.7rem,4vw,2.25rem);margin-bottom:18px;letter-spacing:-.015em;position:relative;padding-bottom:14px;}
   .split-two h2::after{content:"";position:absolute;left:0;bottom:0;width:56px;height:3px;background:var(--rust);}
   .split-two p{margin:0 0 14px;font-size:0.94rem;}
+  .split-two p.lead{font-weight:700;color:var(--navy);font-size:1.15rem;}
   .split-two p strong{color:var(--navy);}
+  .doubt-list{list-style:none;margin:0 0 16px;padding:0 0 0 4px;display:grid;gap:8px;}
+  .doubt-list li{font-style:italic;color:var(--navy);font-size:0.98rem;padding-left:18px;position:relative;}
+  .doubt-list li::before{content:"\2014";position:absolute;left:0;color:var(--rust);}
   .founder-sign{margin-top:20px;}
   .founder-sign .name{font-family:'Caveat',cursive;font-weight:700;font-size:2rem;color:var(--navy-2);}
   .founder-sign .role{font-size:0.68rem;letter-spacing:.06em;color:var(--ink-soft);font-weight:700;margin-top:0;}
@@ -181,9 +185,9 @@
     .compass{aspect-ratio:auto;min-height:280px;max-height:none;}
     .compass::before{background:linear-gradient(180deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.75) 55%,rgba(255,255,255,.15) 100%);}
   }
-  .compass-copy{position:relative;z-index:2;max-width:360px;padding:32px 0;}
-  .compass-copy h2{font-size:clamp(1.45rem,3.6vw,1.85rem);}
-  .compass-copy p{color:var(--ink);margin-top:10px;font-size:0.92rem;}
+  .compass-copy{position:relative;z-index:2;max-width:420px;padding:32px 0;}
+  .compass-copy h2{font-size:clamp(1.6rem,4.2vw,2.15rem);}
+  .compass-copy p{color:var(--ink);margin-top:12px;font-size:clamp(1rem,2vw,1.15rem);line-height:1.5;}
   @media(max-width:640px){.compass-copy{max-width:100%;}}
 
   /* DARK BANNER */
@@ -348,7 +352,7 @@
       <div class="tagline">CLARITY TODAY. A STRONGER TOMORROW.</div>
     </div>
     <div class="hero-media">
-      <img src="assets/bbi-hero.png" alt="Small business community alongside a modern corporate skyline">
+      <img src="assets/bbi-hero.jpg" alt="Small business community alongside a modern corporate skyline">
       <span class="cloudword" style="left:47%;top:16%;">Bigger<br>Budgets</span>
       <span class="cloudword" style="left:63%;top:20%;">More<br>Data</span>
       <span class="cloudword" style="left:82%;top:21%;">Larger<br>Teams</span>
@@ -417,8 +421,18 @@
   <div class="wrap split-two">
     <div>
       <h2>You&rsquo;re Not Alone.</h2>
-      <p>Being a business owner can be a scary terrain &mdash; not enough sales, high costs, constant change, limited time, technology takeover, and corporate competition. It&rsquo;s a lot.</p>
-      <p>Business &amp; Brand Intelligence gives you a clear, evidence-based look at what&rsquo;s really happening inside your business &mdash; so you can make smarter decisions, focus your resources, and move forward with confidence.</p>
+      <p class="lead">I&rsquo;ve been that business owner.</p>
+      <p>I&rsquo;ve tried building businesses on my own. I&rsquo;ve spent money I really didn&rsquo;t have to waste on things I hoped would finally make the difference, without truly knowing whether I was fixing the right problem.</p>
+      <p>And I know how disheartening that can become.</p>
+      <p>Because eventually, the doubt starts creeping in:</p>
+      <ul class="doubt-list">
+        <li>Is my idea just not good enough?</li>
+        <li>Is my product the problem?</li>
+        <li>Do people even want what I&rsquo;ve created?</li>
+      </ul>
+      <p>And when you care deeply about what you&rsquo;re building, those questions can start to feel personal.</p>
+      <p>That is one of the reasons I built Business &amp; Brand Intelligence.</p>
+      <p>I wanted business owners to have a way to step back, look at the evidence, and understand what is actually happening before spending more money, more time, and more energy trying to fix the wrong thing.</p>
       <div class="founder-sign">
         <div class="name">Tracy</div>
         <div class="role">FOUNDER<br>BUSINESS &amp; BRAND INTELLIGENCE</div>

@@ -143,25 +143,26 @@
   .reason-tile{display:flex;flex-direction:column;}
   .reason-photo{position:relative;aspect-ratio:3/3.6;overflow:hidden;}
   .reason-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
-  .reason-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(3,8,14,.92) 0%,rgba(3,8,14,.05) 55%,rgba(3,8,14,0) 70%);}
+  .reason-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(3,8,14,.85) 0%,rgba(3,8,14,.05) 50%,rgba(3,8,14,0) 65%);}
   .reason-quote{position:relative;z-index:2;height:100%;display:flex;align-items:flex-end;padding:14px 12px;}
-  .reason-quote p{font-family:'Caveat',cursive;font-weight:700;color:#fff;font-size:clamp(1rem,2.4vw,1.35rem);line-height:1.15;margin:0;}
+  .reason-quote p{font-family:'Caveat',cursive;font-weight:700;color:#fff;font-size:clamp(1rem,2.4vw,1.35rem);line-height:1.15;margin:0;text-shadow:0 2px 8px rgba(0,0,0,.4);}
   .reason-label{background:var(--label-bar);border-top:1px solid rgba(255,255,255,.14);padding:10px 8px;text-align:center;min-height:42px;display:flex;align-items:center;justify-content:center;}
   .reason-label span{font-size:clamp(0.55rem,1.4vw,0.65rem);letter-spacing:.08em;font-weight:800;color:#fff;}
 
   /* NOT ALONE */
-  .not-alone{padding:64px 0;}
+  .not-alone{padding:72px 0;background:var(--cream);}
   .split-two{display:grid;grid-template-columns:1fr;gap:44px;align-items:start;}
   @media(min-width:900px){.split-two{grid-template-columns:1fr 1.05fr;}}
-  .split-two h2{font-size:clamp(1.6rem,4vw,2.1rem);margin-bottom:16px;}
+  .split-two h2{font-size:clamp(1.7rem,4vw,2.25rem);margin-bottom:18px;letter-spacing:-.015em;position:relative;padding-bottom:14px;}
+  .split-two h2::after{content:"";position:absolute;left:0;bottom:0;width:56px;height:3px;background:var(--rust);}
   .split-two p{margin:0 0 14px;font-size:0.94rem;}
   .split-two p strong{color:var(--navy);}
   .founder-sign{margin-top:20px;}
   .founder-sign .name{font-family:'Caveat',cursive;font-weight:700;font-size:2rem;color:var(--navy-2);}
   .founder-sign .role{font-size:0.68rem;letter-spacing:.06em;color:var(--ink-soft);font-weight:700;margin-top:0;}
 
-  .testi-card{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:30px 34px;position:relative;}
-  .testi-card h3{font-size:1.3rem;margin-bottom:18px;}
+  .testi-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:36px 38px;position:relative;box-shadow:0 24px 50px -32px rgba(10,16,68,.4);}
+  .testi-card h3{font-size:1.35rem;margin-bottom:20px;letter-spacing:-.01em;}
   .testi-grid{display:grid;grid-template-columns:1fr;gap:26px;}
   .testi-item .mark{font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);line-height:1;margin-bottom:6px;}
   .testi-item p{font-size:0.88rem;color:var(--ink);margin:0 0 12px;}
@@ -320,8 +321,6 @@
     </a>
     <nav class="primary">
       <a href="https://businessbrandintelligence.com/" class="active">Home</a>
-      <a href="#industries">Industries</a>
-      <a href="#challenges">Common Challenges</a>
       <a href="#how-it-works">How It Works</a>
       <a href="#client-results">Client Results</a>
       <a href="https://businessbrandintelligence.com/insights.html">Business Insights</a>
@@ -349,7 +348,7 @@
       <div class="tagline">CLARITY TODAY. A STRONGER TOMORROW.</div>
     </div>
     <div class="hero-media">
-      <img src="assets/bbi-hero.jpg" alt="Small business community alongside a modern corporate skyline">
+      <img src="assets/bbi-hero.png" alt="Small business community alongside a modern corporate skyline">
       <span class="cloudword" style="left:47%;top:16%;">Bigger<br>Budgets</span>
       <span class="cloudword" style="left:63%;top:20%;">More<br>Data</span>
       <span class="cloudword" style="left:82%;top:21%;">Larger<br>Teams</span>
@@ -371,42 +370,42 @@
 <div class="reasons">
   <div class="reason-tile">
     <div class="reason-photo">
-      <img src="assets/bbi-parents.jpg" alt="Parent building a business">
+      <img src="assets/bbi-parents.png" alt="Parent building a business">
       <div class="reason-quote"><p>Building a<br>better future<br>for my family.</p></div>
     </div>
     <div class="reason-label"><span>PARENTS</span></div>
   </div>
   <div class="reason-tile">
     <div class="reason-photo">
-      <img src="assets/bbi-retirees.jpg" alt="Retiree creating a new business opportunity">
+      <img src="assets/bbi-retirees.png" alt="Retiree creating a new business opportunity">
       <div class="reason-quote"><p>Turning<br>my experience into<br>a new opportunity.</p></div>
     </div>
     <div class="reason-label"><span>RETIREES</span></div>
   </div>
   <div class="reason-tile">
     <div class="reason-photo">
-      <img src="assets/bbi-dreamers.jpg" alt="Business owner pursuing a dream">
+      <img src="assets/bbi-dreamers.png" alt="Business owner pursuing a dream">
       <div class="reason-quote"><p>Finally doing<br>what I&rsquo;ve always<br>wanted to do.</p></div>
     </div>
     <div class="reason-label"><span>DREAMERS</span></div>
   </div>
   <div class="reason-tile">
     <div class="reason-photo">
-      <img src="assets/bbi-young-entrepreneurs.jpg" alt="Young entrepreneur">
+      <img src="assets/bbi-young-entrepreneurs.png" alt="Young entrepreneur">
       <div class="reason-quote"><p>Turning my ideas<br>into something<br>of my own.</p></div>
     </div>
     <div class="reason-label"><span>YOUNG ENTREPRENEURS</span></div>
   </div>
   <div class="reason-tile">
     <div class="reason-photo">
-      <img src="assets/bbi-new-chapters.jpg" alt="Business owner creating a new chapter">
+      <img src="assets/bbi-new-chapters.png" alt="Business owner creating a new chapter">
       <div class="reason-quote"><p>Creating<br>my next chapter.</p></div>
     </div>
     <div class="reason-label"><span>NEW CHAPTERS</span></div>
   </div>
   <div class="reason-tile">
     <div class="reason-photo">
-      <img src="assets/bbi-community-builders.jpg" alt="Community business owner">
+      <img src="assets/bbi-community-builders.png" alt="Community business owner">
       <div class="reason-quote"><p>Strengthening<br>the community<br>I call home.</p></div>
     </div>
     <div class="reason-label"><span>COMMUNITY BUILDERS</span></div>
@@ -441,7 +440,7 @@
 
 <!-- COMPASS -->
 <section class="compass" id="about">
-  <img src="assets/bbi-compass.jpg" alt="Compass symbolizing business direction">
+  <img src="assets/bbi-compass.png" alt="Compass symbolizing business direction">
   <div class="wrap">
     <div class="compass-copy">
       <h2>Think of us as<br>your compass.</h2>
@@ -660,8 +659,6 @@
       </a>
       <nav class="footer-nav">
         <a href="https://businessbrandintelligence.com/">Home</a>
-        <a href="#industries">Industries</a>
-        <a href="#challenges">Common Challenges</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#client-results">Client Results</a>
         <a href="https://businessbrandintelligence.com/insights.html">Business Insights</a>

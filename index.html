@@ -172,11 +172,12 @@
   .testi-dots span.active{background:var(--rust);}
 
   /* COMPASS */
-  .compass{position:relative;aspect-ratio:21/9;display:flex;align-items:center;overflow:hidden;}
+  .compass{position:relative;aspect-ratio:3.6/1;max-height:420px;min-height:220px;display:flex;align-items:center;overflow:hidden;}
+  .compass > .wrap{width:100%;flex:1 1 auto;}
   .compass img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
   .compass::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.85) 0%,rgba(255,255,255,.45) 45%,rgba(255,255,255,.05) 68%);}
   @media(max-width:700px){
-    .compass{aspect-ratio:auto;min-height:280px;}
+    .compass{aspect-ratio:auto;min-height:280px;max-height:none;}
     .compass::before{background:linear-gradient(180deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.75) 55%,rgba(255,255,255,.15) 100%);}
   }
   .compass-copy{position:relative;z-index:2;max-width:360px;padding:32px 0;}
@@ -348,7 +349,7 @@
       <div class="tagline">CLARITY TODAY. A STRONGER TOMORROW.</div>
     </div>
     <div class="hero-media">
-      <img src="https://businessbrandintelligence.com/assets/bbi-approved-hero.png" alt="Small business community alongside a modern corporate skyline">
+      <img src="assets/bbi-hero.jpg" alt="Small business community alongside a modern corporate skyline">
       <span class="cloudword" style="left:47%;top:16%;">Bigger<br>Budgets</span>
       <span class="cloudword" style="left:63%;top:20%;">More<br>Data</span>
       <span class="cloudword" style="left:82%;top:21%;">Larger<br>Teams</span>
@@ -370,42 +371,42 @@
 <div class="reasons">
   <div class="reason-tile">
     <div class="reason-photo">
-      <img src="https://businessbrandintelligence.com/assets/bbi-parent.jpg" alt="Parent building a business">
+      <img src="assets/bbi-parents.jpg" alt="Parent building a business">
       <div class="reason-quote"><p>Building a<br>better future<br>for my family.</p></div>
     </div>
     <div class="reason-label"><span>PARENTS</span></div>
   </div>
   <div class="reason-tile">
     <div class="reason-photo">
-      <img src="https://businessbrandintelligence.com/assets/bbi-retiree.jpg" alt="Retiree creating a new business opportunity">
+      <img src="assets/bbi-retirees.jpg" alt="Retiree creating a new business opportunity">
       <div class="reason-quote"><p>Turning<br>my experience into<br>a new opportunity.</p></div>
     </div>
     <div class="reason-label"><span>RETIREES</span></div>
   </div>
   <div class="reason-tile">
     <div class="reason-photo">
-      <img src="https://businessbrandintelligence.com/assets/bbi-dreamer.jpg" alt="Business owner pursuing a dream">
+      <img src="assets/bbi-dreamers.jpg" alt="Business owner pursuing a dream">
       <div class="reason-quote"><p>Finally doing<br>what I&rsquo;ve always<br>wanted to do.</p></div>
     </div>
     <div class="reason-label"><span>DREAMERS</span></div>
   </div>
   <div class="reason-tile">
     <div class="reason-photo">
-      <img src="https://businessbrandintelligence.com/assets/bbi-young-entrepreneur.jpg" alt="Young entrepreneur">
+      <img src="assets/bbi-young-entrepreneurs.jpg" alt="Young entrepreneur">
       <div class="reason-quote"><p>Turning my ideas<br>into something<br>of my own.</p></div>
     </div>
     <div class="reason-label"><span>YOUNG ENTREPRENEURS</span></div>
   </div>
   <div class="reason-tile">
     <div class="reason-photo">
-      <img src="https://businessbrandintelligence.com/assets/bbi-new-chapter.jpg" alt="Business owner creating a new chapter">
+      <img src="assets/bbi-new-chapters.jpg" alt="Business owner creating a new chapter">
       <div class="reason-quote"><p>Creating<br>my next chapter.</p></div>
     </div>
     <div class="reason-label"><span>NEW CHAPTERS</span></div>
   </div>
   <div class="reason-tile">
     <div class="reason-photo">
-      <img src="https://businessbrandintelligence.com/assets/bbi-community-builder.jpg" alt="Community business owner">
+      <img src="assets/bbi-community-builders.jpg" alt="Community business owner">
       <div class="reason-quote"><p>Strengthening<br>the community<br>I call home.</p></div>
     </div>
     <div class="reason-label"><span>COMMUNITY BUILDERS</span></div>
@@ -440,7 +441,7 @@
 
 <!-- COMPASS -->
 <section class="compass" id="about">
-  <img src="https://businessbrandintelligence.com/assets/bbi-compass.png" alt="Compass symbolizing business direction">
+  <img src="assets/bbi-compass.jpg" alt="Compass symbolizing business direction">
   <div class="wrap">
     <div class="compass-copy">
       <h2>Think of us as<br>your compass.</h2>

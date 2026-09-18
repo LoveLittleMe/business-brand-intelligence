@@ -7,7 +7,7 @@
 <meta name="description" content="Find out what may be limiting your business before spending more on marketing, software, or other fixes. Get an evidence-based Business Optimization Diagnostic with priority findings and a 90-day roadmap.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Lora:ital,wght@0,400;0,500;1,500&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy: #0a1044;
@@ -120,20 +120,29 @@
   .hero-media{position:relative;aspect-ratio:16/11;overflow:hidden;}
   @media(min-width:880px){.hero-media{aspect-ratio:auto;align-self:stretch;min-height:100%;}}
   .hero-media > img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+  .signword{
+    position:absolute;left:1.5%;top:3%;width:15%;
+    font-family:'Playfair Display',serif;font-weight:600;color:#2a1c10;
+    font-size:clamp(0.55rem,1.3vw,0.78rem);line-height:1.35;text-align:center;
+    transform:rotate(-6deg);
+  }
   .cloudword{
     position:absolute;color:#fff;font-family:'Inter',sans-serif;font-weight:800;
     font-size:clamp(0.5rem,1.35vw,0.72rem);letter-spacing:.03em;text-transform:uppercase;text-align:center;
     text-shadow:0 2px 10px rgba(0,0,0,.5);line-height:1.15;width:26%;
   }
   .hero-caption{
-    position:absolute;left:44%;top:62%;right:4%;color:#fff;text-align:left;
+    position:absolute;left:44%;top:50%;right:6%;color:#fff;text-align:left;
+    background:rgba(3,10,20,.42);backdrop-filter:blur(1px);
+    padding:20px 22px;border-radius:6px;
   }
-  .hero-caption .script{font-size:clamp(1.1rem,3vw,1.9rem);color:#fff;line-height:1.15;text-shadow:0 2px 10px rgba(0,0,0,.45);}
-  .hero-caption .rule{width:min(130px,30%);height:2px;background:var(--rust);margin:8px 0 8px;}
-  .hero-caption .fine{font-size:clamp(0.5rem,1.2vw,0.68rem);letter-spacing:.04em;font-weight:800;color:#fff;line-height:1.5;text-shadow:0 2px 8px rgba(0,0,0,.45);}
+  .hero-caption .script{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:clamp(1.15rem,3vw,1.85rem);color:#fff;line-height:1.2;}
+  .hero-caption .rule{width:min(110px,26%);height:2px;background:var(--rust);margin:10px 0 10px;}
+  .hero-caption .fine{font-size:clamp(0.5rem,1.2vw,0.66rem);letter-spacing:.04em;font-weight:800;color:#fff;line-height:1.55;}
   @media(max-width:520px){
     .hero-caption{display:none;}
     .cloudword{display:none;}
+    .signword{display:none;}
   }
 
   /* REASONS */
@@ -150,26 +159,31 @@
   .reason-label span{font-size:clamp(0.55rem,1.4vw,0.65rem);letter-spacing:.08em;font-weight:800;color:#fff;}
 
   /* NOT ALONE */
-  .not-alone{padding:72px 0;background:var(--cream);}
+  .not-alone{padding:80px 0;background:#faf2ea;}
   .split-two{display:grid;grid-template-columns:1fr;gap:44px;align-items:start;}
   @media(min-width:900px){.split-two{grid-template-columns:1fr 1.05fr;}}
-  .split-two h2{font-size:clamp(1.7rem,4vw,2.25rem);margin-bottom:18px;letter-spacing:-.015em;position:relative;padding-bottom:14px;}
-  .split-two h2::after{content:"";position:absolute;left:0;bottom:0;width:56px;height:3px;background:var(--rust);}
-  .split-two p{margin:0 0 14px;font-size:0.94rem;}
-  .split-two p.lead{font-weight:700;color:var(--navy);font-size:1.15rem;}
+  .split-two h2{font-size:clamp(1.9rem,4.4vw,2.6rem);margin-bottom:6px;letter-spacing:-.015em;}
+  .split-two p.lead{
+    font-family:'Caveat',cursive;font-weight:700;color:var(--rust);
+    font-size:clamp(1.7rem,3.6vw,2.1rem);line-height:1.1;margin:6px 0 22px;
+  }
+  .split-two p{margin:0 0 18px;font-family:'Lora',Georgia,serif;font-size:1.08rem;line-height:1.75;color:var(--ink);}
   .split-two p strong{color:var(--navy);}
-  .doubt-list{list-style:none;margin:0 0 16px;padding:0 0 0 4px;display:grid;gap:8px;}
-  .doubt-list li{font-style:italic;color:var(--navy);font-size:0.98rem;padding-left:18px;position:relative;}
+  .doubt-list{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:12px;}
+  .doubt-list li{
+    font-family:'Lora',Georgia,serif;font-style:italic;color:var(--rust-dark);
+    font-size:clamp(1.05rem,2.2vw,1.2rem);padding-left:22px;position:relative;line-height:1.4;
+  }
   .doubt-list li::before{content:"\2014";position:absolute;left:0;color:var(--rust);}
-  .founder-sign{margin-top:20px;}
-  .founder-sign .name{font-family:'Caveat',cursive;font-weight:700;font-size:2rem;color:var(--navy-2);}
-  .founder-sign .role{font-size:0.68rem;letter-spacing:.06em;color:var(--ink-soft);font-weight:700;margin-top:0;}
+  .founder-sign{margin-top:28px;}
+  .founder-sign .name{font-family:'Caveat',cursive;font-weight:700;font-size:2.3rem;color:var(--rust);}
+  .founder-sign .role{font-size:0.7rem;letter-spacing:.06em;color:var(--ink-soft);font-weight:700;margin-top:2px;}
 
   .testi-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:36px 38px;position:relative;box-shadow:0 24px 50px -32px rgba(10,16,68,.4);}
   .testi-card h3{font-size:1.35rem;margin-bottom:20px;letter-spacing:-.01em;}
   .testi-grid{display:grid;grid-template-columns:1fr;gap:26px;}
   .testi-item .mark{font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);line-height:1;margin-bottom:6px;}
-  .testi-item p{font-size:0.88rem;color:var(--ink);margin:0 0 12px;}
+  .testi-item p{font-family:'Lora',Georgia,serif;font-size:1rem;line-height:1.65;color:var(--ink);margin:0 0 14px;}
   .testi-item .attrib{font-size:0.78rem;color:var(--ink-soft);font-weight:600;}
   .testi-item .attrib strong{display:block;color:var(--navy);font-weight:700;font-size:0.82rem;}
   .testi-dots{display:flex;gap:8px;justify-content:center;margin-top:22px;}
@@ -177,18 +191,21 @@
   .testi-dots span.active{background:var(--rust);}
 
   /* COMPASS */
-  .compass{position:relative;aspect-ratio:3.6/1;max-height:420px;min-height:220px;display:flex;align-items:center;overflow:hidden;}
+  .compass{position:relative;aspect-ratio:3.6/1;max-height:440px;min-height:260px;display:flex;align-items:center;overflow:hidden;}
   .compass > .wrap{width:100%;flex:1 1 auto;}
   .compass img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-  .compass::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.85) 0%,rgba(255,255,255,.45) 45%,rgba(255,255,255,.05) 68%);}
   @media(max-width:700px){
-    .compass{aspect-ratio:auto;min-height:280px;max-height:none;}
-    .compass::before{background:linear-gradient(180deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.75) 55%,rgba(255,255,255,.15) 100%);}
+    .compass{aspect-ratio:auto;min-height:340px;max-height:none;}
   }
-  .compass-copy{position:relative;z-index:2;max-width:420px;padding:32px 0;}
-  .compass-copy h2{font-size:clamp(1.6rem,4.2vw,2.15rem);}
-  .compass-copy p{color:var(--ink);margin-top:12px;font-size:clamp(1rem,2vw,1.15rem);line-height:1.5;}
-  @media(max-width:640px){.compass-copy{max-width:100%;}}
+  .compass-copy{
+    position:relative;z-index:2;max-width:460px;
+    background:rgba(255,255,255,.94);
+    padding:32px 36px;border-radius:8px;
+    box-shadow:0 24px 50px -28px rgba(10,16,68,.45);
+  }
+  .compass-copy h2{font-size:clamp(1.75rem,4.6vw,2.4rem);letter-spacing:-.01em;}
+  .compass-copy p{color:var(--ink);margin-top:14px;font-size:clamp(1.05rem,2.1vw,1.2rem);font-weight:500;line-height:1.55;}
+  @media(max-width:640px){.compass-copy{max-width:100%;padding:26px 24px;}}
 
   /* DARK BANNER */
   .banner{background:var(--navy-deep);color:#fff;padding:44px 0 36px;}
@@ -353,14 +370,15 @@
     </div>
     <div class="hero-media">
       <img src="assets/bbi-hero.jpg" alt="Small business community alongside a modern corporate skyline">
+      <span class="signword">Local<br>Businesses<br>Stronger<br>Communities</span>
       <span class="cloudword" style="left:47%;top:16%;">Bigger<br>Budgets</span>
       <span class="cloudword" style="left:63%;top:20%;">More<br>Data</span>
       <span class="cloudword" style="left:82%;top:21%;">Larger<br>Teams</span>
       <span class="cloudword" style="left:41%;top:34%;">More<br>Technology</span>
       <span class="cloudword" style="left:64%;top:39%;">AI<br>Everywhere</span>
       <span class="cloudword" style="left:82%;top:37%;">Faster<br>Decisions</span>
-      <span class="cloudword" style="left:41%;top:52%;">Greater<br>Capacity</span>
-      <span class="cloudword" style="left:82%;top:53%;">Global<br>Reach</span>
+      <span class="cloudword" style="left:41%;top:44%;">Greater<br>Capacity</span>
+      <span class="cloudword" style="left:82%;top:45%;">Global<br>Reach</span>
       <div class="hero-caption">
         <div class="script">Different resources.<br>Same potential.</div>
         <div class="rule"></div>

@@ -1,720 +1,690 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L94471CHD6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-L94471CHD6');
-</script>
-
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Business Optimization Diagnostic | Business & Brand Intelligence</title>
+<meta name="description" content="Find out what may be limiting your business before spending more on marketing, software, or other fixes. Get an evidence-based Business Optimization Diagnostic with priority findings and a 90-day roadmap.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0a1044;
+    --navy-2: #0d2547;
+    --navy-deep: #002342;
+    --rust: #a05a2a;
+    --rust-dark: #7c3d14;
+    --cream: #f6f5f3;
+    --ink: #1c2b57;
+    --ink-soft: #5b6b85;
+    --line: #e6e2da;
+    --label-bar: #070d12;
+    --white: #ffffff;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+  body{
+    margin:0;
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.55;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Playfair Display', Georgia, serif;
+    color:var(--navy);
+    margin:0;
+    font-weight:700;
+    line-height:1.12;
+  }
+  .script{font-family:'Caveat',cursive;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 40px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--rust);color:var(--white);
+    font-family:'Inter',sans-serif;font-weight:700;font-size:0.95rem;
+    padding:14px 26px;border-radius:6px;text-decoration:none;
+    border:1px solid var(--rust);transition:background .2s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{background:var(--rust-dark);border-color:var(--rust-dark);}
+  .btn-outline{background:transparent;color:var(--navy);border:1px solid var(--navy);}
+  .btn-outline:hover{background:var(--navy);color:var(--white);}
 
-<meta
-  name="description"
-  content="Find out what may be limiting your business before spending more on marketing, software, or other fixes. Get an evidence-based Business Optimization Diagnostic with priority findings and a 90-day roadmap."
->
+  /* HEADER */
+  header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none;}
+  .logo-mark{font-family:'Playfair Display',serif;font-size:clamp(1.35rem,3vw,1.7rem);font-weight:700;color:var(--navy);}
+  .logo-mark span{color:var(--rust);}
+  .logo-text{line-height:1.2;}
+  .logo-text strong{display:block;font-size:0.78rem;color:var(--navy);font-weight:800;letter-spacing:.01em;}
+  .logo-text small{display:block;font-size:0.6rem;color:var(--ink-soft);letter-spacing:.05em;font-weight:600;}
+  @media(max-width:420px){.logo-text{display:none;}}
 
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://businessbrandintelligence.com/">
+  nav.primary{display:flex;align-items:center;gap:22px;}
+  nav.primary a{font-size:0.85rem;font-weight:500;text-decoration:none;color:var(--navy);padding-bottom:5px;border-bottom:2px solid transparent;white-space:nowrap;}
+  nav.primary a:hover,nav.primary a.active{border-color:var(--rust);color:var(--rust);}
+  .nav-cta{flex:none;padding:11px 18px;font-size:0.86rem;}
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Business & Brand Intelligence">
-<meta property="og:title" content="Business Optimization Diagnostic | Business & Brand Intelligence">
-<meta property="og:description" content="Understand what may be helping, limiting, or being overlooked in your business before spending more money trying to fix it.">
-<meta property="og:url" content="https://businessbrandintelligence.com/">
+  .menu-toggle{display:none;flex:none;width:38px;height:38px;border:1px solid var(--line);border-radius:6px;background:#fff;cursor:pointer;align-items:center;justify-content:center;}
+  .menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{
+    content:"";display:block;width:18px;height:2px;background:var(--navy);position:relative;transition:transform .2s ease,opacity .2s ease;
+  }
+  .menu-toggle span::before{position:absolute;top:-6px;}
+  .menu-toggle span::after{position:absolute;top:6px;}
+  #nav-check{display:none;}
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Business Optimization Diagnostic | Business & Brand Intelligence">
-<meta name="twitter:description" content="Get an evidence-based diagnostic of your business with priority findings and a practical 90-day roadmap.">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://businessbrandintelligence.com/#website",
-      "url": "https://businessbrandintelligence.com/",
-      "name": "Business & Brand Intelligence",
-      "alternateName": "B&BI",
-      "publisher": {
-        "@id": "https://businessbrandintelligence.com/#organization"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://businessbrandintelligence.com/#organization",
-      "name": "Business & Brand Intelligence",
-      "url": "https://businessbrandintelligence.com/",
-      "email": "support@businessbrandintelligence.com",
-      "founder": {
-        "@type": "Person",
-        "name": "Tracy Clinscales",
-        "url": "https://businessbrandintelligence.com/founder.html"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/tracyclinscales/"
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://businessbrandintelligence.com/#business-optimization-diagnostic",
-      "name": "Business Optimization Diagnostic",
-      "provider": {
-        "@id": "https://businessbrandintelligence.com/#organization"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "297",
-        "priceCurrency": "USD",
-        "url": "https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00"
-      }
+  @media(min-width:1000px){
+    .menu-toggle{display:none;}
+  }
+  @media(max-width:999px){
+    .nav-row{flex-wrap:wrap;}
+    nav.primary{
+      order:3;flex-basis:100%;display:flex;flex-direction:column;align-items:flex-start;gap:0;
+      max-height:0;overflow:hidden;transition:max-height .25s ease;width:100%;
     }
-  ]
-}
-</script>
+    nav.primary a{width:100%;padding:12px 4px;border-bottom:1px solid var(--line);}
+    nav.primary a:hover,nav.primary a.active{background:var(--cream);}
+    #nav-check:checked ~ .nav-row nav.primary{max-height:480px;}
+    .menu-toggle{display:flex;}
+    #nav-check:checked ~ .nav-row .menu-toggle span{background:transparent;}
+    #nav-check:checked ~ .nav-row .menu-toggle span::before{transform:rotate(45deg);top:0;}
+    #nav-check:checked ~ .nav-row .menu-toggle span::after{transform:rotate(-45deg);top:0;}
+    .nav-cta{padding:9px 14px;font-size:0.8rem;}
+  }
+  @media(max-width:480px){
+    .nav-cta span.long{display:none;}
+  }
 
-<link rel="stylesheet" href="style.css">
+  /* HERO */
+  .hero{background:#fff;}
+  .hero-grid{display:grid;grid-template-columns:1fr;}
+  @media(min-width:880px){.hero-grid{grid-template-columns:0.86fr 1fr;align-items:stretch;}}
+  .hero-copy{padding:clamp(28px,5vw,44px) clamp(20px,5vw,44px) clamp(24px,4vw,36px) clamp(20px,5vw,40px);display:flex;flex-direction:column;justify-content:center;}
+  .hero-copy h1{font-size:clamp(1.65rem,4.2vw,2.35rem);letter-spacing:-.01em;}
+  .hero-copy h1 .navy-line{color:var(--navy);}
+  .hero-copy h1 .rust-line{color:var(--rust);display:block;}
+  .hero-copy .lead{margin-top:18px;}
+  .hero-copy p{font-size:0.92rem;color:var(--ink);margin:0 0 14px;max-width:44ch;}
+  .hero-copy p.bold{font-weight:700;color:var(--navy);margin-bottom:4px;}
+  .hero-copy .btn{margin-top:10px;align-self:flex-start;}
+  .hero-copy .tagline{margin-top:14px;font-size:0.75rem;color:var(--navy);letter-spacing:.05em;font-weight:700;}
 
+  /* Fixed aspect-ratio keeps the photo (and everything pinned to it) proportioned
+     identically on every screen size, instead of stretching to match the text column. */
+  .hero-media{position:relative;aspect-ratio:16/11;overflow:hidden;}
+  @media(min-width:880px){.hero-media{aspect-ratio:auto;align-self:stretch;min-height:100%;}}
+  .hero-media > img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+  .cloudword{
+    position:absolute;color:#fff;font-family:'Inter',sans-serif;font-weight:800;
+    font-size:clamp(0.5rem,1.35vw,0.72rem);letter-spacing:.03em;text-transform:uppercase;text-align:center;
+    text-shadow:0 2px 10px rgba(0,0,0,.5);line-height:1.15;width:26%;
+  }
+  .hero-caption{
+    position:absolute;left:44%;top:62%;right:4%;color:#fff;text-align:left;
+  }
+  .hero-caption .script{font-size:clamp(1.1rem,3vw,1.9rem);color:#fff;line-height:1.15;text-shadow:0 2px 10px rgba(0,0,0,.45);}
+  .hero-caption .rule{width:min(130px,30%);height:2px;background:var(--rust);margin:8px 0 8px;}
+  .hero-caption .fine{font-size:clamp(0.5rem,1.2vw,0.68rem);letter-spacing:.04em;font-weight:800;color:#fff;line-height:1.5;text-shadow:0 2px 8px rgba(0,0,0,.45);}
+  @media(max-width:520px){
+    .hero-caption{display:none;}
+    .cloudword{display:none;}
+  }
+
+  /* REASONS */
+  .reasons{display:grid;grid-template-columns:repeat(2,1fr);}
+  @media(min-width:760px){.reasons{grid-template-columns:repeat(3,1fr);}}
+  @media(min-width:1000px){.reasons{grid-template-columns:repeat(6,1fr);}}
+  .reason-tile{display:flex;flex-direction:column;}
+  .reason-photo{position:relative;aspect-ratio:3/3.6;overflow:hidden;}
+  .reason-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+  .reason-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(3,8,14,.92) 0%,rgba(3,8,14,.05) 55%,rgba(3,8,14,0) 70%);}
+  .reason-quote{position:relative;z-index:2;height:100%;display:flex;align-items:flex-end;padding:14px 12px;}
+  .reason-quote p{font-family:'Caveat',cursive;font-weight:700;color:#fff;font-size:clamp(1rem,2.4vw,1.35rem);line-height:1.15;margin:0;}
+  .reason-label{background:var(--label-bar);border-top:1px solid rgba(255,255,255,.14);padding:10px 8px;text-align:center;min-height:42px;display:flex;align-items:center;justify-content:center;}
+  .reason-label span{font-size:clamp(0.55rem,1.4vw,0.65rem);letter-spacing:.08em;font-weight:800;color:#fff;}
+
+  /* NOT ALONE */
+  .not-alone{padding:64px 0;}
+  .split-two{display:grid;grid-template-columns:1fr;gap:44px;align-items:start;}
+  @media(min-width:900px){.split-two{grid-template-columns:1fr 1.05fr;}}
+  .split-two h2{font-size:clamp(1.6rem,4vw,2.1rem);margin-bottom:16px;}
+  .split-two p{margin:0 0 14px;font-size:0.94rem;}
+  .split-two p strong{color:var(--navy);}
+  .founder-sign{margin-top:20px;}
+  .founder-sign .name{font-family:'Caveat',cursive;font-weight:700;font-size:2rem;color:var(--navy-2);}
+  .founder-sign .role{font-size:0.68rem;letter-spacing:.06em;color:var(--ink-soft);font-weight:700;margin-top:0;}
+
+  .testi-card{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:30px 34px;position:relative;}
+  .testi-card h3{font-size:1.3rem;margin-bottom:18px;}
+  .testi-grid{display:grid;grid-template-columns:1fr;gap:26px;}
+  .testi-item .mark{font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);line-height:1;margin-bottom:6px;}
+  .testi-item p{font-size:0.88rem;color:var(--ink);margin:0 0 12px;}
+  .testi-item .attrib{font-size:0.78rem;color:var(--ink-soft);font-weight:600;}
+  .testi-item .attrib strong{display:block;color:var(--navy);font-weight:700;font-size:0.82rem;}
+  .testi-dots{display:flex;gap:8px;justify-content:center;margin-top:22px;}
+  .testi-dots span{width:8px;height:8px;border-radius:50%;background:var(--line);display:inline-block;}
+  .testi-dots span.active{background:var(--rust);}
+
+  /* COMPASS */
+  .compass{position:relative;aspect-ratio:21/9;display:flex;align-items:center;overflow:hidden;}
+  .compass img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .compass::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.85) 0%,rgba(255,255,255,.45) 45%,rgba(255,255,255,.05) 68%);}
+  @media(max-width:700px){
+    .compass{aspect-ratio:auto;min-height:280px;}
+    .compass::before{background:linear-gradient(180deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.75) 55%,rgba(255,255,255,.15) 100%);}
+  }
+  .compass-copy{position:relative;z-index:2;max-width:360px;padding:32px 0;}
+  .compass-copy h2{font-size:clamp(1.45rem,3.6vw,1.85rem);}
+  .compass-copy p{color:var(--ink);margin-top:10px;font-size:0.92rem;}
+  @media(max-width:640px){.compass-copy{max-width:100%;}}
+
+  /* DARK BANNER */
+  .banner{background:var(--navy-deep);color:#fff;padding:44px 0 36px;}
+  .banner-top{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;}
+  @media(min-width:880px){.banner-top{grid-template-columns:1.5fr auto auto;}}
+  .banner-heading{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .banner-heading .rule{width:34px;height:2px;background:var(--rust);flex:none;}
+  .banner h2{color:#fff;font-size:clamp(1.35rem,3.6vw,1.7rem);}
+  .banner p.sub{color:rgba(255,255,255,.82);margin:10px 0 0;max-width:58ch;font-size:0.9rem;}
+  .banner-divider{display:none;width:1px;align-self:stretch;background:rgba(255,255,255,.2);}
+  @media(min-width:880px){.banner-divider{display:block;}}
+  .banner-cta small{display:block;margin-top:8px;color:rgba(255,255,255,.6);font-size:0.76rem;}
+  .banner-points{margin-top:34px;display:grid;grid-template-columns:1fr;gap:20px;}
+  @media(min-width:760px){.banner-points{grid-template-columns:repeat(4,1fr);}}
+  .banner-point{display:flex;gap:12px;align-items:center;}
+  .banner-point .ico{
+    width:36px;height:36px;flex:none;border-radius:50%;border:1.5px solid var(--rust);
+    display:flex;align-items:center;justify-content:center;color:var(--rust);
+  }
+  .banner-point span{font-size:0.85rem;color:rgba(255,255,255,.9);line-height:1.35;}
+
+  /* HOW IT WORKS */
+  .how{padding:72px 0 0;}
+  .how-head{text-align:center;}
+  .how-head h2{font-size:clamp(1.5rem,4vw,1.85rem);}
+  .how-head p{font-size:0.75rem;letter-spacing:.05em;font-weight:700;color:var(--navy);margin-top:8px;text-transform:uppercase;}
+  .steps{display:grid;grid-template-columns:1fr;gap:36px;margin-top:44px;position:relative;}
+  @media(min-width:900px){.steps{grid-template-columns:repeat(5,1fr);}}
+  .step{text-align:center;position:relative;}
+  .step-top{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px;}
+  .step .num{
+    width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;
+    font-weight:700;font-size:1rem;flex:none;
+  }
+  .step .ico{color:var(--navy);}
+  .step h3{font-size:1rem;margin-bottom:6px;}
+  .step p{font-size:0.82rem;color:var(--ink-soft);margin:0;}
+  .step-arrow{
+    display:none;position:absolute;top:18px;right:-22px;color:var(--navy);font-size:1.1rem;
+  }
+  @media(min-width:900px){.step-arrow{display:block;}}
+
+  /* PRICING */
+  .pricing{
+    display:grid;grid-template-columns:1fr;margin-top:52px;
+    border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff;
+  }
+  @media(min-width:900px){.pricing{grid-template-columns:1.15fr 1fr 0.95fr;}}
+  .pricing > div{padding:32px;}
+  .pricing > div:not(:last-child){border-bottom:1px solid var(--line);}
+  @media(min-width:900px){
+    .pricing > div:not(:last-child){border-bottom:none;border-right:1px solid var(--line);}
+  }
+  .pricing-title h3{font-size:1.25rem;margin-bottom:8px;}
+  .pricing-title .sub{font-size:0.72rem;letter-spacing:.04em;font-weight:700;color:var(--ink-soft);text-transform:uppercase;}
+  .pricing-title .price{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,5vw,2.7rem);font-weight:800;color:var(--navy);margin-top:14px;}
+  .pricing-list ul{list-style:none;margin:0;padding:0;display:grid;gap:13px;}
+  .pricing-list li{display:flex;gap:10px;font-size:0.88rem;align-items:flex-start;color:var(--ink);}
+  .check{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--rust);color:var(--rust);flex:none;display:flex;align-items:center;justify-content:center;font-size:10px;margin-top:2px;}
+  .pricing-actions{display:flex;flex-direction:column;gap:10px;}
+  .pricing-actions .btn{justify-content:center;}
+  .pricing-actions .btn-outline{justify-content:center;font-size:0.86rem;}
+  .pricing-actions .foot{font-size:0.78rem;color:var(--ink-soft);margin-top:4px;}
+
+  /* BADGES */
+  .badges{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;margin:56px 0;}
+  @media(min-width:880px){.badges{grid-template-columns:repeat(4,1fr);}}
+  .badge{text-align:center;padding:0 10px;}
+  .badge .ico{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--rust);color:var(--rust);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;}
+  .badge h4{font-family:'Playfair Display',serif;font-size:0.98rem;color:var(--navy);margin:0 0 6px;font-weight:700;}
+  .badge p{font-size:0.8rem;color:var(--ink-soft);margin:0;}
+
+  /* LINK CARDS */
+  .linkcards{background:var(--cream);padding:64px 0;}
+  .link-cards{display:grid;grid-template-columns:1fr;gap:18px;}
+  @media(min-width:700px){.link-cards{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:1000px){.link-cards{grid-template-columns:repeat(4,1fr);}}
+  .link-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:26px;display:flex;flex-direction:column;gap:10px;}
+  .link-card .ico{color:var(--rust);font-size:1.2rem;}
+  .link-card h4{font-family:'Playfair Display',serif;font-size:1rem;margin:0;color:var(--navy);}
+  .link-card p{font-size:0.82rem;color:var(--ink-soft);margin:0;flex:1;}
+  .link-card a.go{font-size:0.82rem;font-weight:700;color:var(--rust);text-decoration:none;}
+  .link-card a.go:hover{text-decoration:underline;}
+
+  /* LIGHT CLOSER BAR */
+  .closer{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;}
+  .closer-row{display:grid;grid-template-columns:1fr;gap:22px;align-items:center;text-align:center;}
+  @media(min-width:900px){.closer-row{grid-template-columns:auto 1fr auto auto;text-align:left;}}
+  .closer .logo-text strong{color:var(--navy);}
+  .closer-script{font-family:'Caveat',cursive;font-weight:700;color:var(--navy-2);font-size:clamp(1.15rem,2.8vw,1.5rem);line-height:1.25;}
+  .closer-stats{display:flex;gap:26px;justify-content:center;}
+  .closer-stat{text-align:center;}
+  .closer-stat .ico{color:var(--navy);font-size:1.2rem;margin-bottom:4px;}
+  .closer-stat span{display:block;font-size:0.62rem;letter-spacing:.05em;font-weight:800;color:var(--navy);text-transform:uppercase;}
+  .closer-cta{text-align:center;}
+
+  /* FOOTER */
+  footer{background:var(--navy);color:rgba(255,255,255,.85);padding:48px 0 26px;}
+  .footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:26px;align-items:flex-start;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.15);}
+  .footer-nav{display:flex;flex-wrap:wrap;gap:16px 22px;}
+  .footer-nav a{font-size:0.82rem;text-decoration:none;color:rgba(255,255,255,.8);}
+  .footer-nav a:hover{color:#fff;}
+  .footer-social a{color:#fff;font-size:1rem;text-decoration:none;border:1px solid rgba(255,255,255,.4);border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;}
+  .footer-bottom{padding-top:22px;font-size:0.76rem;color:rgba(255,255,255,.55);display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;}
+  .footer-legal a{color:rgba(255,255,255,.55);text-decoration:none;margin-right:14px;}
+  .footer-legal a:hover{color:#fff;}
+  .refund-note{margin-top:16px;font-size:0.74rem;color:rgba(255,255,255,.48);max-width:840px;line-height:1.6;}
+  .support-line{margin-top:12px;font-size:0.76rem;color:rgba(255,255,255,.55);}
+  .support-line a{color:rgba(255,255,255,.75);}
+
+  @media(max-width:640px){
+    .wrap{padding:0 22px;}
+    .hero-copy{padding:36px 22px 28px;}
+    .hero-copy h1{font-size:1.85rem;}
+    .hero-media{min-height:280px;}
+    .not-alone{padding:48px 0;}
+    .how{padding:52px 0 0;}
+    section, .banner, .linkcards{padding-top:48px;padding-bottom:48px;}
+  }
+</style>
 </head>
-
 <body>
 
-<header class="site-nav">
-
-  <div class="container nav-inner">
-
-    <a href="/" class="logo-lockup" aria-label="Business & Brand Intelligence home">
-
-      <div class="logo-mark">
-        B<em>&</em>BI
-      </div>
-
-      <div class="logo-copy">
-        BUSINESS &amp; BRAND<br>
-        INTELLIGENCE
-        <small>CLARITY TODAY. A STRONGER TOMORROW.</small>
-      </div>
-
+<header>
+  <input type="checkbox" id="nav-check">
+  <div class="wrap nav-row">
+    <a class="logo" href="https://businessbrandintelligence.com/">
+      <span class="logo-mark">B<span>&amp;</span>BI</span>
+      <span class="logo-text">
+        <strong>Business &amp; Brand Intelligence</strong>
+        <small>Clarity today. A stronger tomorrow.</small>
+      </span>
     </a>
-
-    <nav class="nav-links" aria-label="Primary navigation">
-
-      <a class="active" href="/">Home</a>
-
-      <a href="#how-it-works">
-        How It Works
-      </a>
-
-      <a href="#client-results">
-        Client Results
-      </a>
-
-      <a href="insights.html">
-        Business Insights
-      </a>
-
-      <a href="founder.html">
-        Note from Founder
-      </a>
-
-      <a href="#about">
-        About
-      </a>
-
-      <a
-        class="nav-cta"
-        href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00"
-        target="_blank"
-        rel="noopener noreferrer"
-        onclick="trackCheckout('header');"
-      >
-        Get Your Diagnostic →
-      </a>
-
+    <nav class="primary">
+      <a href="https://businessbrandintelligence.com/" class="active">Home</a>
+      <a href="#industries">Industries</a>
+      <a href="#challenges">Common Challenges</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#client-results">Client Results</a>
+      <a href="https://businessbrandintelligence.com/insights.html">Business Insights</a>
+      <a href="https://businessbrandintelligence.com/founder.html">Note from Founder</a>
+      <a href="#about">About</a>
     </nav>
-
+    <a class="btn nav-cta" href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00"><span class="long">Get Your Diagnostic</span><span aria-hidden="true">→</span></a>
+    <label class="menu-toggle" for="nav-check" aria-label="Toggle menu"><span></span></label>
   </div>
-
 </header>
 
-
-<main>
-
-
 <!-- HERO -->
-
 <section class="hero">
-
-  <div class="hero-copy">
-
-    <h1>
-      The World Is Changing.<br>
-      <span>
-        What You’re Building<br>
-        Still Matters.
-      </span>
-    </h1>
-
-    <p>
-      <strong>Small business still matters.</strong><br>
-      But building one today can feel like trying to find your footing
-      on terrain that keeps shifting beneath you.
-    </p>
-
-    <p>
-      Big businesses seem harder to compete with. AI can feel intimidating.
-      Social media can be exhausting. Costs keep climbing. Technology keeps
-      changing. And through all of it, you’re still trying to increase
-      revenue, convert more customers and stay relevant.
-    </p>
-
-    <p>
-      <strong>You have a bigger purpose than just keeping up.</strong><br>
-      You’re building a future — for yourself, your family, your community,
-      and maybe even someone else’s.
-    </p>
-
-    <a
-      class="gold-button hero-button"
-      href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00"
-      target="_blank"
-      rel="noopener noreferrer"
-      onclick="trackCheckout('hero');"
-    >
-      Get Your Business Diagnostic →
-    </a>
-
-    <div class="hero-tagline">
-      CLARITY TODAY. A STRONGER TOMORROW.
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <h1><span class="navy-line">The World Is Changing.</span><span class="rust-line">What You&rsquo;re Building</span><span class="rust-line">Still Matters.</span></h1>
+      <div class="lead">
+        <p class="bold">Small business still matters.</p>
+        <p>But building one today can feel like trying to find your footing on terrain that keeps shifting beneath you.</p>
+        <p>Big businesses seem harder to compete with. AI can feel intimidating. Social media can be exhausting. Costs keep climbing. Technology keeps changing. And through all of it, you&rsquo;re still trying to increase revenue, convert more customers and stay relevant.</p>
+        <p class="bold">You have a bigger purpose than just keeping up.</p>
+        <p>You&rsquo;re building a future &mdash; for yourself, your family, your community, and maybe even someone else&rsquo;s.</p>
+      </div>
+      <a class="btn" href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00">Get Your Business Diagnostic →</a>
+      <div class="tagline">CLARITY TODAY. A STRONGER TOMORROW.</div>
     </div>
-
+    <div class="hero-media">
+      <img src="https://businessbrandintelligence.com/assets/bbi-approved-hero.png" alt="Small business community alongside a modern corporate skyline">
+      <span class="cloudword" style="left:47%;top:16%;">Bigger<br>Budgets</span>
+      <span class="cloudword" style="left:63%;top:20%;">More<br>Data</span>
+      <span class="cloudword" style="left:82%;top:21%;">Larger<br>Teams</span>
+      <span class="cloudword" style="left:41%;top:34%;">More<br>Technology</span>
+      <span class="cloudword" style="left:64%;top:39%;">AI<br>Everywhere</span>
+      <span class="cloudword" style="left:82%;top:37%;">Faster<br>Decisions</span>
+      <span class="cloudword" style="left:41%;top:52%;">Greater<br>Capacity</span>
+      <span class="cloudword" style="left:82%;top:53%;">Global<br>Reach</span>
+      <div class="hero-caption">
+        <div class="script">Different resources.<br>Same potential.</div>
+        <div class="rule"></div>
+        <div class="fine">WE SEE THE BIGGER PICTURE<br>SO YOU CAN MOVE FORWARD<br>WITH CONFIDENCE.</div>
+      </div>
+    </div>
   </div>
-
-
-  <div class="hero-image">
-
-    <img
-      src="assets/bbi-hero.jpg"
-      alt="Small businesses navigating a changing business landscape"
-    >
-
-  </div>
-
 </section>
 
-
-<!-- SIX BUSINESS OWNER STORIES -->
-
-<section class="persona-strip">
-
-  <div class="persona">
-    <img src="assets/bbi-parents.jpg" alt="Parents building a business">
-  </div>
-
-  <div class="persona">
-    <img src="assets/bbi-retirees.jpg" alt="Retirees building a new opportunity">
-  </div>
-
-  <div class="persona">
-    <img src="assets/bbi-dreamers.jpg" alt="Dreamers building a business">
-  </div>
-
-  <div class="persona">
-    <img src="assets/bbi-young-entrepreneurs.jpg" alt="Young entrepreneurs">
-  </div>
-
-  <div class="persona">
-    <img src="assets/bbi-new-chapters.jpg" alt="Business owners creating new chapters">
-  </div>
-
-  <div class="persona">
-    <img src="assets/bbi-community-builders.jpg" alt="Community builders">
-  </div>
-
-</section>
-
-
-<!-- YOU'RE NOT ALONE + REAL CLIENT TESTIMONIAL -->
-
-<section class="not-alone-section" id="client-results">
-
-  <div class="container not-alone-grid">
-
-
-    <div class="not-alone-copy">
-
-      <h2>You’re Not Alone.</h2>
-
-      <p>
-        Small-business owners are being asked to make increasingly
-        important decisions in an environment that keeps changing.
-      </p>
-
-      <p>
-        Technology changes. Marketing changes. Customer expectations
-        change. Costs change. New tools appear constantly.
-      </p>
-
-      <p>
-        And when you don’t have much room for error,
-        <strong>every decision carries more weight.</strong>
-      </p>
-
-      <p>
-        You deserve the opportunity to understand what is actually
-        happening inside your business before committing more time,
-        money, and effort in the wrong direction.
-      </p>
-
-      <div class="founder-signature">
-
-        <span class="signature">
-          Tracy
-        </span>
-
-        <span class="signature-title">
-          FOUNDER<br>
-          BUSINESS &amp; BRAND INTELLIGENCE
-        </span>
-
-      </div>
-
+<!-- REASONS -->
+<div class="reasons">
+  <div class="reason-tile">
+    <div class="reason-photo">
+      <img src="https://businessbrandintelligence.com/assets/bbi-parent.jpg" alt="Parent building a business">
+      <div class="reason-quote"><p>Building a<br>better future<br>for my family.</p></div>
     </div>
-
-
-    <div class="testimonial-card">
-
-      <h2>
-        What Clients Are Saying
-      </h2>
-
-      <div class="testimonial-quote-mark">
-        “
-      </div>
-
-      <blockquote>
-        I had been open for months and was struggling to convert visitors
-        into sales. I didn’t want to waste any more time or money on ads
-        and promotions if that wasn’t actually the problem. The Business
-        Optimization Diagnostic helped me better understand what could be
-        holding the business back and gave me a clearer path forward without
-        wasting more time guessing. As a new business owner, that clarity
-        was incredibly valuable because time is money, and I didn’t want
-        to keep waiting to figure out what to do next.
-      </blockquote>
-
-      <div class="testimonial-author">
-        Founder
-        <strong>Love Little Me</strong>
-      </div>
-
-    </div>
-
+    <div class="reason-label"><span>PARENTS</span></div>
   </div>
+  <div class="reason-tile">
+    <div class="reason-photo">
+      <img src="https://businessbrandintelligence.com/assets/bbi-retiree.jpg" alt="Retiree creating a new business opportunity">
+      <div class="reason-quote"><p>Turning<br>my experience into<br>a new opportunity.</p></div>
+    </div>
+    <div class="reason-label"><span>RETIREES</span></div>
+  </div>
+  <div class="reason-tile">
+    <div class="reason-photo">
+      <img src="https://businessbrandintelligence.com/assets/bbi-dreamer.jpg" alt="Business owner pursuing a dream">
+      <div class="reason-quote"><p>Finally doing<br>what I&rsquo;ve always<br>wanted to do.</p></div>
+    </div>
+    <div class="reason-label"><span>DREAMERS</span></div>
+  </div>
+  <div class="reason-tile">
+    <div class="reason-photo">
+      <img src="https://businessbrandintelligence.com/assets/bbi-young-entrepreneur.jpg" alt="Young entrepreneur">
+      <div class="reason-quote"><p>Turning my ideas<br>into something<br>of my own.</p></div>
+    </div>
+    <div class="reason-label"><span>YOUNG ENTREPRENEURS</span></div>
+  </div>
+  <div class="reason-tile">
+    <div class="reason-photo">
+      <img src="https://businessbrandintelligence.com/assets/bbi-new-chapter.jpg" alt="Business owner creating a new chapter">
+      <div class="reason-quote"><p>Creating<br>my next chapter.</p></div>
+    </div>
+    <div class="reason-label"><span>NEW CHAPTERS</span></div>
+  </div>
+  <div class="reason-tile">
+    <div class="reason-photo">
+      <img src="https://businessbrandintelligence.com/assets/bbi-community-builder.jpg" alt="Community business owner">
+      <div class="reason-quote"><p>Strengthening<br>the community<br>I call home.</p></div>
+    </div>
+    <div class="reason-label"><span>COMMUNITY BUILDERS</span></div>
+  </div>
+</div>
 
+<!-- YOU'RE NOT ALONE -->
+<section class="not-alone" id="client-results">
+  <div class="wrap split-two">
+    <div>
+      <h2>You&rsquo;re Not Alone.</h2>
+      <p>Being a business owner can be a scary terrain &mdash; not enough sales, high costs, constant change, limited time, technology takeover, and corporate competition. It&rsquo;s a lot.</p>
+      <p>Business &amp; Brand Intelligence gives you a clear, evidence-based look at what&rsquo;s really happening inside your business &mdash; so you can make smarter decisions, focus your resources, and move forward with confidence.</p>
+      <div class="founder-sign">
+        <div class="name">Tracy</div>
+        <div class="role">FOUNDER<br>BUSINESS &amp; BRAND INTELLIGENCE</div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <h3>What Clients Are Saying</h3>
+      <div class="testi-grid">
+        <div class="testi-item">
+          <div class="mark">&ldquo;</div>
+          <p>I had been open for months and was struggling to convert visitors into sales. I didn&rsquo;t want to waste any more time or money on ads and promotions if that wasn&rsquo;t actually the problem. The Business Optimization Diagnostic helped me better understand what could be holding the business back and gave me a clearer path forward without wasting more time guessing.</p>
+          <div class="attrib"><strong>Founder, Love Little Me</strong>Inner-Child Healing Brand</div>
+        </div>
+      </div>
+      <div class="testi-dots"><span class="active"></span></div>
+    </div>
+  </div>
 </section>
-
 
 <!-- COMPASS -->
-
-<section class="compass-section">
-
-  <img
-    src="assets/bbi-compass.jpg"
-    alt="Think of us as your compass"
-  >
-
-</section>
-
-
-<!-- MORE ISN'T ALWAYS THE ANSWER -->
-
-<section class="more-section">
-
-  <div class="container">
-
-    <h2>
-      More Isn’t Always the Answer.
-    </h2>
-
-    <p class="more-intro">
-      More advertising. More content. More software. More automation.
-      More leads. More help. Before you add more, find out what the
-      evidence inside your own business actually shows.
-    </p>
-
-
-    <div class="more-row">
-
-      <div class="more-benefits">
-
-        <div class="benefit">
-          <div class="benefit-icon">◎</div>
-          <span>
-            Understand what’s<br>
-            really going on
-          </span>
-        </div>
-
-        <div class="benefit">
-          <div class="benefit-icon">◷</div>
-          <span>
-            Avoid wasting<br>
-            time and money
-          </span>
-        </div>
-
-        <div class="benefit">
-          <div class="benefit-icon">▥</div>
-          <span>
-            Focus on what will make<br>
-            the biggest impact
-          </span>
-        </div>
-
-        <div class="benefit">
-          <div class="benefit-icon">✓</div>
-          <span>
-            Make smarter,<br>
-            more confident decisions
-          </span>
-        </div>
-
-      </div>
-
-
-      <div class="more-cta">
-
-        <a
-          class="gold-button"
-          href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00"
-          target="_blank"
-          rel="noopener noreferrer"
-          onclick="trackCheckout('more_section');"
-        >
-          Get Your Diagnostic →
-        </a>
-
-        <small>
-          A clearer view. A stronger next step.
-        </small>
-
-      </div>
-
+<section class="compass" id="about">
+  <img src="https://businessbrandintelligence.com/assets/bbi-compass.png" alt="Compass symbolizing business direction">
+  <div class="wrap">
+    <div class="compass-copy">
+      <h2>Think of us as<br>your compass.</h2>
+      <p>You tell us where you want to go.<br>We help you find a clearer path forward.</p>
     </div>
-
   </div>
-
 </section>
 
+<!-- DARK BANNER -->
+<section class="banner" id="challenges">
+  <div class="wrap">
+    <div class="banner-top">
+      <div>
+        <div class="banner-heading"><span class="rule"></span><h2>More Isn&rsquo;t Always the Answer.</h2></div>
+        <p class="sub">More advertising. More content. More software. More automation. More leads. More help. Before you add more, find out what the evidence inside your own business actually shows.</p>
+      </div>
+      <div class="banner-divider"></div>
+      <div class="banner-cta">
+        <a class="btn" href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00">Get Your Diagnostic →</a>
+        <small>A clearer view. A stronger next step.</small>
+      </div>
+    </div>
+    <div class="banner-points">
+      <div class="banner-point">
+        <span class="ico">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2"/></svg>
+        </span>
+        <span>Understand what&rsquo;s really going on</span>
+      </div>
+      <div class="banner-point">
+        <span class="ico">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </span>
+        <span>Avoid wasting time and money</span>
+      </div>
+      <div class="banner-point">
+        <span class="ico">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>
+        </span>
+        <span>Focus on what will make the biggest impact</span>
+      </div>
+      <div class="banner-point">
+        <span class="ico">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+        </span>
+        <span>Make smarter, more confident decisions</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- HOW IT WORKS -->
-
-<section class="process-section" id="how-it-works">
-
-  <div class="container">
-
-    <h2>
-      How the Diagnostic Works
-    </h2>
-
-    <p class="process-subtitle">
-      A STRUCTURED, EVIDENCE-BASED PROCESS DESIGNED TO IDENTIFY
-      ROOT CAUSES AND GIVE YOU A CLEAR PLAN.
-    </p>
-
-
-    <div class="process-grid">
-
-
-      <div class="process-step">
-
-        <div class="step-number">1</div>
-
-        <strong>
-          Complete the Intake
-        </strong>
-
-        <p>
-          Tell us about your business,<br>
-          current situation and goals.
-        </p>
-
-      </div>
-
-
-      <div class="process-arrow">
-        →
-      </div>
-
-
-      <div class="process-step">
-
-        <div class="step-number">2</div>
-
-        <strong>
-          60-Minute Interview
-        </strong>
-
-        <p>
-          We ask the right questions<br>
-          to get real evidence.
-        </p>
-
-      </div>
-
-
-      <div class="process-arrow">
-        →
-      </div>
-
-
-      <div class="process-step">
-
-        <div class="step-number">3</div>
-
-        <strong>
-          In-Depth Analysis
-        </strong>
-
-        <p>
-          We apply the B&amp;BI methodology<br>
-          to identify what’s really<br>
-          holding you back.
-        </p>
-
-      </div>
-
-
-      <div class="process-arrow">
-        →
-      </div>
-
-
-      <div class="process-step">
-
-        <div class="step-number">4</div>
-
-        <strong>
-          Receive Your Report
-        </strong>
-
-        <p>
-          Get a clear, prioritized plan<br>
-          with practical next steps.
-        </p>
-
-      </div>
-
-
-      <div class="process-arrow">
-        →
-      </div>
-
-
-      <div class="process-step">
-
-        <div class="step-number">5</div>
-
-        <strong>
-          30-Minute Review
-        </strong>
-
-        <p>
-          We walk through your findings<br>
-          and answer your questions.
-        </p>
-
-      </div>
-
-
+<section class="how" id="how-it-works">
+  <div class="wrap">
+    <div class="how-head">
+      <h2>How the Diagnostic Works</h2>
+      <p>A structured, evidence-based process designed to identify root causes and give you a clear plan.</p>
     </div>
 
-  </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-top">
+          <div class="num">1</div>
+          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></span>
+        </div>
+        <h3>Complete the Intake</h3>
+        <p>Tell us about your business, current situation, and goals.</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-top">
+          <div class="num">2</div>
+          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H9l-4 4V5z"/></svg></span>
+        </div>
+        <h3>60-Minute Interview</h3>
+        <p>We ask the right questions to get real evidence.</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-top">
+          <div class="num">3</div>
+          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10" cy="10" r="6"/><path d="M20 20l-5.5-5.5"/></svg></span>
+        </div>
+        <h3>In-Depth Analysis</h3>
+        <p>We apply the B&amp;BI methodology to identify what&rsquo;s really holding you back.</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-top">
+          <div class="num">4</div>
+          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9 14l2 2 4-4"/></svg></span>
+        </div>
+        <h3>Receive Your Report</h3>
+        <p>Get a clear, prioritized plan with practical next steps.</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="step-top">
+          <div class="num">5</div>
+          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3 2.5-5 6-5s6 2 6 5M15 14c2.7 0 5 1.6 5 4.5"/></svg></span>
+        </div>
+        <h3>30-Minute Review</h3>
+        <p>We walk through your findings and answer your questions.</p>
+      </div>
+    </div>
 
+    <div class="pricing">
+      <div class="pricing-title">
+        <h3>Business Optimization Diagnostic</h3>
+        <div class="sub">One clear plan. Real answers. Smarter next steps.</div>
+        <div class="price">$297</div>
+      </div>
+      <div class="pricing-list">
+        <ul>
+          <li><span class="check">✓</span>Evidence-based analysis</li>
+          <li><span class="check">✓</span>3&ndash;5 key findings</li>
+          <li><span class="check">✓</span>Prioritized 90-day roadmap</li>
+          <li><span class="check">✓</span>30-minute review session</li>
+          <li><span class="check">✓</span>Optional 90-day reassessment</li>
+        </ul>
+      </div>
+      <div class="pricing-actions">
+        <a class="btn" href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00">Get Your Diagnostic →</a>
+        <a class="btn btn-outline" href="https://forms.gle/KWDLhyNrDRT7Pgde8">Or book a free 15-minute Fit Call →</a>
+        <div class="foot">Know what to fix before you invest in the wrong solution.</div>
+      </div>
+    </div>
+
+    <div class="badges">
+      <div class="badge">
+        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></svg></div>
+        <h4>Independent &amp; Unbiased</h4>
+        <p>No software to sell. No tools to push.</p>
+      </div>
+      <div class="badge">
+        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg></div>
+        <h4>Methodology-Driven</h4>
+        <p>A structured, repeatable process.</p>
+      </div>
+      <div class="badge">
+        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3 2.5-5 6-5s6 2 6 5M15 14c2.7 0 5 1.6 5 4.5"/></svg></div>
+        <h4>Works Across Industries</h4>
+        <p>Same core methodology, customized insights.</p>
+      </div>
+      <div class="badge">
+        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+        <h4>Focused on Action</h4>
+        <p>So you can move forward with confidence.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-<!-- $297 OFFER -->
-
-<section class="offer-section">
-
-  <div class="container offer-box">
-
-
-    <div class="offer-title">
-
-      <h2>
-        Business Optimization<br>
-        Diagnostic
-      </h2>
-
-      <p>
-        ONE CLEAR PLAN. REAL ANSWERS. SMARTER NEXT STEPS.
-      </p>
-
-      <div class="price">
-        $297
+<!-- LINK CARDS -->
+<section class="linkcards" id="industries">
+  <div class="wrap">
+    <div class="link-cards">
+      <div class="link-card">
+        <div class="ico">▤</div>
+        <h4>Business Insights</h4>
+        <p>Practical articles, resources, and strategies for business owners.</p>
+        <a class="go" href="https://businessbrandintelligence.com/insights.html">View Business Insights →</a>
       </div>
-
+      <div class="link-card">
+        <div class="ico">●</div>
+        <h4>Note from Founder</h4>
+        <p>My why, my approach, and what you can expect.</p>
+        <a class="go" href="https://businessbrandintelligence.com/founder.html">Read the Founder&rsquo;s Note →</a>
+      </div>
+      <div class="link-card">
+        <div class="ico">▦</div>
+        <h4>Free 15-Minute Fit Call</h4>
+        <p>Not sure if the diagnostic is right for you? Let&rsquo;s talk.</p>
+        <a class="go" href="https://forms.gle/KWDLhyNrDRT7Pgde8">Book Your 15-Minute Call →</a>
+      </div>
+      <div class="link-card">
+        <div class="ico">▥</div>
+        <h4>Client Results</h4>
+        <p>See how business owners are getting clarity and results.</p>
+        <a class="go" href="#client-results">Read Client Stories →</a>
+      </div>
     </div>
-
-
-    <div class="offer-includes">
-
-      <div>
-        <span>✓</span>
-        Evidence-based analysis
-      </div>
-
-      <div>
-        <span>✓</span>
-        3–5 key findings
-      </div>
-
-      <div>
-        <span>✓</span>
-        Prioritized 90-day roadmap
-      </div>
-
-      <div>
-        <span>✓</span>
-        30-minute review session
-      </div>
-
-      <div>
-        <span>✓</span>
-        Optional 90-day reassessment
-      </div>
-
-    </div>
-
-
-    <div class="offer-actions">
-
-      <a
-        class="gold-button"
-        href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00"
-        target="_blank"
-        rel="noopener noreferrer"
-        onclick="trackCheckout('offer_band');"
-      >
-        Get Your Diagnostic →
-      </a>
-
-      <a
-        class="fit-button"
-        href="https://forms.gle/KWDLhyNrDRT7Pgde8"
-        target="_blank"
-        rel="noopener noreferrer"
-        onclick="trackFitCall('offer_band');"
-      >
-        Or book a free 15-minute Fit Call →
-      </a>
-
-      <small>
-        Know what to fix before you invest in the wrong solution.
-      </small>
-
-    </div>
-
-
   </div>
-
 </section>
 
-
-<!-- BRAND CLOSING -->
-
-<section class="brand-closing" id="about">
-
-  <div class="container closing-grid">
-
-    <div class="closing-logo">
-      <img
-        src="assets/bbi-logo.png"
-        alt="Business & Brand Intelligence"
-      >
-    </div>
-
-    <div class="closing-tagline">
-      <img
-        src="assets/bbi-tagline.png"
-        alt="Small Businesses Keep Communities, Families and Futures Alive"
-      >
-    </div>
-
-    <div class="closing-icons">
-      <img
-        src="assets/bbi-icons.png"
-        alt="Stronger businesses, stronger communities, a brighter tomorrow"
-      >
-    </div>
-
-  </div>
-
-</section>
-
-
-</main>
-
-
-<footer class="footer">
-
-  <div class="container">
-
-    <div class="footer-links">
-
-      <span>
-        © 2026 Business &amp; Brand Intelligence. All rights reserved.
+<!-- LIGHT CLOSER BAR -->
+<section class="closer">
+  <div class="wrap closer-row">
+    <a class="logo" href="https://businessbrandintelligence.com/">
+      <span class="logo-mark">B<span>&amp;</span>BI</span>
+      <span class="logo-text">
+        <strong>Business &amp; Brand Intelligence</strong>
+        <small>Real people. A stronger tomorrow.</small>
       </span>
-
-      <a href="#">
-        Privacy Policy
-      </a>
-
-      <a href="#">
-        Terms of Service
-      </a>
-
-      <a href="#refund-policy">
-        Refund &amp; Cancellation Policy
-      </a>
-
+    </a>
+    <div class="closer-script">Small Businesses Keep Communities,<br>Families and Futures Alive. &#9825;</div>
+    <div class="closer-stats">
+      <div class="closer-stat"><div class="ico">🌱</div><span>Stronger<br>Businesses</span></div>
+      <div class="closer-stat"><div class="ico">👥</div><span>Stronger<br>Communities</span></div>
+      <div class="closer-stat"><div class="ico">☀</div><span>A Brighter<br>Tomorrow</span></div>
     </div>
-
-
-    <div class="refund-policy" id="refund-policy">
-
-      Refund &amp; Cancellation Policy: Full refunds are available only
-      before the Business Intake is submitted. Once the Business Intake
-      has been submitted, the diagnostic fee is non-refundable.
-      Diagnostic interviews may be rescheduled with at least 24 hours’
-      notice. If Business &amp; Brand Intelligence needs to reschedule
-      a session, a replacement appointment will be provided.
-      Policy is subject to applicable law.
-
-      &nbsp; | &nbsp;
-
-      Support: support@businessbrandintelligence.com
-
-    </div>
-
+    <a class="btn" href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00">Get Your Diagnostic →</a>
   </div>
+</section>
 
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="logo" href="https://businessbrandintelligence.com/" style="text-decoration:none;">
+        <span class="logo-mark" style="color:#fff;">B<span style="color:#e4a468;">&amp;</span>BI</span>
+        <span class="logo-text">
+          <strong style="color:#fff;">Business &amp; Brand Intelligence</strong>
+          <small style="color:rgba(255,255,255,.6);">Clarity today. A stronger tomorrow.</small>
+        </span>
+      </a>
+      <nav class="footer-nav">
+        <a href="https://businessbrandintelligence.com/">Home</a>
+        <a href="#industries">Industries</a>
+        <a href="#challenges">Common Challenges</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#client-results">Client Results</a>
+        <a href="https://businessbrandintelligence.com/insights.html">Business Insights</a>
+        <a href="https://businessbrandintelligence.com/founder.html">Note from Founder</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/tracyclinscales/" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Business &amp; Brand Intelligence. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#refund-policy">Refund &amp; Cancellation Policy</a>
+      </div>
+    </div>
+    <div class="refund-note" id="refund-policy">
+      <strong style="color:rgba(255,255,255,.7);">Refund &amp; Cancellation Policy:</strong> Full refunds are available only before the Business Intake is submitted. Once the Business Intake has been submitted, the diagnostic fee is non-refundable. Diagnostic interviews may be rescheduled with at least 24 hours&rsquo; notice. If Business &amp; Brand Intelligence needs to reschedule a session, a replacement appointment will be provided. Policy is subject to applicable law.
+    </div>
+    <div class="support-line">Support: <a href="mailto:support@businessbrandintelligence.com">support@businessbrandintelligence.com</a></div>
+  </div>
 </footer>
-
-
-<script src="script.js"></script>
 
 </body>
 </html>

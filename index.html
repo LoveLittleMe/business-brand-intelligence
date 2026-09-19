@@ -118,6 +118,7 @@
   /* Fixed aspect-ratio keeps the photo (and everything pinned to it) proportioned
      identically on every screen size, instead of stretching to match the text column. */
   .hero-media{position:relative;aspect-ratio:16/11;overflow:hidden;}
+  @media(min-width:880px){.hero-media{align-self:start;}}
   .hero-media > img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
   .signword{
     position:absolute;left:4.9%;top:5%;width:29.3%;height:27.6%;

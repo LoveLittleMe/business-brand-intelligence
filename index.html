@@ -115,33 +115,29 @@
   .hero-copy .btn{margin-top:10px;align-self:flex-start;}
   .hero-copy .tagline{margin-top:14px;font-size:0.75rem;color:var(--navy);letter-spacing:.05em;font-weight:700;}
 
-  /* Fixed aspect-ratio keeps the photo (and everything pinned to it) proportioned
-     identically on every screen size, instead of stretching to match the text column.
-     Mobile/tablet (stacked layout) uses the photo's own natural ratio so nothing gets
-     cropped off; desktop (side-by-side) stretches to match the text column instead. */
+  /* This hero photo has no text baked in — the sign and building words are separate
+     HTML/CSS overlays positioned on top of it below. */
   .hero-media{position:relative;aspect-ratio:1122/1402;overflow:hidden;}
   @media(min-width:880px){.hero-media{aspect-ratio:unset;height:100%;min-height:100%;align-self:stretch;}}
   .hero-media > img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+
   .signword{
     position:absolute;left:13.4%;top:6.8%;width:24.9%;height:13.2%;
     display:flex;flex-direction:column;justify-content:center;align-items:center;
-    font-family:'DM Serif Display',serif;font-weight:400;color:#102A43;
-    font-size:clamp(14px,2vw,19px);line-height:1.15;letter-spacing:-0.3px;text-align:center;
-    text-shadow:0 1px 2px rgba(255,255,255,.35);
+    font-family:'DM Serif Display',serif;font-weight:400;color:#0B1F3A;
+    font-size:clamp(16px,1.7vw,22px);line-height:1.08;letter-spacing:-0.3px;text-align:center;
   }
   @media(min-width:880px){
-    .signword{left:2.3%;top:6.8%;width:43%;height:13.5%;font-size:clamp(19px,2.3vw,25px);}
+    .signword{left:2.3%;top:6.8%;width:43%;height:13.5%;font-size:clamp(26px,2.1vw,34px);}
   }
+
   .cloudword{
-    position:absolute;color:#fff;font-family:'Inter',sans-serif;font-weight:800;
-    font-size:clamp(0.5rem,1.35vw,0.72rem);letter-spacing:.04em;text-transform:uppercase;text-align:center;
-    line-height:1.25;width:26%;
-    text-shadow:
-      -1px -1px 0 rgba(10,16,68,.85), 1px -1px 0 rgba(10,16,68,.85),
-      -1px 1px 0 rgba(10,16,68,.85), 1px 1px 0 rgba(10,16,68,.85),
-      0 3px 8px rgba(10,16,68,.55);
-    background:rgba(10,16,68,.22);
-    padding:4px 9px;border-radius:4px;
+    position:absolute;color:#fff;font-family:'Inter',Arial,sans-serif;font-weight:800;
+    font-size:clamp(0.55rem,1.3vw,0.78rem);text-transform:uppercase;text-align:center;
+    line-height:1;width:max-content;max-width:130px;
+    text-shadow:0 1px 3px rgba(0,0,0,.85);
+    background:rgba(7,31,58,.48);
+    padding:4px 7px;border-radius:4px;
   }
   /* Mobile positions: calibrated against the full, uncropped photo */
   .cw-1{left:54%;top:6%;}
@@ -162,24 +158,6 @@
     .cw-6{left:47%;top:34%;}
     .cw-7{left:62%;top:37%;}
     .cw-8{left:53%;top:40%;}
-  }
-  .hero-caption{
-    position:absolute;left:47%;top:54%;right:5%;color:#fff;text-align:left;
-    background:rgba(3,10,20,.42);backdrop-filter:blur(1px);
-    padding:20px 22px;border-radius:6px;
-  }
-  .hero-caption .script{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:clamp(1.15rem,3vw,1.85rem);color:#fff;line-height:1.2;}
-  .hero-caption .rule{width:min(110px,26%);height:2px;background:var(--rust);margin:10px 0 10px;}
-  .hero-caption .fine{font-size:clamp(0.5rem,1.2vw,0.66rem);letter-spacing:.04em;font-weight:800;color:#fff;line-height:1.55;}
-  @media(max-width:400px){
-    .hero-caption{padding:14px 16px;}
-  }
-  @media(max-width:640px){
-    .cw-extra{display:none;}
-    .hero-caption .fine{display:none;}
-    .hero-caption{top:auto;bottom:6%;padding:14px 16px;}
-    .hero-caption .script{font-size:1.1rem;}
-    .hero-caption .rule{margin:8px 0 0;}
   }
 
   /* REASONS */
@@ -437,17 +415,12 @@
       <span class="signword">Local Businesses<br>Build Stronger<br>Communities</span>
       <span class="cloudword cw-1">Bigger<br>Budgets</span>
       <span class="cloudword cw-2">More<br>Data</span>
-      <span class="cloudword cw-extra cw-3">Larger<br>Teams</span>
-      <span class="cloudword cw-extra cw-4">More<br>Technology</span>
+      <span class="cloudword cw-3">Larger<br>Teams</span>
+      <span class="cloudword cw-4">More<br>Technology</span>
       <span class="cloudword cw-5">AI<br>Everywhere</span>
-      <span class="cloudword cw-extra cw-6">Greater<br>Capacity</span>
-      <span class="cloudword cw-extra cw-7">Faster<br>Decisions</span>
+      <span class="cloudword cw-6">Greater<br>Capacity</span>
+      <span class="cloudword cw-7">Faster<br>Decisions</span>
       <span class="cloudword cw-8">Global<br>Reach</span>
-      <div class="hero-caption">
-        <div class="script">Different resources.<br>Same potential.</div>
-        <div class="rule"></div>
-        <div class="fine">WE SEE THE BIGGER PICTURE<br>SO YOU CAN MOVE FORWARD<br>WITH CONFIDENCE.</div>
-      </div>
     </div>
   </div>
 </section>

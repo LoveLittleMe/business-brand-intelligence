@@ -116,16 +116,21 @@
   .hero-copy .tagline{margin-top:14px;font-size:0.75rem;color:var(--navy);letter-spacing:.05em;font-weight:700;}
 
   /* Fixed aspect-ratio keeps the photo (and everything pinned to it) proportioned
-     identically on every screen size, instead of stretching to match the text column. */
-  .hero-media{position:relative;aspect-ratio:16/11;overflow:hidden;}
+     identically on every screen size, instead of stretching to match the text column.
+     Mobile/tablet (stacked layout) uses the photo's own natural ratio so nothing gets
+     cropped off; desktop (side-by-side) stretches to match the text column instead. */
+  .hero-media{position:relative;aspect-ratio:1122/1402;overflow:hidden;}
   @media(min-width:880px){.hero-media{aspect-ratio:unset;height:100%;min-height:100%;align-self:stretch;}}
   .hero-media > img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
   .signword{
-    position:absolute;left:2.3%;top:6.8%;width:43%;height:13.5%;
+    position:absolute;left:13.4%;top:6.8%;width:24.9%;height:13.2%;
     display:flex;flex-direction:column;justify-content:center;align-items:center;
     font-family:'DM Serif Display',serif;font-weight:400;color:#102A43;
-    font-size:clamp(19px,2.3vw,25px);line-height:1.15;letter-spacing:-0.3px;text-align:center;
+    font-size:clamp(14px,2vw,19px);line-height:1.15;letter-spacing:-0.3px;text-align:center;
     text-shadow:0 1px 2px rgba(255,255,255,.35);
+  }
+  @media(min-width:880px){
+    .signword{left:2.3%;top:6.8%;width:43%;height:13.5%;font-size:clamp(19px,2.3vw,25px);}
   }
   .cloudword{
     position:absolute;color:#fff;font-family:'Inter',sans-serif;font-weight:800;
@@ -137,6 +142,26 @@
       0 3px 8px rgba(10,16,68,.55);
     background:rgba(10,16,68,.22);
     padding:4px 9px;border-radius:4px;
+  }
+  /* Mobile positions: calibrated against the full, uncropped photo */
+  .cw-1{left:54%;top:6%;}
+  .cw-2{left:41%;top:7%;}
+  .cw-3{left:67%;top:8%;}
+  .cw-4{left:41%;top:18%;}
+  .cw-5{left:54%;top:16%;}
+  .cw-6{left:67%;top:16%;}
+  .cw-7{left:57%;top:27%;}
+  .cw-8{left:72%;top:27%;}
+  /* Desktop positions: calibrated against the tall, side-stretched crop */
+  @media(min-width:880px){
+    .cw-1{left:58%;top:17%;}
+    .cw-2{left:41%;top:21%;}
+    .cw-3{left:65%;top:13%;}
+    .cw-4{left:41%;top:30%;}
+    .cw-5{left:58%;top:27%;}
+    .cw-6{left:47%;top:34%;}
+    .cw-7{left:62%;top:37%;}
+    .cw-8{left:53%;top:40%;}
   }
   .hero-caption{
     position:absolute;left:47%;top:54%;right:5%;color:#fff;text-align:left;
@@ -410,14 +435,14 @@
     <div class="hero-media">
       <img src="assets/bbi-hero.png" alt="Small business community alongside a modern corporate skyline">
       <span class="signword">Local Businesses<br>Build Stronger<br>Communities</span>
-      <span class="cloudword" style="left:58%;top:17%;">Bigger<br>Budgets</span>
-      <span class="cloudword" style="left:41%;top:21%;">More<br>Data</span>
-      <span class="cloudword cw-extra" style="left:65%;top:13%;">Larger<br>Teams</span>
-      <span class="cloudword cw-extra" style="left:41%;top:30%;">More<br>Technology</span>
-      <span class="cloudword" style="left:58%;top:27%;">AI<br>Everywhere</span>
-      <span class="cloudword cw-extra" style="left:47%;top:34%;">Greater<br>Capacity</span>
-      <span class="cloudword cw-extra" style="left:62%;top:37%;">Faster<br>Decisions</span>
-      <span class="cloudword" style="left:53%;top:40%;">Global<br>Reach</span>
+      <span class="cloudword cw-1">Bigger<br>Budgets</span>
+      <span class="cloudword cw-2">More<br>Data</span>
+      <span class="cloudword cw-extra cw-3">Larger<br>Teams</span>
+      <span class="cloudword cw-extra cw-4">More<br>Technology</span>
+      <span class="cloudword cw-5">AI<br>Everywhere</span>
+      <span class="cloudword cw-extra cw-6">Greater<br>Capacity</span>
+      <span class="cloudword cw-extra cw-7">Faster<br>Decisions</span>
+      <span class="cloudword cw-8">Global<br>Reach</span>
       <div class="hero-caption">
         <div class="script">Different resources.<br>Same potential.</div>
         <div class="rule"></div>

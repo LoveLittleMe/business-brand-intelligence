@@ -120,10 +120,11 @@
   .hero-media{position:relative;aspect-ratio:16/11;overflow:hidden;}
   .hero-media > img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
   .signword{
-    position:absolute;left:5%;top:6%;width:28%;
-    font-family:'Playfair Display',serif;font-weight:600;color:#2a1c10;
-    font-size:clamp(0.65rem,1.7vw,1rem);line-height:1.5;text-align:center;
-    transform:rotate(-1.5deg);
+    position:absolute;left:5%;top:7%;width:28%;
+    font-family:'Playfair Display',serif;font-weight:700;color:#1a1108;
+    font-size:clamp(0.72rem,1.85vw,1.05rem);line-height:1.7;text-align:center;
+    letter-spacing:.01em;transform:rotate(-1.5deg);
+    text-shadow:0 1px 0 rgba(255,255,255,.25);
   }
   .cloudword{
     position:absolute;color:#fff;font-family:'Inter',sans-serif;font-weight:800;
@@ -140,6 +141,13 @@
   .hero-caption .fine{font-size:clamp(0.5rem,1.2vw,0.66rem);letter-spacing:.04em;font-weight:800;color:#fff;line-height:1.55;}
   @media(max-width:400px){
     .hero-caption{padding:14px 16px;}
+  }
+  @media(max-width:640px){
+    .cw-extra{display:none;}
+    .hero-caption .fine{display:none;}
+    .hero-caption{top:auto;bottom:6%;padding:14px 16px;}
+    .hero-caption .script{font-size:1.1rem;}
+    .hero-caption .rule{margin:8px 0 0;}
   }
 
   /* REASONS */
@@ -392,15 +400,15 @@
     </div>
     <div class="hero-media">
       <img src="assets/bbi-hero.jpg" alt="Small business community alongside a modern corporate skyline">
-      <span class="signword">Local<br>Businesses<br>Stronger<br>Communities</span>
-      <span class="cloudword" style="left:37%;top:6%;">Bigger<br>Budgets</span>
-      <span class="cloudword" style="left:65%;top:7%;">More<br>Data</span>
-      <span class="cloudword" style="left:25%;top:21%;">More<br>Technology</span>
-      <span class="cloudword" style="left:53%;top:22%;">AI<br>Everywhere</span>
-      <span class="cloudword" style="left:79%;top:20%;">Larger<br>Teams</span>
-      <span class="cloudword" style="left:37%;top:36%;">Greater<br>Capacity</span>
-      <span class="cloudword" style="left:65%;top:37%;">Faster<br>Decisions</span>
-      <span class="cloudword" style="left:53%;top:44%;">Global<br>Reach</span>
+      <span class="signword">Local Businesses<br>Build Stronger<br>Communities</span>
+      <span class="cloudword" style="left:45%;top:10%;">Bigger<br>Budgets</span>
+      <span class="cloudword" style="left:67%;top:10%;">More<br>Data</span>
+      <span class="cloudword cw-extra" style="left:77%;top:14%;">Larger<br>Teams</span>
+      <span class="cloudword cw-extra" style="left:35%;top:24%;">More<br>Technology</span>
+      <span class="cloudword" style="left:55%;top:22%;">AI<br>Everywhere</span>
+      <span class="cloudword cw-extra" style="left:37%;top:38%;">Greater<br>Capacity</span>
+      <span class="cloudword cw-extra" style="left:73%;top:40%;">Faster<br>Decisions</span>
+      <span class="cloudword" style="left:55%;top:42%;">Global<br>Reach</span>
       <div class="hero-caption">
         <div class="script">Different resources.<br>Same potential.</div>
         <div class="rule"></div>

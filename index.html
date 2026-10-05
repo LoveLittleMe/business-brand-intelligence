@@ -309,15 +309,23 @@
   .testi-side{background:#EFE8DF;border-radius:8px;padding:32px;}
   .testi-card{background:#FFFCF8;border:1px solid #ddc9a8;border-radius:8px;padding:36px 38px;position:relative;box-shadow:0 20px 44px -32px rgba(10,16,68,.3);}
   .testi-card h3{font-size:1.35rem;margin-bottom:20px;letter-spacing:-.01em;}
-  .testi-grid{display:grid;grid-template-columns:1fr;gap:26px;}
-  .testi-item .mark{font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);line-height:1;margin-bottom:6px;}
-  .testi-item p{font-family:'Lora',Georgia,serif;font-size:1rem;line-height:1.65;color:var(--ink);margin:0 0 14px;}
-  .testi-item .attrib{font-size:0.78rem;color:var(--ink-soft);font-weight:600;}
-  .testi-item .attrib strong{display:block;color:var(--navy);font-weight:700;font-size:0.82rem;}
-  .testi-item + .testi-item{border-top:1px solid #ddc9a8;padding-top:26px;}
-  .testi-dots{display:flex;gap:8px;justify-content:center;margin-top:22px;}
-  .testi-dots span{width:8px;height:8px;border-radius:50%;background:var(--line);display:inline-block;}
-  .testi-dots span.active{background:#B26126;}
+  .testi-viewport{overflow:hidden;}
+  .testi-track{display:flex;transition:transform .6s ease;}
+  .testi-slide{flex:0 0 100%;margin:0;display:flex;flex-direction:column;}
+  .testi-slide blockquote{margin:0;flex:1;}
+  .testi-slide .mark{font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);line-height:1;margin-bottom:6px;}
+  .testi-slide p{font-family:'Lora',Georgia,serif;font-size:1rem;line-height:1.65;color:var(--ink);margin:0 0 14px;}
+  .testi-slide .attrib{font-size:0.78rem;color:var(--ink-soft);font-weight:600;margin-top:4px;}
+  .testi-slide .attrib strong{display:block;color:var(--navy);font-weight:700;font-size:0.82rem;}
+  .testi-more{display:inline-block;align-self:flex-start;margin-top:14px;font-size:0.84rem;font-weight:700;color:#B26126;text-decoration:none;border-bottom:1px solid rgba(178,97,38,.4);padding-bottom:2px;}
+  .testi-more:hover{color:#7c3d14;border-color:#7c3d14;}
+  .testi-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:22px;}
+  .testi-arrow{width:34px;height:34px;border-radius:50%;border:1px solid #ddc9a8;background:#fff;color:var(--navy);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s ease,color .2s ease;}
+  .testi-arrow:hover,.testi-arrow:focus-visible{background:#B26126;border-color:#B26126;color:#fff;}
+  .testi-dots{display:flex;gap:8px;}
+  .testi-dots button{width:9px;height:9px;padding:0;border-radius:50%;border:none;background:#ddc9a8;cursor:pointer;}
+  .testi-dots button[aria-selected="true"]{background:#B26126;}
+  @media(prefers-reduced-motion:reduce){.testi-track{transition:none;}}
   @media(max-width:640px){.founder-panel{padding:28px 24px;}.testi-side{padding:20px;}}
 
   /* COMPASS */
@@ -480,7 +488,7 @@
     <nav class="primary">
       <a href="https://businessbrandintelligence.com/" class="active">Home</a>
       <a href="#how-it-works">How It Works</a>
-      <a href="#client-results">Client Results</a>
+      <a href="https://businessbrandintelligence.com/client-results.html">Client Results</a>
       <a href="https://businessbrandintelligence.com/insights.html">Business Insights</a>
       <a href="https://businessbrandintelligence.com/founder.html">Note from Founder</a>
       <a href="#about">About</a>
@@ -598,24 +606,34 @@
     </div>
     <div class="col-divider"></div>
     <div class="testi-side">
-      <div class="testi-card">
+      <div class="testi-card" id="testi-carousel" role="region" aria-roledescription="carousel" aria-label="Client testimonials">
         <h3>What Clients Are Saying</h3>
-        <div class="testi-grid">
-          <div class="testi-item">
-            <div class="mark">&ldquo;</div>
-            <p>Tracy Clinscales provided the Vietnamese Heritage Museum with a thoughtful and highly practical Business &amp; Brand Intelligence diagnostic. She took the time to understand how our organization actually operates, identified important gaps and opportunities, and translated her findings into a clear 30/60/90-Day Action Plan.</p>
-            <p>One of the most valuable parts of her work was the Functional Ownership Map, which helped us clarify responsibilities, decision authority, overlaps, and areas where too much work was still returning to the President because ownership was unclear.</p>
-            <p>Her work gave VHM a useful framework for strengthening accountability, delegation, and organizational structure as we continue to grow.</p>
-            <p>Tracy was professional, insightful, patient, and generous with her time. I would highly recommend her to nonprofit leaders and small organizations that need an objective outside perspective and practical guidance for their next stage of development.</p>
-            <div class="attrib"><strong>&mdash; Chau Thuy, Vietnamese Heritage Museum</strong></div>
-          </div>
-          <div class="testi-item">
-            <div class="mark">&ldquo;</div>
-            <p>I had been open for months and was struggling to convert visitors into sales. I didn&rsquo;t want to waste any more time or money on ads and promotions if that wasn&rsquo;t actually the problem. The Business Optimization Diagnostic helped me better understand what could be holding the business back and gave me a clearer path forward without wasting more time guessing.</p>
-            <div class="attrib"><strong>Founder, Love Little Me</strong>Inner-Child Healing Brand</div>
+        <div class="testi-viewport">
+          <div class="testi-track">
+            <figure class="testi-slide" role="group" aria-roledescription="slide" aria-label="1 of 2">
+              <div class="mark">&ldquo;</div>
+              <blockquote>
+                <p>Her work gave VHM a useful framework for strengthening accountability, delegation, and organizational structure as we continue to grow.</p>
+                <p>I would highly recommend her to nonprofit leaders and small organizations that need an objective outside perspective and practical guidance for their next stage of development.</p>
+              </blockquote>
+              <figcaption class="attrib"><strong>Chau Thuy</strong>Vietnamese Heritage Museum</figcaption>
+              <a class="testi-more" href="https://businessbrandintelligence.com/client-results.html#chau-thuy">Read the full testimonial &rarr;</a>
+            </figure>
+            <figure class="testi-slide" role="group" aria-roledescription="slide" aria-label="2 of 2">
+              <div class="mark">&ldquo;</div>
+              <blockquote>
+                <p>I had been open for months and was struggling to convert visitors into sales. I didn&rsquo;t want to waste any more time or money on ads and promotions if that wasn&rsquo;t actually the problem. The Business Optimization Diagnostic helped me better understand what could be holding the business back and gave me a clearer path forward without wasting more time guessing.</p>
+              </blockquote>
+              <figcaption class="attrib"><strong>Founder, Love Little Me</strong>Inner-Child Healing Brand</figcaption>
+              <a class="testi-more" href="https://businessbrandintelligence.com/client-results.html#love-little-me">See all client results &rarr;</a>
+            </figure>
           </div>
         </div>
-        <div class="testi-dots"><span class="active"></span></div>
+        <div class="testi-controls">
+          <button type="button" class="testi-arrow testi-prev" aria-label="Previous testimonial">&larr;</button>
+          <div class="testi-dots" role="tablist" aria-label="Choose testimonial"></div>
+          <button type="button" class="testi-arrow testi-next" aria-label="Next testimonial">&rarr;</button>
+        </div>
       </div>
     </div>
   </div>
@@ -811,7 +829,7 @@
         <div class="ico">▥</div>
         <h4>Client Results</h4>
         <p>See how business owners are getting clarity and results.</p>
-        <a class="go" href="#client-results">Read Client Stories →</a>
+        <a class="go" href="https://businessbrandintelligence.com/client-results.html">Read Client Stories →</a>
       </div>
     </div>
   </div>
@@ -851,7 +869,7 @@
       <nav class="footer-nav">
         <a href="https://businessbrandintelligence.com/">Home</a>
         <a href="#how-it-works">How It Works</a>
-        <a href="#client-results">Client Results</a>
+        <a href="https://businessbrandintelligence.com/client-results.html">Client Results</a>
         <a href="https://businessbrandintelligence.com/insights.html">Business Insights</a>
         <a href="https://businessbrandintelligence.com/founder.html">Note from Founder</a>
         <a href="#about">About</a>
@@ -874,6 +892,44 @@
     <div class="support-line">Support: <a href="mailto:support@businessbrandintelligence.com">support@businessbrandintelligence.com</a></div>
   </div>
 </footer>
+<script>
+(function(){
+  var root=document.getElementById('testi-carousel'); if(!root) return;
+  var track=root.querySelector('.testi-track');
+  var slides=root.querySelectorAll('.testi-slide');
+  var dotsWrap=root.querySelector('.testi-dots');
+  var n=slides.length, i=0, timer=null, paused=false, DELAY=8000;
+  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var dots=[];
+  for(var k=0;k<n;k++){(function(k){
+    var b=document.createElement('button'); b.type='button'; b.setAttribute('role','tab');
+    b.setAttribute('aria-label','Show testimonial '+(k+1));
+    b.addEventListener('click',function(){go(k);restart();});
+    dotsWrap.appendChild(b); dots.push(b);
+  })(k);}
+  function go(k){
+    i=(k+n)%n; track.style.transform='translateX(-'+(i*100)+'%)';
+    for(var d=0;d<n;d++){dots[d].setAttribute('aria-selected',d===i?'true':'false');
+      slides[d].setAttribute('aria-hidden',d===i?'false':'true');
+      var link=slides[d].querySelector('a'); if(link) link.tabIndex=d===i?0:-1;}
+  }
+  function start(){ if(reduce||paused||n<2) return; stop(); timer=setInterval(function(){go(i+1);},DELAY); }
+  function stop(){ if(timer){clearInterval(timer);timer=null;} }
+  function restart(){ stop(); start(); }
+  root.querySelector('.testi-prev').addEventListener('click',function(){go(i-1);restart();});
+  root.querySelector('.testi-next').addEventListener('click',function(){go(i+1);restart();});
+  root.addEventListener('mouseenter',function(){paused=true;stop();});
+  root.addEventListener('mouseleave',function(){paused=false;start();});
+  root.addEventListener('focusin',function(){paused=true;stop();});
+  root.addEventListener('focusout',function(){paused=false;start();});
+  var x0=null;
+  root.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;paused=true;stop();},{passive:true});
+  root.addEventListener('touchend',function(e){
+    if(x0!==null){var dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>40) go(dx<0?i+1:i-1);} x0=null;
+  },{passive:true});
+  go(0); start();
+})();
+</script>
 
 </body>
 </html>

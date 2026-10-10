@@ -126,6 +126,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Lora:ital,wght@0,400;0,500;1,500&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
   :root{
     --navy: #0a1044;
@@ -140,8 +141,15 @@
     --label-bar: #070d12;
     --white: #ffffff;
   }
+
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+
+  html{
+    scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+  }
+
   body{
     margin:0;
     font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -150,6 +158,7 @@
     line-height:1.55;
     overflow-x:hidden;
   }
+
   h1,h2,h3,.serif{
     font-family:'Playfair Display', Georgia, serif;
     color:var(--navy);
@@ -157,107 +166,387 @@
     font-weight:700;
     line-height:1.12;
   }
+
   .script{font-family:'Caveat',cursive;}
   a{color:inherit;}
   img{max-width:100%;display:block;}
-  .wrap{max-width:1240px;margin:0 auto;padding:0 40px;}
+
+  .wrap{
+    max-width:1240px;
+    margin:0 auto;
+    padding:0 40px;
+  }
+
   .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    background:var(--rust);color:var(--white);
-    font-family:'Inter',sans-serif;font-weight:700;font-size:0.95rem;
-    padding:14px 26px;border-radius:6px;text-decoration:none;
-    border:1px solid var(--rust);transition:background .2s ease;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--rust);
+    color:var(--white);
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:0.95rem;
+    padding:14px 26px;
+    border-radius:6px;
+    text-decoration:none;
+    border:1px solid var(--rust);
+    transition:background .2s ease;
     white-space:nowrap;
   }
-  .btn:hover{background:var(--rust-dark);border-color:var(--rust-dark);}
-  .btn-outline{background:transparent;color:var(--navy);border:1px solid var(--navy);}
-  .btn-outline:hover{background:var(--navy);color:var(--white);}
+
+  .btn:hover{
+    background:var(--rust-dark);
+    border-color:var(--rust-dark);
+  }
+
+  .btn-outline{
+    background:transparent;
+    color:var(--navy);
+    border:1px solid var(--navy);
+  }
+
+  .btn-outline:hover{
+    background:var(--navy);
+    color:var(--white);
+  }
+
 
   /* HEADER */
-  header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);}
-  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;}
-  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none;}
-  .logo-mark{font-family:'Playfair Display',serif;font-size:clamp(1.35rem,3vw,1.7rem);font-weight:700;color:var(--navy);}
-  .logo-mark span{color:var(--rust);}
-  .logo-text{line-height:1.2;}
-  .logo-text strong{display:block;font-size:0.78rem;color:var(--navy);font-weight:800;letter-spacing:.01em;}
-  .logo-text small{display:block;font-size:0.6rem;color:var(--ink-soft);letter-spacing:.05em;font-weight:600;}
-  @media(max-width:420px){.logo-text{display:none;}}
 
-  nav.primary{display:flex;align-items:center;gap:22px;}
-  nav.primary a{font-size:0.85rem;font-weight:500;text-decoration:none;color:var(--navy);padding-bottom:5px;border-bottom:2px solid transparent;white-space:nowrap;}
-  nav.primary a:hover,nav.primary a.active{border-color:var(--rust);color:var(--rust);}
-  .nav-cta{flex:none;padding:11px 18px;font-size:0.86rem;}
-
-  .menu-toggle{display:none;flex:none;width:38px;height:38px;border:1px solid var(--line);border-radius:6px;background:#fff;cursor:pointer;align-items:center;justify-content:center;}
-  .menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{
-    content:"";display:block;width:18px;height:2px;background:var(--navy);position:relative;transition:transform .2s ease,opacity .2s ease;
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:#fff;
+    border-bottom:1px solid var(--line);
   }
-  .menu-toggle span::before{position:absolute;top:-6px;}
-  .menu-toggle span::after{position:absolute;top:6px;}
-  #nav-check{display:none;}
+
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 0;
+    gap:16px;
+  }
+
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    flex:none;
+  }
+
+  .logo-mark{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(1.35rem,3vw,1.7rem);
+    font-weight:700;
+    color:var(--navy);
+  }
+
+  .logo-mark span{
+    color:var(--rust);
+  }
+
+  .logo-text{
+    line-height:1.2;
+  }
+
+  .logo-text strong{
+    display:block;
+    font-size:0.78rem;
+    color:var(--navy);
+    font-weight:800;
+    letter-spacing:.01em;
+  }
+
+  .logo-text small{
+    display:block;
+    font-size:0.6rem;
+    color:var(--ink-soft);
+    letter-spacing:.05em;
+    font-weight:600;
+  }
+
+  @media(max-width:420px){
+    .logo-text{
+      display:none;
+    }
+  }
+
+  nav.primary{
+    display:flex;
+    align-items:center;
+    gap:22px;
+  }
+
+  nav.primary a{
+    font-size:0.85rem;
+    font-weight:500;
+    text-decoration:none;
+    color:var(--navy);
+    padding-bottom:5px;
+    border-bottom:2px solid transparent;
+    white-space:nowrap;
+  }
+
+  nav.primary a:hover,
+  nav.primary a.active{
+    border-color:var(--rust);
+    color:var(--rust);
+  }
+
+  .nav-cta{
+    flex:none;
+    padding:11px 18px;
+    font-size:0.86rem;
+  }
+
+  .menu-toggle{
+    display:none;
+    flex:none;
+    width:38px;
+    height:38px;
+    border:1px solid var(--line);
+    border-radius:6px;
+    background:#fff;
+    cursor:pointer;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .menu-toggle span,
+  .menu-toggle span::before,
+  .menu-toggle span::after{
+    content:"";
+    display:block;
+    width:18px;
+    height:2px;
+    background:var(--navy);
+    position:relative;
+    transition:transform .2s ease,opacity .2s ease;
+  }
+
+  .menu-toggle span::before{
+    position:absolute;
+    top:-6px;
+  }
+
+  .menu-toggle span::after{
+    position:absolute;
+    top:6px;
+  }
+
+  #nav-check{
+    display:none;
+  }
 
   @media(min-width:1000px){
-    .menu-toggle{display:none;}
-  }
-  @media(max-width:999px){
-    .nav-row{flex-wrap:wrap;}
-    nav.primary{
-      order:3;flex-basis:100%;display:flex;flex-direction:column;align-items:flex-start;gap:0;
-      max-height:0;overflow:hidden;transition:max-height .25s ease;width:100%;
+    .menu-toggle{
+      display:none;
     }
-    nav.primary a{width:100%;padding:12px 4px;border-bottom:1px solid var(--line);}
-    nav.primary a:hover,nav.primary a.active{background:var(--cream);}
-    #nav-check:checked ~ .nav-row nav.primary{max-height:480px;}
-    .menu-toggle{display:flex;}
-    #nav-check:checked ~ .nav-row .menu-toggle span{background:transparent;}
-    #nav-check:checked ~ .nav-row .menu-toggle span::before{transform:rotate(45deg);top:0;}
-    #nav-check:checked ~ .nav-row .menu-toggle span::after{transform:rotate(-45deg);top:0;}
-    .nav-cta{padding:9px 14px;font-size:0.8rem;}
   }
+
+  @media(max-width:999px){
+
+    .nav-row{
+      flex-wrap:wrap;
+    }
+
+    nav.primary{
+      order:3;
+      flex-basis:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:0;
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .25s ease;
+      width:100%;
+    }
+
+    nav.primary a{
+      width:100%;
+      padding:12px 4px;
+      border-bottom:1px solid var(--line);
+    }
+
+    nav.primary a:hover,
+    nav.primary a.active{
+      background:var(--cream);
+    }
+
+    #nav-check:checked ~ .nav-row nav.primary{
+      max-height:480px;
+    }
+
+    .menu-toggle{
+      display:flex;
+    }
+
+    #nav-check:checked ~ .nav-row .menu-toggle span{
+      background:transparent;
+    }
+
+    #nav-check:checked ~ .nav-row .menu-toggle span::before{
+      transform:rotate(45deg);
+      top:0;
+    }
+
+    #nav-check:checked ~ .nav-row .menu-toggle span::after{
+      transform:rotate(-45deg);
+      top:0;
+    }
+
+    .nav-cta{
+      padding:9px 14px;
+      font-size:0.8rem;
+    }
+  }
+
   @media(max-width:480px){
-    .nav-cta span.long{display:none;}
+    .nav-cta span.long{
+      display:none;
+    }
   }
+
 
   /* HERO */
-  .hero{background:#fff;}
-  .hero-grid{display:grid;grid-template-columns:1fr;}
-  @media(min-width:880px){.hero-grid{grid-template-columns:0.72fr 1.28fr;align-items:stretch;}}
-  .hero-copy{padding:clamp(28px,5vw,44px) clamp(20px,5vw,44px) clamp(24px,4vw,36px) clamp(20px,5vw,40px);display:flex;flex-direction:column;justify-content:center;}
-  .hero-eyebrow{font-size:0.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--rust);margin-bottom:10px;}
-  .hero-copy h1{font-size:clamp(1.65rem,4.2vw,2.35rem);letter-spacing:-.01em;}
-  .hero-copy h1 .navy-line{color:var(--navy);}
-  .hero-copy h1 .rust-line{color:var(--rust);display:block;}
-  .hero-copy .lead{margin-top:18px;}
-  .hero-copy p{font-size:0.92rem;color:var(--ink);margin:0 0 14px;max-width:44ch;}
-  .hero-copy p.bold{font-weight:700;color:var(--navy);margin-bottom:4px;}
-  .hero-copy .btn{margin-top:10px;align-self:flex-start;}
-  .hero-copy .tagline{margin-top:14px;font-size:0.75rem;color:var(--navy);letter-spacing:.05em;font-weight:700;}
 
-  /* This hero photo has no text baked in — the sign and building words are separate
-     HTML/CSS overlays positioned on top of it below. One fixed aspect-ratio at every
-     screen size (not stretched to match the text column) so the crop — and therefore
-     every label's position — never changes and never drifts. */
-  .hero-media{position:relative;aspect-ratio:1122/1402;overflow:hidden;}
-  @media(min-width:880px){.hero-media{align-self:start;}}
-  .hero-media > img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+  .hero{
+    background:#fff;
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+
+  @media(min-width:880px){
+    .hero-grid{
+      grid-template-columns:0.72fr 1.28fr;
+      align-items:stretch;
+    }
+  }
+
+  .hero-copy{
+    padding:clamp(28px,5vw,44px) clamp(20px,5vw,44px) clamp(24px,4vw,36px) clamp(20px,5vw,40px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  .hero-eyebrow{
+    font-size:0.74rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    font-weight:800;
+    color:var(--rust);
+    margin-bottom:10px;
+  }
+
+  .hero-copy h1{
+    font-size:clamp(1.65rem,4.2vw,2.35rem);
+    letter-spacing:-.01em;
+  }
+
+  .hero-copy h1 .navy-line{
+    color:var(--navy);
+  }
+
+  .hero-copy h1 .rust-line{
+    color:var(--rust);
+    display:block;
+  }
+
+  .hero-copy .lead{
+    margin-top:18px;
+  }
+
+  .hero-copy p{
+    font-size:0.92rem;
+    color:var(--ink);
+    margin:0 0 14px;
+    max-width:44ch;
+  }
+
+  .hero-copy p.bold{
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:4px;
+  }
+
+  .hero-copy .btn{
+    margin-top:10px;
+    align-self:flex-start;
+  }
+
+  .hero-copy .tagline{
+    margin-top:14px;
+    font-size:0.75rem;
+    color:var(--navy);
+    letter-spacing:.05em;
+    font-weight:700;
+  }
+
+  .hero-media{
+    position:relative;
+    aspect-ratio:1122/1402;
+    overflow:hidden;
+  }
+
+  @media(min-width:880px){
+    .hero-media{
+      align-self:start;
+    }
+  }
+
+  .hero-media > img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+  }
 
   .signword{
-    position:absolute;left:20.5%;top:8%;width:17.5%;height:16%;
-    display:flex;flex-direction:column;justify-content:center;align-items:center;
-    font-family:'DM Serif Display',serif;font-weight:700;color:#061B33;
-    font-size:clamp(7px,2.05vw,19px);line-height:1.2;letter-spacing:normal;text-align:center;
+    position:absolute;
+    left:20.5%;
+    top:8%;
+    width:17.5%;
+    height:16%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    font-family:'DM Serif Display',serif;
+    font-weight:700;
+    color:#061B33;
+    font-size:clamp(7px,2.05vw,19px);
+    line-height:1.2;
+    letter-spacing:normal;
+    text-align:center;
     text-shadow:0 1px 2px rgba(0,0,0,.25);
   }
 
   .cloudword{
-    position:absolute;background:rgba(11,31,58,.55);color:#fff;
-    padding:3px 6px;border-radius:4px;
-    font-family:'Inter',Arial,sans-serif;font-size:clamp(8px,2.4vw,12px);font-weight:800;line-height:1.05;
-    text-transform:uppercase;text-align:center;
+    position:absolute;
+    background:rgba(11,31,58,.55);
+    color:#fff;
+    padding:3px 6px;
+    border-radius:4px;
+    font-family:'Inter',Arial,sans-serif;
+    font-size:clamp(8px,2.4vw,12px);
+    font-weight:800;
+    line-height:1.05;
+    text-transform:uppercase;
+    text-align:center;
     text-shadow:0 1px 2px rgba(0,0,0,.6);
-    width:max-content;max-width:clamp(68px,18vw,120px);
+    width:max-content;
+    max-width:clamp(68px,18vw,120px);
   }
+
   .cw-1{left:50%;top:7%;}
   .cw-2{left:75%;top:6%;}
   .cw-3{left:82%;top:12%;}
@@ -266,696 +555,3176 @@
   .cw-6{left:63%;top:27%;}
   .cw-7{left:70%;top:32%;}
   .cw-8{left:78%;top:28%;}
-  /* 8 tightly-spaced tags don't have room to stay legible/non-overlapping on a narrow
-     phone-width crop — drop to the 5 most essential on small screens. */
+
   @media(max-width:640px){
-    .cw-4,.cw-6,.cw-7{display:none;}
+    .cw-4,.cw-6,.cw-7{
+      display:none;
+    }
   }
 
+
   /* REASONS */
-  .reasons{display:grid;grid-template-columns:repeat(2,1fr);}
-  @media(min-width:760px){.reasons{grid-template-columns:repeat(3,1fr);}}
-  @media(min-width:1000px){.reasons{grid-template-columns:repeat(6,1fr);}}
-  .reason-tile{display:flex;flex-direction:column;}
-  .reason-photo{position:relative;aspect-ratio:3/3.6;overflow:hidden;}
-  .reason-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
-  .reason-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(3,8,14,.85) 0%,rgba(3,8,14,.05) 50%,rgba(3,8,14,0) 65%);}
-  .reason-quote{position:relative;z-index:2;height:100%;display:flex;align-items:flex-end;padding:14px 12px;}
-  .reason-quote p{font-family:'Caveat',cursive;font-weight:700;color:#fff;font-size:clamp(1rem,2.4vw,1.35rem);line-height:1.15;margin:0;text-shadow:0 2px 8px rgba(0,0,0,.4);}
-  .reason-label{background:var(--label-bar);border-top:1px solid rgba(255,255,255,.14);padding:10px 8px;text-align:center;min-height:42px;display:flex;align-items:center;justify-content:center;}
-  .reason-label span{font-size:clamp(0.55rem,1.4vw,0.65rem);letter-spacing:.08em;font-weight:800;color:#fff;}
+
+  .reasons{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  @media(min-width:760px){
+    .reasons{
+      grid-template-columns:repeat(3,1fr);
+    }
+  }
+
+  @media(min-width:1000px){
+    .reasons{
+      grid-template-columns:repeat(6,1fr);
+    }
+  }
+
+  .reason-tile{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .reason-photo{
+    position:relative;
+    aspect-ratio:3/3.6;
+    overflow:hidden;
+  }
+
+  .reason-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    position:absolute;
+    inset:0;
+  }
+
+  .reason-photo::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(3,8,14,.85) 0%,rgba(3,8,14,.05) 50%,rgba(3,8,14,0) 65%);
+  }
+
+  .reason-quote{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    align-items:flex-end;
+    padding:14px 12px;
+  }
+
+  .reason-quote p{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    color:#fff;
+    font-size:clamp(1rem,2.4vw,1.35rem);
+    line-height:1.15;
+    margin:0;
+    text-shadow:0 2px 8px rgba(0,0,0,.4);
+  }
+
+  .reason-label{
+    background:var(--label-bar);
+    border-top:1px solid rgba(255,255,255,.14);
+    padding:10px 8px;
+    text-align:center;
+    min-height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .reason-label span{
+    font-size:clamp(0.55rem,1.4vw,0.65rem);
+    letter-spacing:.08em;
+    font-weight:800;
+    color:#fff;
+  }
+
 
   /* NOT ALONE */
-  .not-alone{padding:64px 0 40px;background:#F6F1EA;}
-  .split-two{display:grid;grid-template-columns:1fr;gap:40px;align-items:start;}
-  @media(min-width:900px){.split-two{grid-template-columns:1fr auto 1.05fr;align-items:center;}}
-  .col-divider{display:none;}
+
+  .not-alone{
+    padding:64px 0 40px;
+    background:#F6F1EA;
+  }
+
+  .split-two{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:40px;
+    align-items:start;
+  }
+
+  @media(min-width:900px){
+    .split-two{
+      grid-template-columns:1fr auto 1.05fr;
+      align-items:center;
+    }
+  }
+
+  .col-divider{
+    display:none;
+  }
+
   @media(min-width:900px){
     .col-divider{
-      display:block;width:1px;height:100%;align-self:stretch;
+      display:block;
+      width:1px;
+      height:100%;
+      align-self:stretch;
       background:linear-gradient(to bottom,rgba(178,97,38,0) 0%,rgba(178,97,38,.4) 15%,rgba(178,97,38,.4) 85%,rgba(178,97,38,0) 100%);
     }
   }
-  .split-two h2{font-size:clamp(1.9rem,4.4vw,2.6rem);margin-bottom:14px;letter-spacing:-.015em;position:relative;padding-bottom:14px;}
-  .split-two h2::after{content:"";position:absolute;left:0;bottom:0;width:56px;height:3px;background:#B26126;}
-  .founder-panel{background:#fff;border-left:4px solid #B26126;border-radius:4px;padding:36px 40px;}
+
+  .split-two h2{
+    font-size:clamp(1.9rem,4.4vw,2.6rem);
+    margin-bottom:14px;
+    letter-spacing:-.015em;
+    position:relative;
+    padding-bottom:14px;
+  }
+
+  .split-two h2::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:56px;
+    height:3px;
+    background:#B26126;
+  }
+
+  .founder-panel{
+    background:#fff;
+    border-left:4px solid #B26126;
+    border-radius:4px;
+    padding:36px 40px;
+  }
+
   .split-two p.lead{
-    font-family:'Caveat',cursive;font-weight:700;color:#B26126;
-    font-size:clamp(1.7rem,3.6vw,2.1rem);line-height:1.1;margin:0 0 22px;
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    color:#B26126;
+    font-size:clamp(1.7rem,3.6vw,2.1rem);
+    line-height:1.1;
+    margin:0 0 22px;
   }
-  .split-two p{margin:0 0 18px;font-family:'Lora',Georgia,serif;font-size:1.08rem;line-height:1.75;color:var(--ink);}
-  .split-two p strong{color:var(--navy);}
-  .doubt-block{background:#FBF6EF;border-left:3px solid #B26126;border-radius:4px;padding:18px 22px;margin:0 0 22px;}
-  .doubt-list{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
+
+  .split-two p{
+    margin:0 0 18px;
+    font-family:'Lora',Georgia,serif;
+    font-size:1.08rem;
+    line-height:1.75;
+    color:var(--ink);
+  }
+
+  .split-two p strong{
+    color:var(--navy);
+  }
+
+  .doubt-block{
+    background:#FBF6EF;
+    border-left:3px solid #B26126;
+    border-radius:4px;
+    padding:18px 22px;
+    margin:0 0 22px;
+  }
+
+  .doubt-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    gap:10px;
+  }
+
   .doubt-list li{
-    font-family:'Lora',Georgia,serif;font-style:italic;color:#8a4a1f;
-    font-size:clamp(1.02rem,2.1vw,1.15rem);padding-left:20px;position:relative;line-height:1.4;
+    font-family:'Lora',Georgia,serif;
+    font-style:italic;
+    color:#8a4a1f;
+    font-size:clamp(1.02rem,2.1vw,1.15rem);
+    padding-left:20px;
+    position:relative;
+    line-height:1.4;
   }
-  .doubt-list li::before{content:"\2014";position:absolute;left:0;color:#B26126;}
-  .founder-sign{margin-top:8px;}
-  .sign-rule{width:100%;max-width:220px;height:1px;background:#e2d6c4;margin:0 0 18px;}
-  .founder-sign .name{font-family:'Caveat',cursive;font-weight:700;font-size:2.3rem;color:#B26126;}
-  .founder-sign .role{font-size:0.7rem;letter-spacing:.06em;color:var(--ink-soft);font-weight:700;margin-top:2px;}
+
+  .doubt-list li::before{
+    content:"\2014";
+    position:absolute;
+    left:0;
+    color:#B26126;
+  }
+
+  .founder-sign{
+    margin-top:8px;
+  }
+
+  .sign-rule{
+    width:100%;
+    max-width:220px;
+    height:1px;
+    background:#e2d6c4;
+    margin:0 0 18px;
+  }
+
+  .founder-sign .name{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    font-size:2.3rem;
+    color:#B26126;
+  }
+
+  .founder-sign .role{
+    font-size:0.7rem;
+    letter-spacing:.06em;
+    color:var(--ink-soft);
+    font-weight:700;
+    margin-top:2px;
+  }
+
   .founder-link{
-    display:inline-block;margin-top:20px;font-family:'Inter',sans-serif;font-weight:700;
-    font-size:0.88rem;color:#B26126;text-decoration:none;border-bottom:1px solid rgba(178,97,38,.4);
+    display:inline-block;
+    margin-top:20px;
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:0.88rem;
+    color:#B26126;
+    text-decoration:none;
+    border-bottom:1px solid rgba(178,97,38,.4);
     padding-bottom:2px;
   }
-  .founder-link:hover{color:#7c3d14;border-color:#7c3d14;}
 
-  .testi-side{background:#EFE8DF;border-radius:8px;padding:32px;}
-  .testi-card{background:#FFFCF8;border:1px solid #ddc9a8;border-radius:8px;padding:36px 38px;position:relative;box-shadow:0 20px 44px -32px rgba(10,16,68,.3);}
-  .testi-card h3{font-size:1.35rem;margin-bottom:20px;letter-spacing:-.01em;}
-  .testi-viewport{overflow:hidden;}
-  .testi-track{display:flex;transition:transform .6s ease;}
-  .testi-slide{flex:0 0 100%;margin:0;display:flex;flex-direction:column;}
-  .testi-slide blockquote{margin:0;flex:1;}
-  .testi-slide .mark{font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);line-height:1;margin-bottom:6px;}
-  .testi-slide p{font-family:'Lora',Georgia,serif;font-size:1rem;line-height:1.65;color:var(--ink);margin:0 0 14px;}
-  .testi-slide .attrib{font-size:0.78rem;color:var(--ink-soft);font-weight:600;margin-top:4px;}
-  .testi-slide .attrib strong{display:block;color:var(--navy);font-weight:700;font-size:0.82rem;}
-  .testi-more{display:inline-block;align-self:flex-start;margin-top:14px;font-size:0.84rem;font-weight:700;color:#B26126;text-decoration:none;border-bottom:1px solid rgba(178,97,38,.4);padding-bottom:2px;}
-  .testi-more:hover{color:#7c3d14;border-color:#7c3d14;}
-  .testi-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:22px;}
-  .testi-arrow{width:34px;height:34px;border-radius:50%;border:1px solid #ddc9a8;background:#fff;color:var(--navy);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s ease,color .2s ease;}
-  .testi-arrow:hover,.testi-arrow:focus-visible{background:#B26126;border-color:#B26126;color:#fff;}
-  .testi-dots{display:flex;gap:8px;}
-  .testi-dots button{width:9px;height:9px;padding:0;border-radius:50%;border:none;background:#ddc9a8;cursor:pointer;}
-  .testi-dots button[aria-selected="true"]{background:#B26126;}
-  @media(prefers-reduced-motion:reduce){.testi-track{transition:none;}}
-  @media(max-width:640px){.founder-panel{padding:28px 24px;}.testi-side{padding:20px;}}
-
-  /* COMPASS */
-  .compass{position:relative;aspect-ratio:3.6/1;max-height:440px;min-height:260px;display:flex;align-items:center;overflow:hidden;}
-  .compass > .wrap{width:100%;flex:1 1 auto;}
-  .compass img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-  @media(max-width:700px){
-    .compass{aspect-ratio:auto;min-height:340px;max-height:none;}
+  .founder-link:hover{
+    color:#7c3d14;
+    border-color:#7c3d14;
   }
-  .compass-copy{
-    position:relative;z-index:2;max-width:460px;
-    background:rgba(255,255,255,.94);
-    padding:32px 36px;border-radius:8px;
-    box-shadow:0 24px 50px -28px rgba(10,16,68,.45);
+
+  .testi-side{
+    background:#EFE8DF;
+    border-radius:8px;
+    padding:32px;
   }
-  .compass-copy h2{font-size:clamp(1.75rem,4.6vw,2.4rem);letter-spacing:-.01em;}
-  .compass-copy p{color:var(--ink);margin-top:14px;font-size:clamp(1.05rem,2.1vw,1.2rem);font-weight:500;line-height:1.55;}
-  @media(max-width:640px){.compass-copy{max-width:100%;padding:26px 24px;}}
 
-  /* DARK BANNER */
-  .banner{background:var(--navy-deep);color:#fff;padding:44px 0 36px;}
-  .banner-top{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;}
-  @media(min-width:880px){.banner-top{grid-template-columns:1.5fr auto auto;}}
-  .banner-heading{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
-  .banner-heading .rule{width:34px;height:2px;background:var(--rust);flex:none;}
-  .banner h2{color:#fff;font-size:clamp(1.35rem,3.6vw,1.7rem);}
-  .banner p.sub{color:rgba(255,255,255,.82);margin:10px 0 0;max-width:58ch;font-size:0.9rem;}
-  .banner-divider{display:none;width:1px;align-self:stretch;background:rgba(255,255,255,.2);}
-  @media(min-width:880px){.banner-divider{display:block;}}
-  .banner-cta small{display:block;margin-top:8px;color:rgba(255,255,255,.6);font-size:0.76rem;}
-  .banner-points{margin-top:34px;display:grid;grid-template-columns:1fr;gap:20px;}
-  @media(min-width:760px){.banner-points{grid-template-columns:repeat(4,1fr);}}
-  .banner-point{display:flex;gap:12px;align-items:center;}
-  .banner-point .ico{
-    width:36px;height:36px;flex:none;border-radius:50%;border:1.5px solid var(--rust);
-    display:flex;align-items:center;justify-content:center;color:var(--rust);
+  .testi-card{
+    background:#FFFCF8;
+    border:1px solid #ddc9a8;
+    border-radius:8px;
+    padding:36px 38px;
+    position:relative;
+    box-shadow:0 20px 44px -32px rgba(10,16,68,.3);
   }
-  .banner-point span{font-size:0.85rem;color:rgba(255,255,255,.9);line-height:1.35;}
 
-  /* HOW IT WORKS */
-  .how{padding:56px 0 48px;background:#F6F8FA;}
-  .how-head{text-align:center;position:relative;padding-bottom:16px;}
-  .how-head h2{font-size:clamp(1.5rem,4vw,1.85rem);}
-  .how-head p{font-size:0.75rem;letter-spacing:.05em;font-weight:700;color:var(--navy);margin-top:8px;text-transform:uppercase;}
-  .how-head::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:56px;height:3px;background:#B26126;}
-  .steps{display:grid;grid-template-columns:1fr;gap:36px;margin-top:44px;position:relative;}
-  @media(min-width:900px){.steps{grid-template-columns:repeat(5,1fr);}}
-  .step{text-align:center;position:relative;}
-  .step-top{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px;}
-  .step .num{
-    width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;
-    display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;
-    font-weight:700;font-size:1rem;flex:none;
+  .testi-card h3{
+    font-size:1.35rem;
+    margin-bottom:20px;
+    letter-spacing:-.01em;
   }
-  .step .ico{color:var(--navy);}
-  .step h3{font-size:1rem;margin-bottom:6px;}
-  .step p{font-size:0.82rem;color:var(--ink-soft);margin:0;}
-  .step-arrow{
-    display:none;position:absolute;top:18px;right:-22px;color:var(--navy);font-size:1.1rem;
+
+  .testi-viewport{
+    overflow:hidden;
   }
-  @media(min-width:900px){.step-arrow{display:block;}}
 
-  /* PRICING BAND */
-  .pricing-band{background:#F1E8DE;padding:48px 0;}
-  .pricing{
-    display:grid;grid-template-columns:1fr;
-    border:1.5px solid #ddc9a8;border-radius:10px;overflow:hidden;background:#fff;
-    box-shadow:0 26px 54px -30px rgba(60,40,10,.35);
+  .testi-track{
+    display:flex;
+    transition:transform .6s ease;
   }
-  @media(min-width:900px){.pricing{grid-template-columns:1.15fr 1fr 0.95fr;}}
-  .pricing > div{padding:32px;}
-  .pricing > div:not(:last-child){border-bottom:1px solid var(--line);}
-  @media(min-width:900px){
-    .pricing > div:not(:last-child){border-bottom:none;border-right:1px solid var(--line);}
+
+  .testi-slide{
+    flex:0 0 100%;
+    margin:0;
+    display:flex;
+    flex-direction:column;
   }
-  .pricing-title h3{font-size:1.25rem;margin-bottom:8px;}
-  .pricing-title .sub{font-size:0.72rem;letter-spacing:.04em;font-weight:700;color:var(--ink-soft);text-transform:uppercase;}
-  .pricing-title .price{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,5vw,2.7rem);font-weight:800;color:var(--navy);margin-top:14px;}
-  .pricing-list ul{list-style:none;margin:0;padding:0;display:grid;gap:13px;}
-  .pricing-list li{display:flex;gap:10px;font-size:0.88rem;align-items:flex-start;color:var(--ink);}
-  .check{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--rust);color:var(--rust);flex:none;display:flex;align-items:center;justify-content:center;font-size:10px;margin-top:2px;}
-  .pricing-actions{display:flex;flex-direction:column;gap:10px;}
-  .pricing-actions .btn{justify-content:center;}
-  .pricing-actions .btn-outline{justify-content:center;font-size:0.86rem;}
-  .pricing-actions .foot{font-size:0.78rem;color:var(--ink-soft);margin-top:4px;}
 
-  /* WHY BAND */
-  .why-band{background:#F1F5F8;border-top:1px solid #dde5ea;padding:48px 0;}
-  .badges{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;}
-  @media(min-width:880px){.badges{grid-template-columns:repeat(4,1fr);}}
-  .badge{text-align:center;padding:0 10px;}
-  .badge .ico{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--rust);color:var(--rust);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;}
-  .badge h4{font-family:'Playfair Display',serif;font-size:0.98rem;color:var(--navy);margin:0 0 6px;font-weight:700;}
-  .badge p{font-size:0.8rem;color:var(--ink-soft);margin:0;}
+  .testi-slide blockquote{
+    margin:0;
+    flex:1;
+  }
 
-  /* LINK CARDS */
-  .linkcards{background:var(--cream);padding:64px 0;}
-  .link-cards{display:grid;grid-template-columns:1fr;gap:18px;}
-  @media(min-width:700px){.link-cards{grid-template-columns:repeat(2,1fr);}}
-  @media(min-width:1000px){.link-cards{grid-template-columns:repeat(4,1fr);}}
-  .link-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:26px;display:flex;flex-direction:column;gap:10px;}
-  .link-card .ico{color:var(--rust);font-size:1.2rem;}
-  .link-card h4{font-family:'Playfair Display',serif;font-size:1rem;margin:0;color:var(--navy);}
-  .link-card p{font-size:0.82rem;color:var(--ink-soft);margin:0;flex:1;}
-  .link-card a.go{font-size:0.82rem;font-weight:700;color:var(--rust);text-decoration:none;}
-  .link-card a.go:hover{text-decoration:underline;}
+  .testi-slide .mark{
+    font-family:'Playfair Display',serif;
+    font-size:2rem;
+    color:var(--navy);
+    line-height:1;
+    margin-bottom:6px;
+  }
 
-  /* LIGHT CLOSER BAR */
-  .closer{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;}
-  .closer-row{display:grid;grid-template-columns:1fr;gap:22px;align-items:center;text-align:center;}
-  @media(min-width:900px){.closer-row{grid-template-columns:auto 1fr auto auto;text-align:left;}}
-  .closer .logo-text strong{color:var(--navy);}
-  .closer-script{font-family:'Caveat',cursive;font-weight:700;color:var(--navy-2);font-size:clamp(1.15rem,2.8vw,1.5rem);line-height:1.25;}
-  .closer-stats{display:flex;gap:26px;justify-content:center;}
-  .closer-stat{text-align:center;}
-  .closer-stat .ico{color:var(--navy);font-size:1.2rem;margin-bottom:4px;}
-  .closer-stat span{display:block;font-size:0.62rem;letter-spacing:.05em;font-weight:800;color:var(--navy);text-transform:uppercase;}
-  .closer-cta{text-align:center;}
+  .testi-slide p{
+    font-family:'Lora',Georgia,serif;
+    font-size:1rem;
+    line-height:1.65;
+    color:var(--ink);
+    margin:0 0 14px;
+  }
 
-  /* FOOTER */
-  footer{background:var(--navy);color:rgba(255,255,255,.85);padding:48px 0 26px;}
-  .footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:26px;align-items:flex-start;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.15);}
-  .footer-nav{display:flex;flex-wrap:wrap;gap:16px 22px;}
-  .footer-nav a{font-size:0.82rem;text-decoration:none;color:rgba(255,255,255,.8);}
-  .footer-nav a:hover{color:#fff;}
-  .footer-social a{color:#fff;font-size:1rem;text-decoration:none;border:1px solid rgba(255,255,255,.4);border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;}
-  .footer-bottom{padding-top:22px;font-size:0.76rem;color:rgba(255,255,255,.55);display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;}
-  .footer-legal a{color:rgba(255,255,255,.55);text-decoration:none;margin-right:14px;}
-  .footer-legal a:hover{color:#fff;}
-  .refund-note{margin-top:16px;font-size:0.74rem;color:rgba(255,255,255,.48);max-width:840px;line-height:1.6;}
-  .support-line{margin-top:12px;font-size:0.76rem;color:rgba(255,255,255,.55);}
-  .support-line a{color:rgba(255,255,255,.75);}
+  .testi-slide .attrib{
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    font-weight:600;
+    margin-top:4px;
+  }
+
+  .testi-slide .attrib strong{
+    display:block;
+    color:var(--navy);
+    font-weight:700;
+    font-size:0.82rem;
+  }
+
+  .testi-more{
+    display:inline-block;
+    align-self:flex-start;
+    margin-top:14px;
+    font-size:0.84rem;
+    font-weight:700;
+    color:#B26126;
+    text-decoration:none;
+    border-bottom:1px solid rgba(178,97,38,.4);
+    padding-bottom:2px;
+  }
+
+  .testi-more:hover{
+    color:#7c3d14;
+    border-color:#7c3d14;
+  }
+
+  .testi-controls{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+    margin-top:22px;
+  }
+
+  .testi-arrow{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    border:1px solid #ddc9a8;
+    background:#fff;
+    color:var(--navy);
+    font-size:1rem;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:background .2s ease,color .2s ease;
+  }
+
+  .testi-arrow:hover,
+  .testi-arrow:focus-visible{
+    background:#B26126;
+    border-color:#B26126;
+    color:#fff;
+  }
+
+  .testi-dots{
+    display:flex;
+    gap:8px;
+  }
+
+  .testi-dots button{
+    width:9px;
+    height:9px;
+    padding:0;
+    border-radius:50%;
+    border:none;
+    background:#ddc9a8;
+    cursor:pointer;
+  }
+
+  .testi-dots button[aria-selected="true"]{
+    background:#B26126;
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    .testi-track{
+      transition:none;
+    }
+  }
 
   @media(max-width:640px){
-    .wrap{padding:0 22px;}
-    .hero-copy{padding:36px 22px 28px;}
-    .hero-copy h1{font-size:1.85rem;}
-    .hero-media{min-height:280px;}
-    .not-alone{padding:48px 0;}
-    .how{padding:40px 0 32px;}
-    .pricing-band{padding:32px 0;}
-    .why-band{padding:32px 0;}
-    section, .banner, .linkcards{padding-top:48px;padding-bottom:48px;}
+    .founder-panel{
+      padding:28px 24px;
+    }
+
+    .testi-side{
+      padding:20px;
+    }
   }
+
+
+  /* COMPASS */
+
+  .compass{
+    position:relative;
+    aspect-ratio:3.6/1;
+    max-height:440px;
+    min-height:260px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+  }
+
+  .compass > .wrap{
+    width:100%;
+    flex:1 1 auto;
+  }
+
+  .compass img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  @media(max-width:700px){
+    .compass{
+      aspect-ratio:auto;
+      min-height:340px;
+      max-height:none;
+    }
+  }
+
+  .compass-copy{
+    position:relative;
+    z-index:2;
+    max-width:460px;
+    background:rgba(255,255,255,.94);
+    padding:32px 36px;
+    border-radius:8px;
+    box-shadow:0 24px 50px -28px rgba(10,16,68,.45);
+  }
+
+  .compass-copy h2{
+    font-size:clamp(1.75rem,4.6vw,2.4rem);
+    letter-spacing:-.01em;
+  }
+
+  .compass-copy p{
+    color:var(--ink);
+    margin-top:14px;
+    font-size:clamp(1.05rem,2.1vw,1.2rem);
+    font-weight:500;
+    line-height:1.55;
+  }
+
+  @media(max-width:640px){
+    .compass-copy{
+      max-width:100%;
+      padding:26px 24px;
+    }
+  }
+
+
+  /* DARK BANNER */
+
+  .banner{
+    background:var(--navy-deep);
+    color:#fff;
+    padding:44px 0 36px;
+  }
+
+  .banner-top{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:24px;
+    align-items:center;
+  }
+
+  @media(min-width:880px){
+    .banner-top{
+      grid-template-columns:1.5fr auto auto;
+    }
+  }
+
+  .banner-heading{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+
+  .banner-heading .rule{
+    width:34px;
+    height:2px;
+    background:var(--rust);
+    flex:none;
+  }
+
+  .banner h2{
+    color:#fff;
+    font-size:clamp(1.35rem,3.6vw,1.7rem);
+  }
+
+  .banner p.sub{
+    color:rgba(255,255,255,.82);
+    margin:10px 0 0;
+    max-width:58ch;
+    font-size:0.9rem;
+  }
+
+  .banner-divider{
+    display:none;
+    width:1px;
+    align-self:stretch;
+    background:rgba(255,255,255,.2);
+  }
+
+  @media(min-width:880px){
+    .banner-divider{
+      display:block;
+    }
+  }
+
+  .banner-cta small{
+    display:block;
+    margin-top:8px;
+    color:rgba(255,255,255,.6);
+    font-size:0.76rem;
+  }
+
+  .banner-points{
+    margin-top:34px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  @media(min-width:760px){
+    .banner-points{
+      grid-template-columns:repeat(4,1fr);
+    }
+  }
+
+  .banner-point{
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+
+  .banner-point .ico{
+    width:36px;
+    height:36px;
+    flex:none;
+    border-radius:50%;
+    border:1.5px solid var(--rust);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--rust);
+  }
+
+  .banner-point span{
+    font-size:0.85rem;
+    color:rgba(255,255,255,.9);
+    line-height:1.35;
+  }
+
+
+  /* HOW IT WORKS */
+
+  .how{
+    padding:56px 0 48px;
+    background:#F6F8FA;
+  }
+
+  .how-head{
+    text-align:center;
+    position:relative;
+    padding-bottom:16px;
+  }
+
+  .how-head h2{
+    font-size:clamp(1.5rem,4vw,1.85rem);
+  }
+
+  .how-head p{
+    font-size:0.75rem;
+    letter-spacing:.05em;
+    font-weight:700;
+    color:var(--navy);
+    margin-top:8px;
+    text-transform:uppercase;
+  }
+
+  .how-head::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    width:56px;
+    height:3px;
+    background:#B26126;
+  }
+
+  .steps{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:36px;
+    margin-top:44px;
+    position:relative;
+  }
+
+  @media(min-width:900px){
+    .steps{
+      grid-template-columns:repeat(5,1fr);
+    }
+  }
+
+  .step{
+    text-align:center;
+    position:relative;
+  }
+
+  .step-top{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+
+  .step .num{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:var(--navy);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:1rem;
+    flex:none;
+  }
+
+  .step .ico{
+    color:var(--navy);
+  }
+
+  .step h3{
+    font-size:1rem;
+    margin-bottom:6px;
+  }
+
+  .step p{
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  .step-arrow{
+    display:none;
+    position:absolute;
+    top:18px;
+    right:-22px;
+    color:var(--navy);
+    font-size:1.1rem;
+  }
+
+  @media(min-width:900px){
+    .step-arrow{
+      display:block;
+    }
+  }
+
+
+  /* PRICING BAND */
+
+  .pricing-band{
+    background:#F1E8DE;
+    padding:48px 0;
+  }
+
+  .pricing{
+    display:grid;
+    grid-template-columns:1fr;
+    border:1.5px solid #ddc9a8;
+    border-radius:10px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 26px 54px -30px rgba(60,40,10,.35);
+  }
+
+  @media(min-width:900px){
+    .pricing{
+      grid-template-columns:1.15fr 1fr 0.95fr;
+    }
+  }
+
+  .pricing > div{
+    padding:32px;
+  }
+
+  .pricing > div:not(:last-child){
+    border-bottom:1px solid var(--line);
+  }
+
+  @media(min-width:900px){
+    .pricing > div:not(:last-child){
+      border-bottom:none;
+      border-right:1px solid var(--line);
+    }
+  }
+
+  .pricing-title h3{
+    font-size:1.25rem;
+    margin-bottom:8px;
+  }
+
+  .pricing-title .sub{
+    font-size:0.72rem;
+    letter-spacing:.04em;
+    font-weight:700;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+  }
+
+  .pricing-title .price{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2.1rem,5vw,2.7rem);
+    font-weight:800;
+    color:var(--navy);
+    margin-top:14px;
+  }
+
+  .pricing-list ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    gap:13px;
+  }
+
+  .pricing-list li{
+    display:flex;
+    gap:10px;
+    font-size:0.88rem;
+    align-items:flex-start;
+    color:var(--ink);
+  }
+
+  .check{
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    border:1.5px solid var(--rust);
+    color:var(--rust);
+    flex:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:10px;
+    margin-top:2px;
+  }
+
+  .pricing-actions{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .pricing-actions .btn{
+    justify-content:center;
+  }
+
+  .pricing-actions .btn-outline{
+    justify-content:center;
+    font-size:0.86rem;
+  }
+
+  .pricing-actions .foot{
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+
+
+  /* WHY BAND */
+
+  .why-band{
+    background:#F1F5F8;
+    border-top:1px solid #dde5ea;
+    padding:48px 0;
+  }
+
+  .badges{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+  }
+
+  @media(min-width:880px){
+    .badges{
+      grid-template-columns:repeat(4,1fr);
+    }
+  }
+
+  .badge{
+    text-align:center;
+    padding:0 10px;
+  }
+
+  .badge .ico{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    border:1.5px solid var(--rust);
+    color:var(--rust);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 12px;
+  }
+
+  .badge h4{
+    font-family:'Playfair Display',serif;
+    font-size:0.98rem;
+    color:var(--navy);
+    margin:0 0 6px;
+    font-weight:700;
+  }
+
+  .badge p{
+    font-size:0.8rem;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+
+  /* LINK CARDS */
+
+  .linkcards{
+    background:var(--cream);
+    padding:64px 0;
+  }
+
+  .link-cards{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  @media(min-width:700px){
+    .link-cards{
+      grid-template-columns:repeat(2,1fr);
+    }
+  }
+
+  @media(min-width:1000px){
+    .link-cards{
+      grid-template-columns:repeat(4,1fr);
+    }
+  }
+
+  .link-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:26px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .link-card .ico{
+    color:var(--rust);
+    font-size:1.2rem;
+  }
+
+  .link-card h4{
+    font-family:'Playfair Display',serif;
+    font-size:1rem;
+    margin:0;
+    color:var(--navy);
+  }
+
+  .link-card p{
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    margin:0;
+    flex:1;
+  }
+
+  .link-card a.go{
+    font-size:0.82rem;
+    font-weight:700;
+    color:var(--rust);
+    text-decoration:none;
+  }
+
+  .link-card a.go:hover{
+    text-decoration:underline;
+  }
+
+
+  /* LIGHT CLOSER BAR */
+
+  .closer{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:26px 0;
+  }
+
+  .closer-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:22px;
+    align-items:center;
+    text-align:center;
+  }
+
+  @media(min-width:900px){
+    .closer-row{
+      grid-template-columns:auto 1fr auto auto;
+      text-align:left;
+    }
+  }
+
+  .closer .logo-text strong{
+    color:var(--navy);
+  }
+
+  .closer-script{
+    font-family:'Caveat',cursive;
+    font-weight:700;
+    color:var(--navy-2);
+    font-size:clamp(1.15rem,2.8vw,1.5rem);
+    line-height:1.25;
+  }
+
+  .closer-stats{
+    display:flex;
+    gap:26px;
+    justify-content:center;
+  }
+
+  .closer-stat{
+    text-align:center;
+  }
+
+  .closer-stat .ico{
+    color:var(--navy);
+    font-size:1.2rem;
+    margin-bottom:4px;
+  }
+
+  .closer-stat span{
+    display:block;
+    font-size:0.62rem;
+    letter-spacing:.05em;
+    font-weight:800;
+    color:var(--navy);
+    text-transform:uppercase;
+  }
+
+  .closer-cta{
+    text-align:center;
+  }
+
+
+  /* FOOTER */
+
+  footer{
+    background:var(--navy);
+    color:rgba(255,255,255,.85);
+    padding:48px 0 26px;
+  }
+
+  .footer-top{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:26px;
+    align-items:flex-start;
+    padding-bottom:28px;
+    border-bottom:1px solid rgba(255,255,255,.15);
+  }
+
+  .footer-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px 22px;
+  }
+
+  .footer-nav a{
+    font-size:0.82rem;
+    text-decoration:none;
+    color:rgba(255,255,255,.8);
+  }
+
+  .footer-nav a:hover{
+    color:#fff;
+  }
+
+  .footer-social a{
+    color:#fff;
+    font-size:1rem;
+    text-decoration:none;
+    border:1px solid rgba(255,255,255,.4);
+    border-radius:50%;
+    width:30px;
+    height:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .footer-bottom{
+    padding-top:22px;
+    font-size:0.76rem;
+    color:rgba(255,255,255,.55);
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 18px;
+    justify-content:space-between;
+  }
+
+  .footer-legal a{
+    color:rgba(255,255,255,.55);
+    text-decoration:none;
+    margin-right:14px;
+  }
+
+  .footer-legal a:hover{
+    color:#fff;
+  }
+
+  .refund-note{
+    margin-top:16px;
+    font-size:0.74rem;
+    color:rgba(255,255,255,.48);
+    max-width:840px;
+    line-height:1.6;
+  }
+
+  .support-line{
+    margin-top:12px;
+    font-size:0.76rem;
+    color:rgba(255,255,255,.55);
+  }
+
+  .support-line a{
+    color:rgba(255,255,255,.75);
+  }
+
+
+  @media(max-width:640px){
+
+    .wrap{
+      padding:0 22px;
+    }
+
+    .hero-copy{
+      padding:36px 22px 28px;
+    }
+
+    .hero-copy h1{
+      font-size:1.85rem;
+    }
+
+    .hero-media{
+      min-height:280px;
+    }
+
+    .not-alone{
+      padding:48px 0;
+    }
+
+    .how{
+      padding:40px 0 32px;
+    }
+
+    .pricing-band{
+      padding:32px 0;
+    }
+
+    .why-band{
+      padding:32px 0;
+    }
+
+    section,
+    .banner,
+    .linkcards{
+      padding-top:48px;
+      padding-bottom:48px;
+    }
+  }
+
 </style>
 </head>
 
+
 <body>
 
+
 <header>
+
   <input type="checkbox" id="nav-check">
+
   <div class="wrap nav-row">
+
     <a class="logo" href="https://businessbrandintelligence.com/">
-      <span class="logo-mark">B<span>&amp;</span>BI</span>
+
+      <span class="logo-mark">
+        B<span>&amp;</span>BI
+      </span>
+
       <span class="logo-text">
         <strong>Business &amp; Brand Intelligence</strong>
         <small>Clarity today. A stronger tomorrow.</small>
       </span>
+
     </a>
+
+
     <nav class="primary">
-      <a href="https://businessbrandintelligence.com/" class="active">Home</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="https://businessbrandintelligence.com/client-results.html">Client Results</a>
-      <a href="https://businessbrandintelligence.com/insights.html">Business Insights</a>
-      <a href="https://businessbrandintelligence.com/founder.html">Note from Founder</a>
-      <a href="#about">About</a>
+
+      <a
+        href="https://businessbrandintelligence.com/"
+        class="active"
+      >
+        Home
+      </a>
+
+      <a href="#how-it-works">
+        How It Works
+      </a>
+
+      <a href="https://businessbrandintelligence.com/client-results.html">
+        Client Results
+      </a>
+
+      <a href="https://businessbrandintelligence.com/insights.html">
+        Business Insights
+      </a>
+
+      <a href="https://businessbrandintelligence.com/founder.html">
+        Note from Founder
+      </a>
+
+      <a href="#about">
+        About
+      </a>
+
     </nav>
-    <a class="btn nav-cta" href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00" onclick="gtag('event','diagnostic_checkout_click',{'link_location':'home_nav'});"><span class="long">Get Your Diagnostic</span><span aria-hidden="true">→</span></a>
-    <label class="menu-toggle" for="nav-check" aria-label="Toggle menu"><span></span></label>
+
+
+    <a
+      class="btn nav-cta"
+      href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00"
+      onclick="gtag('event','diagnostic_checkout_click',{'link_location':'home_nav'});"
+    >
+
+      <span class="long">
+        Get Your Diagnostic
+      </span>
+
+      <span aria-hidden="true">
+        →
+      </span>
+
+    </a>
+
+
+    <label
+      class="menu-toggle"
+      for="nav-check"
+      aria-label="Toggle menu"
+    >
+      <span></span>
+    </label>
+
   </div>
+
 </header>
 
+
 <!-- HERO -->
+
 <section class="hero">
+
   <div class="hero-grid">
+
     <div class="hero-copy">
-      <div class="hero-eyebrow">Business Optimization Diagnostics for Small Business</div>
-      <h1><span class="navy-line">Small Business</span><span class="rust-line">Still Matters.</span></h1>
-      <div class="lead">
-        <p>Bigger businesses have larger budgets, bigger teams, more data, more technology, and more room to make mistakes.</p>
-        <p>Meanwhile, costs are rising. Social media keeps demanding more of our time. Customer expectations keep changing. Technology keeps evolving. And now artificial intelligence is changing how people work and how businesses operate.</p>
-        <p>For us as small-business owners, the challenge is figuring out what actually matters for our business when our time, money, and resources are not unlimited.</p>
-        <p>We started because we wanted to create something of our own.</p>
-        <p>To live a dream.<br>To build financial freedom.<br>To leave something meaningful for our families.<br>To support our communities.<br>To create a future that looks different from the one we started with.</p>
-        <p>And somewhere in the middle of all this change, we can find ourselves asking some very real questions:</p>
-        <p>Where do I go from here?<br>What do I actually need to do?<br>Am I still relevant?<br>Can I compete?<br>How do I move forward?</p>
+
+      <div class="hero-eyebrow">
+        Business Optimization Diagnostics for Small Business
       </div>
-      <p class="bold">Business &amp; Brand Intelligence helps small-business owners identify what is actually holding their business back before they spend more money trying to fix the wrong thing.</p>
-      <a class="btn" href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00" onclick="gtag('event','diagnostic_checkout_click',{'link_location':'home_hero'});">Get Your Business Diagnostic →</a>
-      <div class="tagline">CLARITY TODAY. A STRONGER TOMORROW.</div>
+
+      <h1>
+
+        <span class="navy-line">
+          Small Business
+        </span>
+
+        <span class="rust-line">
+          Still Matters.
+        </span>
+
+      </h1>
+
+
+      <div class="lead">
+
+        <p>
+          Bigger businesses have larger budgets, bigger teams, more data,
+          more technology, and more room to make mistakes.
+        </p>
+
+        <p>
+          Meanwhile, costs are rising. Social media keeps demanding more of
+          our time. Customer expectations keep changing. Technology keeps
+          evolving. And now artificial intelligence is changing how people
+          work and how businesses operate.
+        </p>
+
+        <p>
+          For us as small-business owners, the challenge is figuring out
+          what actually matters for our business when our time, money,
+          and resources are not unlimited.
+        </p>
+
+        <p>
+          We started because we wanted to create something of our own.
+        </p>
+
+        <p>
+          To live a dream.<br>
+          To build financial freedom.<br>
+          To leave something meaningful for our families.<br>
+          To support our communities.<br>
+          To create a future that looks different from the one we started with.
+        </p>
+
+        <p>
+          And somewhere in the middle of all this change, we can find
+          ourselves asking some very real questions:
+        </p>
+
+        <p>
+          Where do I go from here?<br>
+          What do I actually need to do?<br>
+          Am I still relevant?<br>
+          Can I compete?<br>
+          How do I move forward?
+        </p>
+
+      </div>
+
+
+      <p class="bold">
+        Business &amp; Brand Intelligence helps small-business owners identify
+        what is actually holding their business back before they spend more money
+        trying to fix the wrong thing.
+      </p>
+
+
+      <a
+        class="btn"
+        href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00"
+        onclick="gtag('event','diagnostic_checkout_click',{'link_location':'home_hero'});"
+      >
+        Get Your Business Diagnostic →
+      </a>
+
+
+      <div class="tagline">
+        CLARITY TODAY. A STRONGER TOMORROW.
+      </div>
+
     </div>
+
+
     <div class="hero-media">
-      <img src="assets/bbi-hero.png" alt="Small business community alongside a modern corporate skyline">
-      <span class="signword">Local Businesses<br>Build Stronger<br>Communities</span>
-      <span class="cloudword cw-1">Bigger<br>Budgets</span>
-      <span class="cloudword cw-2">More<br>Data</span>
-      <span class="cloudword cw-3">Larger<br>Teams</span>
-      <span class="cloudword cw-4">More<br>Technology</span>
-      <span class="cloudword cw-5">AI<br>Everywhere</span>
-      <span class="cloudword cw-6">Greater<br>Capacity</span>
-      <span class="cloudword cw-7">Faster<br>Decisions</span>
-      <span class="cloudword cw-8">Global<br>Reach</span>
+
+      <img
+        src="assets/bbi-hero.png"
+        alt="Small business community alongside a modern corporate skyline"
+      >
+
+      <span class="signword">
+        Local Businesses<br>
+        Build Stronger<br>
+        Communities
+      </span>
+
+      <span class="cloudword cw-1">
+        Bigger<br>Budgets
+      </span>
+
+      <span class="cloudword cw-2">
+        More<br>Data
+      </span>
+
+      <span class="cloudword cw-3">
+        Larger<br>Teams
+      </span>
+
+      <span class="cloudword cw-4">
+        More<br>Technology
+      </span>
+
+      <span class="cloudword cw-5">
+        AI<br>Everywhere
+      </span>
+
+      <span class="cloudword cw-6">
+        Greater<br>Capacity
+      </span>
+
+      <span class="cloudword cw-7">
+        Faster<br>Decisions
+      </span>
+
+      <span class="cloudword cw-8">
+        Global<br>Reach
+      </span>
+
     </div>
+
   </div>
+
 </section>
+
 
 <!-- REASONS -->
+
 <div class="reasons">
+
+
   <div class="reason-tile">
+
     <div class="reason-photo">
-      <img src="assets/bbi-parents.png" alt="Parent building a business">
-      <div class="reason-quote"><p>Building a<br>better future<br>for my family.</p></div>
+
+      <img
+        src="assets/bbi-parents.png"
+        alt="Parent building a business"
+      >
+
+      <div class="reason-quote">
+        <p>
+          Building a<br>
+          better future<br>
+          for my family.
+        </p>
+      </div>
+
     </div>
-    <div class="reason-label"><span>PARENTS</span></div>
+
+    <div class="reason-label">
+      <span>PARENTS</span>
+    </div>
+
   </div>
+
+
   <div class="reason-tile">
+
     <div class="reason-photo">
-      <img src="assets/bbi-retirees.png" alt="Retiree creating a new business opportunity">
-      <div class="reason-quote"><p>Turning<br>my experience into<br>a new opportunity.</p></div>
+
+      <img
+        src="assets/bbi-retirees.png"
+        alt="Retiree creating a new business opportunity"
+      >
+
+      <div class="reason-quote">
+        <p>
+          Turning<br>
+          my experience into<br>
+          a new opportunity.
+        </p>
+      </div>
+
     </div>
-    <div class="reason-label"><span>RETIREES</span></div>
+
+    <div class="reason-label">
+      <span>RETIREES</span>
+    </div>
+
   </div>
+
+
   <div class="reason-tile">
+
     <div class="reason-photo">
-      <img src="assets/bbi-dreamers.png" alt="Business owner pursuing a dream">
-      <div class="reason-quote"><p>Finally doing<br>what I&rsquo;ve always<br>wanted to do.</p></div>
+
+      <img
+        src="assets/bbi-dreamers.png"
+        alt="Business owner pursuing a dream"
+      >
+
+      <div class="reason-quote">
+        <p>
+          Finally doing<br>
+          what I&rsquo;ve always<br>
+          wanted to do.
+        </p>
+      </div>
+
     </div>
-    <div class="reason-label"><span>DREAMERS</span></div>
+
+    <div class="reason-label">
+      <span>DREAMERS</span>
+    </div>
+
   </div>
+
+
   <div class="reason-tile">
+
     <div class="reason-photo">
-      <img src="assets/bbi-young-entrepreneurs.png" alt="Young entrepreneur">
-      <div class="reason-quote"><p>Turning my ideas<br>into something<br>of my own.</p></div>
+
+      <img
+        src="assets/bbi-young-entrepreneurs.png"
+        alt="Young entrepreneur"
+      >
+
+      <div class="reason-quote">
+        <p>
+          Turning my ideas<br>
+          into something<br>
+          of my own.
+        </p>
+      </div>
+
     </div>
-    <div class="reason-label"><span>YOUNG ENTREPRENEURS</span></div>
+
+    <div class="reason-label">
+      <span>YOUNG ENTREPRENEURS</span>
+    </div>
+
   </div>
+
+
   <div class="reason-tile">
+
     <div class="reason-photo">
-      <img src="assets/bbi-new-chapters.png" alt="Business owner creating a new chapter">
-      <div class="reason-quote"><p>Creating<br>my next chapter.</p></div>
+
+      <img
+        src="assets/bbi-new-chapters.png"
+        alt="Business owner creating a new chapter"
+      >
+
+      <div class="reason-quote">
+        <p>
+          Creating<br>
+          my next chapter.
+        </p>
+      </div>
+
     </div>
-    <div class="reason-label"><span>NEW CHAPTERS</span></div>
+
+    <div class="reason-label">
+      <span>NEW CHAPTERS</span>
+    </div>
+
   </div>
+
+
   <div class="reason-tile">
+
     <div class="reason-photo">
-      <img src="assets/bbi-community-builders.png" alt="Community business owner">
-      <div class="reason-quote"><p>Strengthening<br>the community<br>I call home.</p></div>
+
+      <img
+        src="assets/bbi-community-builders.png"
+        alt="Community business owner"
+      >
+
+      <div class="reason-quote">
+        <p>
+          Strengthening<br>
+          the community<br>
+          I call home.
+        </p>
+      </div>
+
     </div>
-    <div class="reason-label"><span>COMMUNITY BUILDERS</span></div>
+
+    <div class="reason-label">
+      <span>COMMUNITY BUILDERS</span>
+    </div>
+
   </div>
+
+
 </div>
 
+
 <!-- YOU'RE NOT ALONE -->
-<section class="not-alone" id="client-results">
+
+<section
+  class="not-alone"
+  id="client-results"
+>
+
   <div class="wrap split-two">
+
     <div class="founder-side">
-      <h2>You&rsquo;re Not Alone.</h2>
+
+      <h2>
+        You&rsquo;re Not Alone.
+      </h2>
+
       <div class="founder-panel">
-        <p class="lead">I&rsquo;ve been that business owner.</p>
-        <p>I&rsquo;ve tried building businesses on my own. I&rsquo;ve spent money I really didn&rsquo;t have to waste on things I hoped would finally make the difference, without truly knowing whether I was fixing the right problem.</p>
-        <p>And I know how disheartening that can become.</p>
-        <p>Because eventually, the doubt starts creeping in:</p>
+
+        <p class="lead">
+          I&rsquo;ve been that business owner.
+        </p>
+
+        <p>
+          I&rsquo;ve tried building businesses on my own. I&rsquo;ve spent money
+          I really didn&rsquo;t have to waste on things I hoped would finally
+          make the difference, without truly knowing whether I was fixing
+          the right problem.
+        </p>
+
+        <p>
+          And I know how disheartening that can become.
+        </p>
+
+        <p>
+          Because eventually, the doubt starts creeping in:
+        </p>
+
+
         <div class="doubt-block">
+
           <ul class="doubt-list">
-            <li>Is my idea just not good enough?</li>
-            <li>Is my product the problem?</li>
-            <li>Do people even want what I&rsquo;ve created?</li>
+
+            <li>
+              Is my idea just not good enough?
+            </li>
+
+            <li>
+              Is my product the problem?
+            </li>
+
+            <li>
+              Do people even want what I&rsquo;ve created?
+            </li>
+
           </ul>
+
         </div>
-        <p>And when you care deeply about what you&rsquo;re building, those questions can start to feel personal.</p>
-        <p>That is one of the reasons I built Business &amp; Brand Intelligence.</p>
-        <p>I wanted business owners to have a way to step back, look at the evidence, and understand what is actually happening before spending more money, more time, and more energy trying to fix the wrong thing.</p>
+
+
+        <p>
+          And when you care deeply about what you&rsquo;re building,
+          those questions can start to feel personal.
+        </p>
+
+        <p>
+          That is one of the reasons I built Business &amp; Brand Intelligence.
+        </p>
+
+        <p>
+          I wanted business owners to have a way to step back, look at the evidence,
+          and understand what is actually happening before spending more money,
+          more time, and more energy trying to fix the wrong thing.
+        </p>
+
+
         <div class="founder-sign">
+
           <div class="sign-rule"></div>
-          <div class="name">Tracy</div>
-          <div class="role">FOUNDER<br>BUSINESS &amp; BRAND INTELLIGENCE</div>
-        </div>
-        <a class="founder-link" href="https://businessbrandintelligence.com/founder.html">Read my full story &rarr;</a>
-      </div>
-    </div>
-    <div class="col-divider"></div>
-    <div class="testi-side">
-      <div class="testi-card" id="testi-carousel" role="region" aria-roledescription="carousel" aria-label="Client testimonials">
-        <h3>What Clients Are Saying</h3>
-        <div class="testi-viewport">
-          <div class="testi-track">
-            <figure class="testi-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
-              <div class="mark">&ldquo;</div>
-              <blockquote>
-                <p>Her work gave VHM a useful framework for strengthening accountability, delegation, and organizational structure as we continue to grow.</p>
-                <p>I would highly recommend her to nonprofit leaders and small organizations that need an objective outside perspective and practical guidance for their next stage of development.</p>
-              </blockquote>
-              <figcaption class="attrib"><strong>Chau Thuy</strong>Vietnamese Heritage Museum</figcaption>
-              <a class="testi-more" href="https://businessbrandintelligence.com/client-results.html#chau-thuy">Read the full testimonial &rarr;</a>
-            </figure>
-            <figure class="testi-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
-              <div class="mark">&ldquo;</div>
-              <blockquote>
-                <p>I had been open for months and was struggling to convert visitors into sales. I didn&rsquo;t want to waste any more time or money on ads and promotions if that wasn&rsquo;t actually the problem. The Business Optimization Diagnostic helped me better understand what could be holding the business back and gave me a clearer path forward without wasting more time guessing.</p>
-              </blockquote>
-              <figcaption class="attrib"><strong>Founder, Love Little Me</strong>Inner-Child Healing Brand</figcaption>
-              <a class="testi-more" href="https://businessbrandintelligence.com/client-results.html#love-little-me">See all client results &rarr;</a>
-            </figure>
-            <figure class="testi-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
-              <div class="mark">&ldquo;</div>
-              <blockquote>
-                <p>This diagnostic shined a light on the fact that I am an actual business owner, not only a cosmetologist. Tracy connected the issues, explained which ones needed attention first and why, and gave me a 30/60/90-Day Action Plan that broke a lot of concerns into manageable steps. It was personalized and based on my real business, not generic advice.</p>
-              </blockquote>
-              <figcaption class="attrib"><strong>Huong</strong>Hairstylist &amp; Salon Owner, Orange County, CA</figcaption>
-              <a class="testi-more" href="https://businessbrandintelligence.com/client-results.html#huong">Read the full testimonial &rarr;</a>
-            </figure>
+
+          <div class="name">
+            Tracy
           </div>
+
+          <div class="role">
+            FOUNDER<br>
+            BUSINESS &amp; BRAND INTELLIGENCE
+          </div>
+
         </div>
-        <div class="testi-controls">
-          <button type="button" class="testi-arrow testi-prev" aria-label="Previous testimonial">&larr;</button>
-          <div class="testi-dots" role="tablist" aria-label="Choose testimonial"></div>
-          <button type="button" class="testi-arrow testi-next" aria-label="Next testimonial">&rarr;</button>
-        </div>
+
+
+        <a
+          class="founder-link"
+          href="https://businessbrandintelligence.com/founder.html"
+        >
+          Read my full story &rarr;
+        </a>
+
       </div>
+
     </div>
+
+
+    <div class="col-divider"></div>
+
+
+    <div class="testi-side">
+
+      <div
+        class="testi-card"
+        id="testi-carousel"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="Client testimonials"
+      >
+
+        <h3>
+          What Clients Are Saying
+        </h3>
+
+
+        <div class="testi-viewport">
+
+          <div class="testi-track">
+
+
+            <figure
+              class="testi-slide"
+              role="group"
+              aria-roledescription="slide"
+              aria-label="1 of 3"
+            >
+
+              <div class="mark">
+                &ldquo;
+              </div>
+
+              <blockquote>
+
+                <p>
+                  Her work gave VHM a useful framework for strengthening
+                  accountability, delegation, and organizational structure
+                  as we continue to grow.
+                </p>
+
+                <p>
+                  I would highly recommend her to nonprofit leaders and small
+                  organizations that need an objective outside perspective
+                  and practical guidance for their next stage of development.
+                </p>
+
+              </blockquote>
+
+              <figcaption class="attrib">
+
+                <strong>
+                  Chau Thuy
+                </strong>
+
+                Vietnamese Heritage Museum
+
+              </figcaption>
+
+              <a
+                class="testi-more"
+                href="https://businessbrandintelligence.com/client-results.html#chau-thuy"
+              >
+                Read the full testimonial &rarr;
+              </a>
+
+            </figure>
+
+
+            <figure
+              class="testi-slide"
+              role="group"
+              aria-roledescription="slide"
+              aria-label="2 of 3"
+            >
+
+              <div class="mark">
+                &ldquo;
+              </div>
+
+              <blockquote>
+
+                <p>
+                  I had been open for months and was struggling to convert visitors
+                  into sales. I didn&rsquo;t want to waste any more time or money
+                  on ads and promotions if that wasn&rsquo;t actually the problem.
+                  The Business Optimization Diagnostic helped me better understand
+                  what could be holding the business back and gave me a clearer path
+                  forward without wasting more time guessing.
+                </p>
+
+              </blockquote>
+
+              <figcaption class="attrib">
+
+                <strong>
+                  Founder, Love Little Me
+                </strong>
+
+                Inner-Child Healing Brand
+
+              </figcaption>
+
+              <a
+                class="testi-more"
+                href="https://businessbrandintelligence.com/client-results.html#love-little-me"
+              >
+                See all client results &rarr;
+              </a>
+
+            </figure>
+
+
+            <figure
+              class="testi-slide"
+              role="group"
+              aria-roledescription="slide"
+              aria-label="3 of 3"
+            >
+
+              <div class="mark">
+                &ldquo;
+              </div>
+
+              <blockquote>
+
+                <p>
+                  This diagnostic shined a light on the fact that I am an actual
+                  business owner, not only a cosmetologist. Tracy connected the issues,
+                  explained which ones needed attention first and why, and gave me a
+                  30/60/90-Day Action Plan that broke a lot of concerns into manageable
+                  steps. It was personalized and based on my real business, not generic
+                  advice.
+                </p>
+
+              </blockquote>
+
+              <figcaption class="attrib">
+
+                <strong>
+                  Huong
+                </strong>
+
+                Hairstylist &amp; Salon Owner, Orange County, CA
+
+              </figcaption>
+
+              <a
+                class="testi-more"
+                href="https://businessbrandintelligence.com/client-results.html#huong"
+              >
+                Read the full testimonial &rarr;
+              </a>
+
+            </figure>
+
+
+          </div>
+
+        </div>
+
+
+        <div class="testi-controls">
+
+          <button
+            type="button"
+            class="testi-arrow testi-prev"
+            aria-label="Previous testimonial"
+          >
+            &larr;
+          </button>
+
+          <div
+            class="testi-dots"
+            role="tablist"
+            aria-label="Choose testimonial"
+          ></div>
+
+          <button
+            type="button"
+            class="testi-arrow testi-next"
+            aria-label="Next testimonial"
+          >
+            &rarr;
+          </button>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>
+
 
 <!-- COMPASS -->
-<section class="compass" id="about">
-  <img src="assets/bbi-compass.png" alt="Compass symbolizing business direction">
+
+<section
+  class="compass"
+  id="about"
+>
+
+  <img
+    src="assets/bbi-compass.png"
+    alt="Compass symbolizing business direction"
+  >
+
   <div class="wrap">
+
     <div class="compass-copy">
-      <h2>Think of us as<br>your compass.</h2>
-      <p>You tell us where you want to go.<br>We help you find a clearer path forward.</p>
+
+      <h2>
+        Think of us as<br>
+        your compass.
+      </h2>
+
+      <p>
+        You tell us where you want to go.<br>
+        We help you find a clearer path forward.
+      </p>
+
     </div>
+
   </div>
+
 </section>
+
 
 <!-- DARK BANNER -->
-<section class="banner" id="challenges">
+
+<section
+  class="banner"
+  id="challenges"
+>
+
   <div class="wrap">
+
     <div class="banner-top">
+
       <div>
-        <div class="banner-heading"><span class="rule"></span><h2>More Isn&rsquo;t Always the Answer.</h2></div>
-        <p class="sub">More advertising. More content. More software. More automation. More leads. More help. Before you add more, find out what the evidence inside your own business actually shows.</p>
+
+        <div class="banner-heading">
+
+          <span class="rule"></span>
+
+          <h2>
+            More Isn&rsquo;t Always the Answer.
+          </h2>
+
+        </div>
+
+        <p class="sub">
+          More advertising. More content. More software. More automation.
+          More leads. More help. Before you add more, find out what the
+          evidence inside your own business actually shows.
+        </p>
+
       </div>
+
+
       <div class="banner-divider"></div>
+
+
       <div class="banner-cta">
-        <a class="btn" href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00" onclick="gtag('event','diagnostic_checkout_click',{'link_location':'home_banner'});">Get Your Diagnostic →</a>
-        <small>A clearer view. A stronger next step.</small>
+
+        <a
+          class="btn"
+          href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00"
+          onclick="gtag('event','diagnostic_checkout_click',{'link_location':'home_banner'});"
+        >
+          Get Your Diagnostic →
+        </a>
+
+        <small>
+          A clearer view. A stronger next step.
+        </small>
+
       </div>
+
     </div>
+
+
     <div class="banner-points">
+
+
       <div class="banner-point">
+
         <span class="ico">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2"/></svg>
+
+          <svg
+            width="17"
+            height="17"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+            />
+
+            <circle
+              cx="12"
+              cy="12"
+              r="4"
+            />
+
+            <path d="M12 3v2M12 19v2"/>
+
+          </svg>
+
         </span>
-        <span>Understand what&rsquo;s really going on</span>
+
+        <span>
+          Understand what&rsquo;s really going on
+        </span>
+
       </div>
+
+
       <div class="banner-point">
+
         <span class="ico">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+
+          <svg
+            width="17"
+            height="17"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+            />
+
+            <path d="M12 7v5l3 3"/>
+
+          </svg>
+
         </span>
-        <span>Avoid wasting time and money</span>
+
+        <span>
+          Avoid wasting time and money
+        </span>
+
       </div>
+
+
       <div class="banner-point">
+
         <span class="ico">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>
+
+          <svg
+            width="17"
+            height="17"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+
+            <path d="M4 20V10M12 20V4M20 20v-7"/>
+
+          </svg>
+
         </span>
-        <span>Focus on what will make the biggest impact</span>
+
+        <span>
+          Focus on what will make the biggest impact
+        </span>
+
       </div>
+
+
       <div class="banner-point">
+
         <span class="ico">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+
+          <svg
+            width="17"
+            height="17"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+            />
+
+            <path d="M8 12l3 3 5-6"/>
+
+          </svg>
+
         </span>
-        <span>Make smarter, more confident decisions</span>
+
+        <span>
+          Make smarter, more confident decisions
+        </span>
+
       </div>
+
+
     </div>
+
   </div>
+
 </section>
+
 
 <!-- HOW IT WORKS -->
-<section class="how" id="how-it-works">
+
+<section
+  class="how"
+  id="how-it-works"
+>
+
   <div class="wrap">
+
     <div class="how-head">
-      <h2>How the Diagnostic Works</h2>
-      <p>A structured, evidence-based process designed to identify root causes and give you a clear plan.</p>
+
+      <h2>
+        How the Diagnostic Works
+      </h2>
+
+      <p>
+        A structured, evidence-based process designed to identify root causes
+        and give you a clear plan.
+      </p>
+
     </div>
+
 
     <div class="steps">
+
+
       <div class="step">
+
         <div class="step-top">
-          <div class="num">1</div>
-          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></span>
+
+          <div class="num">
+            1
+          </div>
+
+          <span class="ico">
+
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+
+              <path d="M7 3h7l4 4v14H7z"/>
+              <path d="M14 3v4h4M9 12h6M9 16h6"/>
+
+            </svg>
+
+          </span>
+
         </div>
-        <h3>Complete the Intake</h3>
-        <p>Tell us about your business, current situation, and goals.</p>
-        <span class="step-arrow">→</span>
+
+        <h3>
+          Complete the Intake
+        </h3>
+
+        <p>
+          Tell us about your business, current situation, and goals.
+        </p>
+
+        <span class="step-arrow">
+          →
+        </span>
+
       </div>
+
+
       <div class="step">
+
         <div class="step-top">
-          <div class="num">2</div>
-          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H9l-4 4V5z"/></svg></span>
+
+          <div class="num">
+            2
+          </div>
+
+          <span class="ico">
+
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+
+              <path d="M4 5h16v11H9l-4 4V5z"/>
+
+            </svg>
+
+          </span>
+
         </div>
-        <h3>60-Minute Interview</h3>
-        <p>We ask the right questions to get real evidence.</p>
-        <span class="step-arrow">→</span>
+
+        <h3>
+          60-Minute Interview
+        </h3>
+
+        <p>
+          We ask the right questions to get real evidence.
+        </p>
+
+        <span class="step-arrow">
+          →
+        </span>
+
       </div>
+
+
       <div class="step">
+
         <div class="step-top">
-          <div class="num">3</div>
-          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10" cy="10" r="6"/><path d="M20 20l-5.5-5.5"/></svg></span>
+
+          <div class="num">
+            3
+          </div>
+
+          <span class="ico">
+
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+
+              <circle
+                cx="10"
+                cy="10"
+                r="6"
+              />
+
+              <path d="M20 20l-5.5-5.5"/>
+
+            </svg>
+
+          </span>
+
         </div>
-        <h3>In-Depth Analysis</h3>
-        <p>We apply the B&amp;BI methodology to identify what&rsquo;s really holding you back.</p>
-        <span class="step-arrow">→</span>
+
+        <h3>
+          In-Depth Analysis
+        </h3>
+
+        <p>
+          We apply the B&amp;BI methodology to identify what&rsquo;s really
+          holding you back.
+        </p>
+
+        <span class="step-arrow">
+          →
+        </span>
+
       </div>
+
+
       <div class="step">
+
         <div class="step-top">
-          <div class="num">4</div>
-          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9 14l2 2 4-4"/></svg></span>
+
+          <div class="num">
+            4
+          </div>
+
+          <span class="ico">
+
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+
+              <path d="M7 3h7l4 4v14H7z"/>
+              <path d="M14 3v4h4"/>
+              <path d="M9 14l2 2 4-4"/>
+
+            </svg>
+
+          </span>
+
         </div>
-        <h3>Receive Your Report</h3>
-        <p>Get a clear, prioritized plan with practical next steps.</p>
-        <span class="step-arrow">→</span>
+
+        <h3>
+          Receive Your Report
+        </h3>
+
+        <p>
+          Get a clear, prioritized plan with practical next steps.
+        </p>
+
+        <span class="step-arrow">
+          →
+        </span>
+
       </div>
+
+
       <div class="step">
+
         <div class="step-top">
-          <div class="num">5</div>
-          <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3 2.5-5 6-5s6 2 6 5M15 14c2.7 0 5 1.6 5 4.5"/></svg></span>
+
+          <div class="num">
+            5
+          </div>
+
+          <span class="ico">
+
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+
+              <circle
+                cx="9"
+                cy="8"
+                r="3"
+              />
+
+              <circle
+                cx="17"
+                cy="9"
+                r="2.4"
+              />
+
+              <path d="M3 20c0-3 2.5-5 6-5s6 2 6 5M15 14c2.7 0 5 1.6 5 4.5"/>
+
+            </svg>
+
+          </span>
+
         </div>
-        <h3>30-Minute Review</h3>
-        <p>We walk through your findings and answer your questions.</p>
+
+        <h3>
+          30-Minute Review
+        </h3>
+
+        <p>
+          We walk through your findings and answer your questions.
+        </p>
+
       </div>
+
+
     </div>
+
   </div>
+
 </section>
+
+
+<!-- PRICING -->
 
 <section class="pricing-band">
+
   <div class="wrap">
+
     <div class="pricing">
+
       <div class="pricing-title">
-        <h3>Business Optimization Diagnostic</h3>
-        <div class="sub">One clear plan. Real answers. Smarter next steps.</div>
-        <div class="price">$297</div>
+
+        <h3>
+          Business Optimization Diagnostic
+        </h3>
+
+        <div class="sub">
+          One clear plan. Real answers. Smarter next steps.
+        </div>
+
+        <div class="price">
+          $297
+        </div>
+
       </div>
+
+
       <div class="pricing-list">
+
         <ul>
-          <li><span class="check">✓</span>Evidence-based analysis</li>
-          <li><span class="check">✓</span>3&ndash;5 key findings</li>
-          <li><span class="check">✓</span>Prioritized 90-day roadmap</li>
-          <li><span class="check">✓</span>30-minute review session</li>
-          <li><span class="check">✓</span>Optional 90-day reassessment</li>
+
+          <li>
+            <span class="check">✓</span>
+            Evidence-based analysis
+          </li>
+
+          <li>
+            <span class="check">✓</span>
+            3&ndash;5 key findings
+          </li>
+
+          <li>
+            <span class="check">✓</span>
+            Prioritized 90-day roadmap
+          </li>
+
+          <li>
+            <span class="check">✓</span>
+            30-minute review session
+          </li>
+
+          <li>
+            <span class="check">✓</span>
+            Optional 90-day reassessment
+          </li>
+
         </ul>
+
       </div>
+
+
       <div class="pricing-actions">
-        <a class="btn" href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00" onclick="gtag('event','diagnostic_checkout_click',{'link_location':'home_pricing'});">Get Your Diagnostic →</a>
-        <div class="foot">Know what to fix before you invest in the wrong solution.</div>
+
+        <a
+          class="btn"
+          href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00"
+          onclick="gtag('event','diagnostic_checkout_click',{'link_location':'home_pricing'});"
+        >
+          Get Your Diagnostic →
+        </a>
+
+        <div class="foot">
+          Know what to fix before you invest in the wrong solution.
+        </div>
+
       </div>
+
+
     </div>
+
   </div>
+
 </section>
+
+
+<!-- WHY B&BI -->
 
 <section class="why-band">
+
   <div class="wrap">
+
     <div class="badges">
+
+
       <div class="badge">
-        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></svg></div>
-        <h4>Independent &amp; Unbiased</h4>
-        <p>No software to sell. No tools to push.</p>
+
+        <div class="ico">
+
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+
+            <rect
+              x="4"
+              y="4"
+              width="16"
+              height="16"
+              rx="2"
+            />
+
+            <path d="M4 10h16M10 4v16"/>
+
+          </svg>
+
+        </div>
+
+        <h4>
+          Independent &amp; Unbiased
+        </h4>
+
+        <p>
+          No software to sell. No tools to push.
+        </p>
+
       </div>
+
+
       <div class="badge">
-        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg></div>
-        <h4>Methodology-Driven</h4>
-        <p>A structured, repeatable process.</p>
+
+        <div class="ico">
+
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+
+            <rect x="4" y="4" width="7" height="7"/>
+            <rect x="13" y="4" width="7" height="7"/>
+            <rect x="4" y="13" width="7" height="7"/>
+            <rect x="13" y="13" width="7" height="7"/>
+
+          </svg>
+
+        </div>
+
+        <h4>
+          Methodology-Driven
+        </h4>
+
+        <p>
+          A structured, repeatable process.
+        </p>
+
       </div>
+
+
       <div class="badge">
-        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3 2.5-5 6-5s6 2 6 5M15 14c2.7 0 5 1.6 5 4.5"/></svg></div>
-        <h4>Works Across Industries</h4>
-        <p>Same core methodology, customized insights.</p>
+
+        <div class="ico">
+
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+
+            <circle cx="9" cy="8" r="3"/>
+            <circle cx="17" cy="9" r="2.4"/>
+
+            <path d="M3 20c0-3 2.5-5 6-5s6 2 6 5M15 14c2.7 0 5 1.6 5 4.5"/>
+
+          </svg>
+
+        </div>
+
+        <h4>
+          Works Across Industries
+        </h4>
+
+        <p>
+          Same core methodology, customized insights.
+        </p>
+
       </div>
+
+
       <div class="badge">
-        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
-        <h4>Focused on Action</h4>
-        <p>So you can move forward with confidence.</p>
+
+        <div class="ico">
+
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+            />
+
+            <path d="M8 12l3 3 5-6"/>
+
+          </svg>
+
+        </div>
+
+        <h4>
+          Focused on Action
+        </h4>
+
+        <p>
+          So you can move forward with confidence.
+        </p>
+
       </div>
+
+
     </div>
+
   </div>
+
 </section>
+
 
 <!-- LINK CARDS -->
-<section class="linkcards" id="industries">
+
+<section
+  class="linkcards"
+  id="industries"
+>
+
   <div class="wrap">
+
     <div class="link-cards">
+
+
       <div class="link-card">
-        <div class="ico">▤</div>
-        <h4>Business Insights</h4>
-        <p>Practical articles, resources, and strategies for business owners.</p>
-        <a class="go" href="https://businessbrandintelligence.com/insights.html">View Business Insights →</a>
+
+        <div class="ico">
+          ▤
+        </div>
+
+        <h4>
+          Business Insights
+        </h4>
+
+        <p>
+          Practical articles, resources, and strategies for business owners.
+        </p>
+
+        <a
+          class="go"
+          href="https://businessbrandintelligence.com/insights.html"
+        >
+          View Business Insights →
+        </a>
+
       </div>
+
+
       <div class="link-card">
-        <div class="ico">●</div>
-        <h4>Note from Founder</h4>
-        <p>My why, my approach, and what you can expect.</p>
-        <a class="go" href="https://businessbrandintelligence.com/founder.html">Read the Founder&rsquo;s Note →</a>
+
+        <div class="ico">
+          ●
+        </div>
+
+        <h4>
+          Note from Founder
+        </h4>
+
+        <p>
+          My why, my approach, and what you can expect.
+        </p>
+
+        <a
+          class="go"
+          href="https://businessbrandintelligence.com/founder.html"
+        >
+          Read the Founder&rsquo;s Note →
+        </a>
+
       </div>
+
+
       <div class="link-card">
-        <div class="ico">◎</div>
-        <h4>Is the Diagnostic Right for You?</h4>
-        <p>See how the process works and what you receive before deciding whether the Business Optimization Diagnostic fits your needs.</p>
-        <a class="go" href="#how-it-works">See How the Diagnostic Works →</a>
+
+        <div class="ico">
+          ◎
+        </div>
+
+        <h4>
+          Is the Diagnostic Right for You?
+        </h4>
+
+        <p>
+          See how the process works and what you receive before deciding
+          whether the Business Optimization Diagnostic fits your needs.
+        </p>
+
+        <a
+          class="go"
+          href="#how-it-works"
+        >
+          See How the Diagnostic Works →
+        </a>
+
       </div>
+
+
       <div class="link-card">
-        <div class="ico">▥</div>
-        <h4>Client Results</h4>
-        <p>See how business owners are getting clarity and results.</p>
-        <a class="go" href="https://businessbrandintelligence.com/client-results.html">Read Client Stories →</a>
+
+        <div class="ico">
+          ▥
+        </div>
+
+        <h4>
+          Client Results
+        </h4>
+
+        <p>
+          See how business owners are getting clarity and results.
+        </p>
+
+        <a
+          class="go"
+          href="https://businessbrandintelligence.com/client-results.html"
+        >
+          Read Client Stories →
+        </a>
+
       </div>
+
+
     </div>
+
   </div>
+
 </section>
+
 
 <!-- LIGHT CLOSER BAR -->
+
 <section class="closer">
+
   <div class="wrap closer-row">
-    <a class="logo" href="https://businessbrandintelligence.com/">
-      <span class="logo-mark">B<span>&amp;</span>BI</span>
-      <span class="logo-text">
-        <strong>Business &amp; Brand Intelligence</strong>
-        <small>Real people. A stronger tomorrow.</small>
+
+    <a
+      class="logo"
+      href="https://businessbrandintelligence.com/"
+    >
+
+      <span class="logo-mark">
+        B<span>&amp;</span>BI
       </span>
+
+      <span class="logo-text">
+
+        <strong>
+          Business &amp; Brand Intelligence
+        </strong>
+
+        <small>
+          Real people. A stronger tomorrow.
+        </small>
+
+      </span>
+
     </a>
-    <div class="closer-script">Small Businesses Keep Communities,<br>Families and Futures Alive. &#9825;</div>
-    <div class="closer-stats">
-      <div class="closer-stat"><div class="ico">🌱</div><span>Stronger<br>Businesses</span></div>
-      <div class="closer-stat"><div class="ico">👥</div><span>Stronger<br>Communities</span></div>
-      <div class="closer-stat"><div class="ico">☀</div><span>A Brighter<br>Tomorrow</span></div>
+
+
+    <div class="closer-script">
+      Small Businesses Keep Communities,<br>
+      Families and Futures Alive. &#9825;
     </div>
-    <a class="btn" href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00" onclick="gtag('event','diagnostic_checkout_click',{'link_location':'home_closing'});">Get Your Diagnostic →</a>
+
+
+    <div class="closer-stats">
+
+
+      <div class="closer-stat">
+
+        <div class="ico">
+          🌱
+        </div>
+
+        <span>
+          Stronger<br>
+          Businesses
+        </span>
+
+      </div>
+
+
+      <div class="closer-stat">
+
+        <div class="ico">
+          👥
+        </div>
+
+        <span>
+          Stronger<br>
+          Communities
+        </span>
+
+      </div>
+
+
+      <div class="closer-stat">
+
+        <div class="ico">
+          ☀
+        </div>
+
+        <span>
+          A Brighter<br>
+          Tomorrow
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+    <a
+      class="btn"
+      href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00"
+      onclick="gtag('event','diagnostic_checkout_click',{'link_location':'home_closing'});"
+    >
+      Get Your Diagnostic →
+    </a>
+
+
   </div>
+
 </section>
 
+
 <!-- FOOTER -->
+
 <footer>
+
   <div class="wrap">
+
     <div class="footer-top">
-      <a class="logo" href="https://businessbrandintelligence.com/" style="text-decoration:none;">
-        <span class="logo-mark" style="color:#fff;">B<span style="color:#e4a468;">&amp;</span>BI</span>
-        <span class="logo-text">
-          <strong style="color:#fff;">Business &amp; Brand Intelligence</strong>
-          <small style="color:rgba(255,255,255,.6);">Clarity today. A stronger tomorrow.</small>
+
+
+      <a
+        class="logo"
+        href="https://businessbrandintelligence.com/"
+        style="text-decoration:none;"
+      >
+
+        <span
+          class="logo-mark"
+          style="color:#fff;"
+        >
+          B<span style="color:#e4a468;">&amp;</span>BI
         </span>
+
+        <span class="logo-text">
+
+          <strong style="color:#fff;">
+            Business &amp; Brand Intelligence
+          </strong>
+
+          <small style="color:rgba(255,255,255,.6);">
+            Clarity today. A stronger tomorrow.
+          </small>
+
+        </span>
+
       </a>
+
+
       <nav class="footer-nav">
-        <a href="https://businessbrandintelligence.com/">Home</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="https://businessbrandintelligence.com/client-results.html">Client Results</a>
-        <a href="https://businessbrandintelligence.com/insights.html">Business Insights</a>
-        <a href="https://businessbrandintelligence.com/founder.html">Note from Founder</a>
-        <a href="#about">About</a>
+
+        <a href="https://businessbrandintelligence.com/">
+          Home
+        </a>
+
+        <a href="#how-it-works">
+          How It Works
+        </a>
+
+        <a href="https://businessbrandintelligence.com/client-results.html">
+          Client Results
+        </a>
+
+        <a href="https://businessbrandintelligence.com/insights.html">
+          Business Insights
+        </a>
+
+        <a href="https://businessbrandintelligence.com/founder.html">
+          Note from Founder
+        </a>
+
+        <a href="#about">
+          About
+        </a>
+
       </nav>
+
+
       <div class="footer-social">
-        <a href="https://www.linkedin.com/in/tracyclinscales/" aria-label="LinkedIn">in</a>
+
+        <a
+          href="https://www.linkedin.com/in/tracyclinscales/"
+          aria-label="LinkedIn"
+        >
+          in
+        </a>
+
       </div>
+
+
     </div>
+
+
     <div class="footer-bottom">
-      <div>© 2026 Business &amp; Brand Intelligence. All rights reserved.</div>
-      <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#refund-policy">Refund &amp; Cancellation Policy</a>
+
+      <div>
+        © 2026 Business &amp; Brand Intelligence. All rights reserved.
       </div>
+
+
+      <div class="footer-legal">
+
+        <a href="https://businessbrandintelligence.com/privacy-policy.html">
+          Privacy Policy
+        </a>
+
+        <a href="https://businessbrandintelligence.com/terms-of-service.html">
+          Terms of Service
+        </a>
+
+        <a href="#refund-policy">
+          Refund &amp; Cancellation Policy
+        </a>
+
+      </div>
+
+
     </div>
-    <div class="refund-note" id="refund-policy">
-      <strong style="color:rgba(255,255,255,.7);">Refund &amp; Cancellation Policy:</strong> Full refunds are available only before the Business Intake is submitted. Once the Business Intake has been submitted, the diagnostic fee is non-refundable. Diagnostic interviews may be rescheduled with at least 24 hours&rsquo; notice. If Business &amp; Brand Intelligence needs to reschedule a session, a replacement appointment will be provided. Policy is subject to applicable law.
+
+
+    <div
+      class="refund-note"
+      id="refund-policy"
+    >
+
+      <strong style="color:rgba(255,255,255,.7);">
+        Refund &amp; Cancellation Policy:
+      </strong>
+
+      Full refunds are available only before the Business Intake is submitted.
+      Once the Business Intake has been submitted, the diagnostic fee is
+      non-refundable. Diagnostic interviews may be rescheduled with at least
+      24 hours&rsquo; notice. If Business &amp; Brand Intelligence needs to
+      reschedule a session, a replacement appointment will be provided.
+      Policy is subject to applicable law.
+
     </div>
-    <div class="support-line">Support: <a href="mailto:support@businessbrandintelligence.com">support@businessbrandintelligence.com</a></div>
+
+
+    <div class="support-line">
+
+      Support:
+
+      <a href="mailto:support@businessbrandintelligence.com">
+        support@businessbrandintelligence.com
+      </a>
+
+    </div>
+
+
   </div>
+
 </footer>
+
+
 <script>
+
 (function(){
-  var root=document.getElementById('testi-carousel'); if(!root) return;
+
+  var root=document.getElementById('testi-carousel');
+
+  if(!root) return;
+
+
   var track=root.querySelector('.testi-track');
+
   var slides=root.querySelectorAll('.testi-slide');
+
   var dotsWrap=root.querySelector('.testi-dots');
-  var n=slides.length, i=0, timer=null, paused=false, DELAY=8000;
-  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var n=slides.length,
+      i=0,
+      timer=null,
+      paused=false,
+      DELAY=8000;
+
+
+  var reduce=
+    window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+
   var dots=[];
-  for(var k=0;k<n;k++){(function(k){
-    var b=document.createElement('button'); b.type='button'; b.setAttribute('role','tab');
-    b.setAttribute('aria-label','Show testimonial '+(k+1));
-    b.addEventListener('click',function(){go(k);restart();});
-    dotsWrap.appendChild(b); dots.push(b);
-  })(k);}
-  function go(k){
-    i=(k+n)%n; track.style.transform='translateX(-'+(i*100)+'%)';
-    for(var d=0;d<n;d++){dots[d].setAttribute('aria-selected',d===i?'true':'false');
-      slides[d].setAttribute('aria-hidden',d===i?'false':'true');
-      var link=slides[d].querySelector('a'); if(link) link.tabIndex=d===i?0:-1;}
+
+
+  for(var k=0;k<n;k++){
+
+    (function(k){
+
+      var b=document.createElement('button');
+
+      b.type='button';
+
+      b.setAttribute('role','tab');
+
+      b.setAttribute(
+        'aria-label',
+        'Show testimonial '+(k+1)
+      );
+
+
+      b.addEventListener(
+        'click',
+        function(){
+
+          go(k);
+
+          restart();
+
+        }
+      );
+
+
+      dotsWrap.appendChild(b);
+
+      dots.push(b);
+
+    })(k);
+
   }
-  function start(){ if(reduce||paused||n<2) return; stop(); timer=setInterval(function(){go(i+1);},DELAY); }
-  function stop(){ if(timer){clearInterval(timer);timer=null;} }
-  function restart(){ stop(); start(); }
-  root.querySelector('.testi-prev').addEventListener('click',function(){go(i-1);restart();});
-  root.querySelector('.testi-next').addEventListener('click',function(){go(i+1);restart();});
-  root.addEventListener('mouseenter',function(){paused=true;stop();});
-  root.addEventListener('mouseleave',function(){paused=false;start();});
-  root.addEventListener('focusin',function(){paused=true;stop();});
-  root.addEventListener('focusout',function(){paused=false;start();});
+
+
+  function go(k){
+
+    i=(k+n)%n;
+
+    track.style.transform=
+      'translateX(-'+(i*100)+'%)';
+
+
+    for(var d=0;d<n;d++){
+
+      dots[d].setAttribute(
+        'aria-selected',
+        d===i?'true':'false'
+      );
+
+
+      slides[d].setAttribute(
+        'aria-hidden',
+        d===i?'false':'true'
+      );
+
+
+      var link=
+        slides[d].querySelector('a');
+
+
+      if(link){
+
+        link.tabIndex=
+          d===i?0:-1;
+
+      }
+
+    }
+
+  }
+
+
+  function start(){
+
+    if(reduce||paused||n<2) return;
+
+    stop();
+
+    timer=setInterval(
+      function(){
+
+        go(i+1);
+
+      },
+      DELAY
+    );
+
+  }
+
+
+  function stop(){
+
+    if(timer){
+
+      clearInterval(timer);
+
+      timer=null;
+
+    }
+
+  }
+
+
+  function restart(){
+
+    stop();
+
+    start();
+
+  }
+
+
+  root
+    .querySelector('.testi-prev')
+    .addEventListener(
+      'click',
+      function(){
+
+        go(i-1);
+
+        restart();
+
+      }
+    );
+
+
+  root
+    .querySelector('.testi-next')
+    .addEventListener(
+      'click',
+      function(){
+
+        go(i+1);
+
+        restart();
+
+      }
+    );
+
+
+  root.addEventListener(
+    'mouseenter',
+    function(){
+
+      paused=true;
+
+      stop();
+
+    }
+  );
+
+
+  root.addEventListener(
+    'mouseleave',
+    function(){
+
+      paused=false;
+
+      start();
+
+    }
+  );
+
+
+  root.addEventListener(
+    'focusin',
+    function(){
+
+      paused=true;
+
+      stop();
+
+    }
+  );
+
+
+  root.addEventListener(
+    'focusout',
+    function(){
+
+      paused=false;
+
+      start();
+
+    }
+  );
+
+
   var x0=null;
-  root.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;paused=true;stop();},{passive:true});
-  root.addEventListener('touchend',function(e){
-    if(x0!==null){var dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>40) go(dx<0?i+1:i-1);} x0=null;
-  },{passive:true});
-  go(0); start();
+
+
+  root.addEventListener(
+    'touchstart',
+    function(e){
+
+      x0=
+        e.touches[0].clientX;
+
+      paused=true;
+
+      stop();
+
+    },
+    {
+      passive:true
+    }
+  );
+
+
+  root.addEventListener(
+    'touchend',
+    function(e){
+
+      if(x0!==null){
+
+        var dx=
+          e.changedTouches[0].clientX-x0;
+
+
+        if(Math.abs(dx)>40){
+
+          go(
+            dx<0
+              ?i+1
+              :i-1
+          );
+
+        }
+
+      }
+
+
+      x0=null;
+
+    },
+    {
+      passive:true
+    }
+  );
+
+
+  go(0);
+
+  start();
+
 })();
+
 </script>
+
 
 </body>
 </html>

@@ -51,22 +51,44 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://businessbrandintelligence.com/founder.html#tracy-clinscales",
-  "name": "Tracy Clinscales",
-  "jobTitle": "Founder",
-  "url": "https://businessbrandintelligence.com/founder.html",
-  "image": "https://businessbrandintelligence.com/tracy-founder.png",
-  "worksFor": {
-    "@type": "Organization",
-    "@id": "https://businessbrandintelligence.com/#organization",
-    "name": "Business & Brand Intelligence",
-    "url": "https://businessbrandintelligence.com/"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/in/tracyclinscales/"
-  ],
-  "description": "Founder of Business & Brand Intelligence, which provides evidence-based Business Optimization Diagnostics for business owners."
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://businessbrandintelligence.com/founder.html#tracy-clinscales",
+      "name": "Tracy Clinscales",
+      "jobTitle": "Founder",
+      "url": "https://businessbrandintelligence.com/founder.html",
+      "image": "https://businessbrandintelligence.com/tracy-founder.png",
+      "worksFor": {
+        "@type": "Organization",
+        "@id": "https://businessbrandintelligence.com/#organization",
+        "name": "Business & Brand Intelligence",
+        "url": "https://businessbrandintelligence.com/"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/tracyclinscales/"
+      ],
+      "description": "Founder of Business & Brand Intelligence, which provides evidence-based Business Optimization Diagnostics for business owners."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://businessbrandintelligence.com/founder.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Business & Brand Intelligence",
+          "item": "https://businessbrandintelligence.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Founder",
+          "item": "https://businessbrandintelligence.com/founder.html"
+        }
+      ]
+    }
+  ]
 }
 </script>
 

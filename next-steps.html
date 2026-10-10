@@ -85,6 +85,11 @@
       text-align: right;
     }
 
+    .support a {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
     .hero {
       padding: 62px 0 46px;
     }
@@ -254,6 +259,11 @@
       font-size: 15px;
     }
 
+    .panel a {
+      color: var(--teal);
+      font-weight: 700;
+    }
+
     .footer {
       padding: 36px 0 44px;
       border-top: 1px solid #d7d1c5;
@@ -263,6 +273,15 @@
 
     .footer strong {
       color: var(--navy);
+    }
+
+    .footer-links {
+      margin-top: 12px;
+    }
+
+    .footer-links a {
+      color: var(--teal);
+      font-weight: 700;
     }
 
     @media (max-width: 820px) {
@@ -301,7 +320,9 @@
 
       <div class="support">
         Questions?<br>
-        <strong>support@businessbrandintelligence.com</strong>
+        <a href="mailto:support@businessbrandintelligence.com">
+          support@businessbrandintelligence.com
+        </a>
       </div>
     </div>
   </header>
@@ -384,13 +405,20 @@
             inside your business.
           </p>
 
-          <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSf99EwMHRuTYdunqteqSBphPlWYF5oF4P3DRufUl3D_YiApcw/viewform" onclick="gtag('event','intake_form_click',{'link_location':'next_steps_button'});">
+          <a
+            class="button"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSf99EwMHRuTYdunqteqSBphPlWYF5oF4P3DRufUl3D_YiApcw/viewform"
+            onclick="gtag('event','intake_form_click',{'link_location':'next_steps_button'});"
+          >
             Complete Your Business Intake
           </a>
 
           <div class="fallback">
             If the button does not open, use this
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf99EwMHRuTYdunqteqSBphPlWYF5oF4P3DRufUl3D_YiApcw/viewform" onclick="gtag('event','intake_form_click',{'link_location':'next_steps_fallback'});">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf99EwMHRuTYdunqteqSBphPlWYF5oF4P3DRufUl3D_YiApcw/viewform"
+              onclick="gtag('event','intake_form_click',{'link_location':'next_steps_fallback'});"
+            >
               direct intake link
             </a>.
           </div>
@@ -412,7 +440,10 @@
           <div class="panel">
             <h3>Need help before you begin?</h3>
             <p>
-              Email <strong>support@businessbrandintelligence.com</strong>
+              Email
+              <a href="mailto:support@businessbrandintelligence.com">
+                support@businessbrandintelligence.com
+              </a>
               with questions about the intake or diagnostic process.
             </p>
           </div>
@@ -426,8 +457,28 @@
 
   <footer class="footer">
     <div class="container">
+
       <strong>Business &amp; Brand Intelligence</strong><br>
       Business Optimization Diagnostics &amp; Intelligence
+
+      <div class="footer-links">
+        <a href="https://businessbrandintelligence.com/privacy-policy.html">
+          Privacy Policy
+        </a>
+
+        &nbsp; · &nbsp;
+
+        <a href="https://businessbrandintelligence.com/terms-of-service.html">
+          Terms of Service
+        </a>
+
+        &nbsp; · &nbsp;
+
+        <a href="mailto:support@businessbrandintelligence.com">
+          Support
+        </a>
+      </div>
+
     </div>
   </footer>
 

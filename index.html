@@ -412,156 +412,138 @@
   }
 
 
-  /* HERO */
+  /* ===== REDESIGN: rhythm of distinct bands ===== */
+  :root{--gold:#f7b733;--gold-2:#eba824;--navy-night:#0a1c36;--sand:#fbf6ee;--sand-2:#f3ece0;}
+  .btn-gold{display:inline-block;background:var(--gold);color:#0a2342;font-family:'Inter',Arial,sans-serif;font-weight:700;font-size:1.05rem;padding:16px 30px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(247,183,51,.35);transition:transform .18s ease,box-shadow .18s ease,background .18s ease;}
+  .btn-gold:hover{background:var(--gold-2);transform:translateY(-2px);box-shadow:0 10px 24px rgba(247,183,51,.45);}
+  .btn-gold:focus-visible,.hero-cta:focus-visible{outline:3px solid #0a2342;outline-offset:3px;}
 
-  .hero{
-    background:#fff;
+  /* HERO — immersive photo, copy on the left */
+  .hero{background:var(--sand);position:relative;overflow:hidden;}
+  .hero-grid{position:relative;display:flex;flex-direction:column;}
+  .hero-copy{position:relative;z-index:2;padding:40px 22px 24px;max-width:680px;}
+  .hero-eyebrow{font-family:'Inter',Arial,sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--rust);margin:0 0 14px;display:flex;align-items:center;gap:12px;}
+  .hero-eyebrow::before{content:"";width:34px;height:3px;border-radius:2px;background:var(--gold);}
+  .hero-copy h1{font-size:clamp(2.7rem,10vw,5rem);line-height:1.0;letter-spacing:-.015em;margin:0 0 22px;}
+  .hero-copy h1 .navy-line{color:#0a2342;display:block;}
+  .hero-copy h1 .rust-line{color:var(--rust);display:block;}
+  .hero-sub{font-family:'Inter',Arial,sans-serif;font-weight:700;color:#0a2342;font-size:clamp(1.1rem,3.8vw,1.6rem);line-height:1.25;margin:0 0 14px;max-width:24em;}
+  .hero-text{font-family:'Lora',Georgia,serif;font-size:clamp(1.02rem,3.3vw,1.25rem);line-height:1.55;color:#1c2b3a;margin:0 0 26px;max-width:32em;}
+  .hero-cta{display:inline-block;background:var(--gold);color:#0a2342;font-family:'Inter',Arial,sans-serif;font-weight:700;font-size:1.08rem;padding:17px 32px;border-radius:999px;text-decoration:none;box-shadow:0 8px 22px rgba(247,183,51,.4);transition:transform .18s ease,box-shadow .18s ease;align-self:flex-start;}
+  .hero-cta:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(247,183,51,.5);}
+  .hero-checks{list-style:none;padding:0;margin:26px 0 0;display:flex;flex-wrap:wrap;gap:12px 26px;font-family:'Inter',Arial,sans-serif;font-size:0.92rem;font-weight:500;color:#0a2342;}
+  .hero-checks li{display:flex;align-items:center;gap:9px;}
+  .hero-checks li::before{content:"";flex:none;width:24px;height:24px;border-radius:50%;background:var(--rust) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/62% no-repeat;}
+  .hero-media{position:relative;z-index:1;aspect-ratio:4/3;margin-top:6px;}
+  .hero-media img{width:100%;height:100%;object-fit:cover;object-position:96% center;display:block;}
+  .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,var(--sand) 0%,rgba(251,246,238,0) 30%);}
+  @media(min-width:900px){
+    .hero-grid{display:block;min-height:clamp(560px,46vw,700px);}
+    .hero-copy{padding:clamp(56px,6vw,96px) 0 clamp(70px,7vw,110px);margin-left:max(24px,calc((100vw - 1180px)/2));max-width:none;width:min(640px,54vw);}
+    .hero-media{position:absolute;top:0;right:0;bottom:0;width:66%;aspect-ratio:auto;margin:0;}
+    .hero-media img{object-position:right center;}
+    .hero-media::after{background:linear-gradient(to right,var(--sand) 0%,rgba(251,246,238,.88) 16%,rgba(251,246,238,0) 46%);}
+  }
+  /* one orchestrated moment: the hero copy settles in once on load */
+  @media(prefers-reduced-motion:no-preference){
+    .hero-copy > *{opacity:0;transform:translateY(14px);animation:heroIn .7s cubic-bezier(.2,.7,.2,1) forwards;}
+    .hero-copy > *:nth-child(2){animation-delay:.08s}.hero-copy > *:nth-child(3){animation-delay:.16s}
+    .hero-copy > *:nth-child(4){animation-delay:.24s}.hero-copy > *:nth-child(5){animation-delay:.32s}.hero-copy > *:nth-child(6){animation-delay:.4s}
+    @keyframes heroIn{to{opacity:1;transform:none}}
   }
 
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1fr;
-  }
+  /* SECTION 2 — THE REALITY: deep navy island with curved edges */
+  .reality{position:relative;background:radial-gradient(900px 420px at 85% 0%,rgba(160,90,42,.28),transparent 60%),radial-gradient(700px 380px at 0% 100%,rgba(247,183,51,.10),transparent 60%),var(--navy-night);padding:clamp(80px,9vw,128px) 0 clamp(90px,10vw,140px);color:#fff;}
+  .reality::before,.reality::after{content:"";position:absolute;left:0;right:0;height:clamp(34px,5vw,64px);background:var(--sand);}
+  .reality::before{top:-1px;clip-path:ellipse(58% 100% at 50% 0);}
+  .reality::after{bottom:-1px;clip-path:ellipse(58% 100% at 50% 100%);}
+  .reality-in{position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding:0 22px;}
+  .reality-eyebrow{font-family:'Inter',Arial,sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--rust);margin:0 0 12px;}
+  .reality .reality-eyebrow{color:var(--gold);}
+  .reality h2{font-size:clamp(1.9rem,6.4vw,3.2rem);line-height:1.1;color:#fff;margin:0 0 34px;max-width:18em;}
+  .reality h2 span{color:var(--gold);}
+  .reality-cols{display:grid;grid-template-columns:1fr;gap:34px;}
+  @media(min-width:900px){.reality-cols{grid-template-columns:1fr 1fr;gap:72px;align-items:start;}}
+  .reality p{font-family:'Inter',Arial,sans-serif;font-size:1rem;line-height:1.6;color:#d5deeb;margin:0 0 14px;}
+  .q-list{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:10px;}
+  .q-list li{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 18px;font-family:'Inter',Arial,sans-serif;font-size:0.98rem;color:#fff;backdrop-filter:blur(2px);transition:background .2s ease,transform .2s ease,border-color .2s ease;}
+  .q-list li:hover{background:rgba(255,255,255,.1);border-color:rgba(247,183,51,.5);transform:translateX(4px);}
+  .q-list li::before{content:"";flex:none;width:24px;height:24px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f7b733' stroke-width='1.8' stroke-linejoin='round'%3E%3Cpath d='M12 3.5c-4.7 0-8.5 3.3-8.5 7.5 0 2.2 1 4.2 2.7 5.6L5.5 20.5l4-2c.8.2 1.6.3 2.5.3 4.7 0 8.5-3.3 8.5-7.5S16.7 3.5 12 3.5z'/%3E%3C/svg%3E") center/contain no-repeat;}
+  .reality-quote{border-left:4px solid var(--gold);padding:6px 0 6px 24px;margin:26px 0 0;}
+  .reality-quote p{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.15rem,3.6vw,1.45rem);line-height:1.5;color:#fff;margin:0;}
+  .reality-cta{text-align:center;margin-top:52px;}
+  .reality-cta a{display:inline-block;background:var(--gold);color:#0a2342;font-family:'Inter',Arial,sans-serif;font-weight:700;font-size:1.05rem;padding:17px 34px;border-radius:999px;text-decoration:none;box-shadow:0 8px 22px rgba(247,183,51,.3);transition:transform .18s ease,box-shadow .18s ease;}
+  .reality-cta a:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(247,183,51,.45);}
+  .reality-cta a:focus-visible{outline:3px solid #fff;outline-offset:3px;}
 
-  @media(min-width:880px){
-    .hero-grid{
-      grid-template-columns:0.72fr 1.28fr;
-      align-items:stretch;
-    }
-  }
+  /* SECTION 3 — THE SOLUTION: light, with one lifted card */
+  .solution{position:relative;background:radial-gradient(800px 500px at 100% 20%,rgba(160,90,42,.10),transparent 60%),var(--sand);padding:clamp(40px,6vw,80px) 0 clamp(70px,8vw,110px);}
+  .solution-in{width:100%;max-width:1180px;margin:0 auto;padding:0 22px;display:grid;grid-template-columns:1fr;gap:36px;}
+  @media(min-width:900px){.solution-in{grid-template-columns:0.92fr 1.08fr;gap:68px;align-items:start;}.sol-copy{align-self:center;}}
+  .solution h2{font-size:clamp(1.9rem,6.2vw,3rem);line-height:1.1;color:#0a2342;margin:0 0 22px;}
+  .solution h2 span{color:var(--rust);display:block;}
+  .solution p{font-family:'Inter',Arial,sans-serif;font-size:1.02rem;line-height:1.6;color:#1c2b3a;margin:0 0 16px;}
+  .sol-strong strong{color:#0a2342;font-size:1.08rem;}
+  .sol-rust{color:var(--rust)!important;font-weight:700;font-size:1.2rem!important;line-height:1.4!important;margin-top:24px!important;padding-left:18px;border-left:4px solid var(--gold);}
+  .sol-card{background:#fff;border:1px solid #eadfcd;border-radius:20px;padding:clamp(22px,3.4vw,40px);box-shadow:0 24px 60px -20px rgba(10,35,66,.28),0 2px 6px rgba(10,35,66,.06);}
+  .sol-card h3{font-size:clamp(1.35rem,4.4vw,1.8rem);line-height:1.2;color:#0a2342;margin:0 0 10px;}
+  .sol-sub{margin-bottom:22px!important;color:#4a5668!important;}
+  .teams{display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:640px){.teams{grid-template-columns:1fr 1fr;gap:0 30px;}.teams-col+.teams-col{border-left:1px solid #eadfcd;padding-left:30px;}}
+  .teams-col{display:flex;flex-direction:column;gap:16px;}
+  .team{display:flex;gap:13px;align-items:flex-start;}
+  .ti{flex:none;width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#fbf0e0,#f3e2c8);display:flex;align-items:center;justify-content:center;}
+  .ti svg{width:23px;height:23px;}
+  .team strong{display:block;font-family:'Inter',Arial,sans-serif;font-size:0.97rem;color:#0a2342;}
+  .team div span{display:block;font-family:'Inter',Arial,sans-serif;font-size:0.86rem;line-height:1.42;color:#4a5668;margin-top:1px;}
+  .sol-expect{font-weight:700;color:#0a2342!important;margin:6px 0 0!important;font-size:0.98rem!important;}
+  .sol-bring{margin-top:26px;background:linear-gradient(135deg,#0a2342,#12325c);border-radius:14px;padding:22px 24px;}
+  .sol-bring h4{font-family:'DM Serif Display',Georgia,serif;font-size:1.3rem;color:var(--gold);margin:0 0 10px;font-weight:400;}
+  .sol-bring p{font-size:0.93rem!important;color:#dbe4f0!important;margin:0 0 10px!important;}
+  .sol-bring p:last-child{margin-bottom:0!important;}
+  .sol-tag{margin:22px 0 0!important;font-family:'DM Serif Display',Georgia,serif!important;font-size:1.35rem!important;color:var(--rust);}
 
-  .hero-copy{
-    padding:clamp(28px,5vw,44px) clamp(20px,5vw,44px) clamp(24px,4vw,36px) clamp(20px,5vw,40px);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-  }
+  /* SECTION 4 — WHY CHOOSE: full-bleed rust with a slanted foot */
+  .whole{position:relative;z-index:2;background:radial-gradient(900px 500px at 0% 0%,rgba(247,183,51,.18),transparent 60%),linear-gradient(160deg,#7c3d14 0%,#a05a2a 100%);padding:clamp(70px,8vw,110px) 0 clamp(110px,11vw,160px);color:#fff;clip-path:polygon(0 0,100% 0,100% calc(100% - clamp(30px,5vw,70px)),0 100%);}
+  .whole-in{width:100%;max-width:1180px;margin:0 auto;padding:0 22px;display:grid;grid-template-columns:1fr;gap:36px;}
+  @media(min-width:900px){.whole-in{grid-template-columns:1fr 1fr;gap:68px;align-items:start;}}
+  .whole .reality-eyebrow{color:var(--gold);}
+  .whole h2{font-size:clamp(1.9rem,6.2vw,3rem);line-height:1.1;color:#fff;margin:0 0 24px;}
+  .whole p{font-family:'Inter',Arial,sans-serif;font-size:1.02rem;line-height:1.6;color:#fbeedd;margin:0 0 12px;}
+  .whole p.pull{font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(1.4rem,4.6vw,1.9rem);line-height:1.25;color:#fff;margin:18px 0;padding:14px 0 14px 20px;border-left:4px solid var(--gold);}
+  .whole p.pull strong{font-weight:400;color:#fff;}
+  .found-card{background:#fff;border-radius:20px;padding:clamp(22px,3.4vw,38px);box-shadow:0 28px 60px -18px rgba(0,0,0,.45);}
+  .found-card h3{font-size:clamp(1.4rem,4.6vw,1.8rem);color:#0a2342;margin:0 0 4px;}
+  .found-lead{font-size:0.92rem!important;color:#4a5668!important;margin-bottom:16px!important;}
+  .found-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+  .found-list li{background:#fbf6ee;border:1px solid #eadfcd;border-left:4px solid var(--rust);border-radius:10px;padding:13px 18px;font-family:'Inter',Arial,sans-serif;transition:transform .18s ease,box-shadow .18s ease;}
+  .found-list li:hover{transform:translateX(4px);box-shadow:0 6px 16px -8px rgba(10,35,66,.3);}
+  .found-list strong{display:block;font-size:0.98rem;color:#0a2342;}
+  .found-list span{display:block;font-size:0.88rem;line-height:1.42;color:#4a5668;margin-top:2px;}
 
-  .hero-eyebrow{
-    font-size:0.74rem;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    font-weight:800;
-    color:var(--rust);
-    margin-bottom:10px;
-  }
+  /* SAMPLE DOCUMENTS — a stage under the slanted rust band */
+  .sample{position:relative;z-index:1;background:#fff;margin-top:calc(-1 * clamp(30px,5vw,70px));padding:calc(clamp(60px,7vw,100px) + clamp(30px,5vw,70px)) 0 clamp(70px,8vw,110px);text-align:center;}
+  .sample-in{width:100%;max-width:1180px;margin:0 auto;padding:0 22px;}
+  .sample .reality-eyebrow{letter-spacing:.22em;margin-bottom:12px;}
+  .sample h2{font-size:clamp(1.9rem,6.2vw,3.1rem);line-height:1.1;color:#0a2342;margin:0 0 16px;}
+  .sample-sub{font-family:'Inter',Arial,sans-serif;font-size:1.02rem;line-height:1.6;color:#1c2b3a;max-width:720px;margin:0 auto 40px;}
+  .sample-sub strong{color:#0a2342;}
+  .docs{display:grid;grid-template-columns:1fr;gap:22px;text-align:left;}
+  @media(min-width:900px){.docs{grid-template-columns:repeat(3,1fr);gap:26px;align-items:start;}.doc:nth-child(2){margin-top:28px;}}
+  .doc{background:#fff;border:1px solid #eadfcd;border-radius:18px;padding:22px;display:flex;flex-direction:column;box-shadow:0 18px 44px -18px rgba(10,35,66,.3);transition:transform .22s ease,box-shadow .22s ease;}
+  .doc:hover{transform:translateY(-6px);box-shadow:0 26px 54px -18px rgba(10,35,66,.38);}
+  .doc-head{display:flex;gap:13px;align-items:flex-start;margin-bottom:16px;}
+  .doc-num{flex:none;width:40px;height:40px;border-radius:50%;background:#0a2342;color:#fff;font-family:'Inter',Arial,sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .doc-head h3{font-size:1.2rem;line-height:1.2;color:#0a2342;margin:0 0 5px;}
+  .doc-kicker{display:block;font-family:'Inter',Arial,sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:.1em;color:var(--rust);margin-bottom:5px;}
+  .doc-head p{font-family:'Inter',Arial,sans-serif;font-size:0.9rem;line-height:1.5;color:#3c4a5e;margin:0;}
+  .doc img{width:100%;height:auto;display:block;border:1px solid #e1d6c3;border-radius:8px;background:#fff;margin-top:auto;}
+  .sample-note{margin:34px auto 0;max-width:1000px;background:var(--sand);border-radius:12px;padding:16px 22px;font-family:'Inter',Arial,sans-serif;font-size:0.92rem;line-height:1.55;color:#3c4a5e;text-align:left;border-left:4px solid var(--rust);}
+  .sample-note strong{color:#0a2342;}
 
-  .hero-copy h1{
-    font-size:clamp(1.65rem,4.2vw,2.35rem);
-    letter-spacing:-.01em;
-  }
-
-  .hero-copy h1 .navy-line{
-    color:var(--navy);
-  }
-
-  .hero-copy h1 .rust-line{
-    color:var(--rust);
-    display:block;
-  }
-
-  .hero-copy .lead{
-    margin-top:18px;
-  }
-
-  .hero-copy p{
-    font-size:0.92rem;
-    color:var(--ink);
-    margin:0 0 14px;
-    max-width:44ch;
-  }
-
-  .hero-copy p.bold{
-    font-weight:700;
-    color:var(--navy);
-    margin-bottom:4px;
-  }
-
-  .hero-copy .btn{
-    margin-top:10px;
-    align-self:flex-start;
-  }
-
-  .hero-copy .tagline{
-    margin-top:14px;
-    font-size:0.75rem;
-    color:var(--navy);
-    letter-spacing:.05em;
-    font-weight:700;
-  }
-
-  .hero-media{
-    position:relative;
-    aspect-ratio:1122/1402;
-    overflow:hidden;
-  }
-
-  @media(min-width:880px){
-    .hero-media{
-      align-self:start;
-    }
-  }
-
-  .hero-media > img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center;
-    display:block;
-  }
-
-  .signword{
-    position:absolute;
-    left:20.5%;
-    top:8%;
-    width:17.5%;
-    height:16%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    font-family:'DM Serif Display',serif;
-    font-weight:700;
-    color:#061B33;
-    font-size:clamp(7px,2.05vw,19px);
-    line-height:1.2;
-    letter-spacing:normal;
-    text-align:center;
-    text-shadow:0 1px 2px rgba(0,0,0,.25);
-  }
-
-  .cloudword{
-    position:absolute;
-    background:rgba(11,31,58,.55);
-    color:#fff;
-    padding:3px 6px;
-    border-radius:4px;
-    font-family:'Inter',Arial,sans-serif;
-    font-size:clamp(8px,2.4vw,12px);
-    font-weight:800;
-    line-height:1.05;
-    text-transform:uppercase;
-    text-align:center;
-    text-shadow:0 1px 2px rgba(0,0,0,.6);
-    width:max-content;
-    max-width:clamp(68px,18vw,120px);
-  }
-
-  .cw-1{left:50%;top:7%;}
-  .cw-2{left:75%;top:6%;}
-  .cw-3{left:82%;top:12%;}
-  .cw-4{left:50%;top:18%;}
-  .cw-5{left:63%;top:16%;}
-  .cw-6{left:63%;top:27%;}
-  .cw-7{left:70%;top:32%;}
-  .cw-8{left:78%;top:28%;}
-
-  @media(max-width:640px){
-    .cw-4,.cw-6,.cw-7{
-      display:none;
-    }
-  }
-
+  .sec-cta{margin-top:26px;}
+  .sample-cta{margin-top:36px;text-align:center;}
+  .sample-cta .sec-cta{margin-top:0;}
 
   /* REASONS */
 
@@ -1624,17 +1606,8 @@
       padding:0 22px;
     }
 
-    .hero-copy{
-      padding:36px 22px 28px;
-    }
 
-    .hero-copy h1{
-      font-size:1.85rem;
-    }
 
-    .hero-media{
-      min-height:280px;
-    }
 
     .not-alone{
       padding:48px 0;
@@ -1712,7 +1685,7 @@
         Note from Founder
       </a>
 
-      <a href="#about">
+      <a href="#why-bbi">
         About
       </a>
 
@@ -1750,152 +1723,142 @@
 
 
 <!-- HERO -->
-
 <section class="hero">
-
   <div class="hero-grid">
-
     <div class="hero-copy">
-
-      <div class="hero-eyebrow">
-        Business Optimization Diagnostics for Small Business
-      </div>
-
-      <h1>
-
-        <span class="navy-line">
-          Small Business
-        </span>
-
-        <span class="rust-line">
-          Still Matters.
-        </span>
-
-      </h1>
-
-
-      <div class="lead">
-
-        <p>
-          Bigger businesses have larger budgets, bigger teams, more data,
-          more technology, and more room to make mistakes.
-        </p>
-
-        <p>
-          Meanwhile, costs are rising. Social media keeps demanding more of
-          our time. Customer expectations keep changing. Technology keeps
-          evolving. And now artificial intelligence is changing how people
-          work and how businesses operate.
-        </p>
-
-        <p>
-          For us as small-business owners, the challenge is figuring out
-          what actually matters for our business when our time, money,
-          and resources are not unlimited.
-        </p>
-
-        <p>
-          We started because we wanted to create something of our own.
-        </p>
-
-        <p>
-          To live a dream.<br>
-          To build financial freedom.<br>
-          To leave something meaningful for our families.<br>
-          To support our communities.<br>
-          To create a future that looks different from the one we started with.
-        </p>
-
-        <p>
-          And somewhere in the middle of all this change, we can find
-          ourselves asking some very real questions:
-        </p>
-
-        <p>
-          Where do I go from here?<br>
-          What do I actually need to do?<br>
-          Am I still relevant?<br>
-          Can I compete?<br>
-          How do I move forward?
-        </p>
-
-      </div>
-
-
-      <p class="bold">
-        Business &amp; Brand Intelligence helps small-business owners identify
-        what is actually holding their business back before they spend more money
-        trying to fix the wrong thing.
-      </p>
-
-
-      <a
-        class="btn"
-        href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00"
-        onclick="gtag('event','diagnostic_checkout_click',{'link_location':'home_hero'});"
-      >
-        Get Your Business Diagnostic →
-      </a>
-
-
-      <div class="tagline">
-        CLARITY TODAY. A STRONGER TOMORROW.
-      </div>
-
+      <p class="hero-eyebrow">Business &amp; Brand Intelligence</p>
+      <h1><span class="navy-line">Small Business</span><span class="rust-line">Still Matters.</span></h1>
+      <p class="hero-sub">Business Optimization Diagnostic for Small Businesses</p>
+      <p class="hero-text">Find out why your business isn&rsquo;t growing, where profits are stalled, what opportunities you may be overlooking, and where to focus before investing more money.</p>
+      <a class="hero-cta" href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00">Get Your Diagnostic &mdash; $297 &nbsp;&rarr;</a>
+      <ul class="hero-checks">
+        <li>Clear Insights</li>
+        <li>Prioritized Next Steps</li>
+        <li>More Confident Decisions</li>
+      </ul>
     </div>
-
-
     <div class="hero-media">
-
-      <img
-        src="assets/bbi-hero.png"
-        alt="Small business community alongside a modern corporate skyline"
-      >
-
-      <span class="signword">
-        Local Businesses<br>
-        Build Stronger<br>
-        Communities
-      </span>
-
-      <span class="cloudword cw-1">
-        Bigger<br>Budgets
-      </span>
-
-      <span class="cloudword cw-2">
-        More<br>Data
-      </span>
-
-      <span class="cloudword cw-3">
-        Larger<br>Teams
-      </span>
-
-      <span class="cloudword cw-4">
-        More<br>Technology
-      </span>
-
-      <span class="cloudword cw-5">
-        AI<br>Everywhere
-      </span>
-
-      <span class="cloudword cw-6">
-        Greater<br>Capacity
-      </span>
-
-      <span class="cloudword cw-7">
-        Faster<br>Decisions
-      </span>
-
-      <span class="cloudword cw-8">
-        Global<br>Reach
-      </span>
-
+      <img src="assets/bbi-hero-storefront.jpg" alt="Sunlit small-business storefront with an open sign and a potted plant on the sidewalk" width="1672" height="941">
     </div>
-
   </div>
-
 </section>
 
+<!-- SECTION 2 — THE REALITY -->
+<section class="reality" id="reality">
+  <div class="reality-in">
+    <p class="reality-eyebrow">The Reality for Small-Business Owners</p>
+    <h2>Your Small Business. <span>Your Livelihood. Your Future.</span></h2>
+    <div class="reality-cols">
+      <div>
+        <p>As small-business owners, we sometimes find ourselves asking some very real questions:</p>
+        <ul class="q-list">
+          <li>How much longer can I afford to keep my doors open?</li>
+          <li>Why am I working so hard but not making enough money?</li>
+          <li>Why aren&rsquo;t I getting more customers?</li>
+          <li>Where is all my money going?</li>
+          <li>How can I compete with larger businesses?</li>
+          <li>What should I be doing differently?</li>
+          <li>I&rsquo;ve worked so hard to build this business. What if it isn&rsquo;t enough anymore?</li>
+        </ul>
+      </div>
+      <div>
+        <p>Bigger businesses have larger budgets, bigger teams, more data, more technology, and more room to make mistakes.</p>
+        <p>Meanwhile, costs are rising. Social media keeps demanding more of our time. Customer expectations keep changing. Technology keeps evolving. And now artificial intelligence is changing how people work and how businesses operate.</p>
+        <p>For us as small-business owners, the challenge is figuring out what actually matters for our business when our time, money, and resources are not unlimited.</p>
+        <p>We started because we wanted to create something of our own.</p>
+        <div class="reality-quote"><p>To live a dream.<br>To build financial freedom.<br>To leave something meaningful for our families.<br>To support our communities.<br>To create a future that looks different from the one we started with.</p></div>
+      </div>
+    </div>
+    <div class="reality-cta"><a href="#how-it-works">Discover How the Diagnostic Can Help &nbsp;&rarr;</a></div>
+  </div>
+</section>
+
+<!-- SECTION 3 — THE SOLUTION -->
+<section class="solution" id="solution">
+  <div class="solution-in">
+    <div class="sol-copy">
+      <p class="reality-eyebrow">The Solution</p>
+      <h2>Stop Guessing What Your Business Needs. <span>Start Knowing Where to Focus.</span></h2>
+      <p class="sol-lead">You&rsquo;re working hard to run your business. But when sales slow down, expenses rise, or customers stop coming back, it isn&rsquo;t always clear what&rsquo;s causing the problem.</p>
+      <p class="sol-strong"><strong>That&rsquo;s where Business &amp; Brand Intelligence comes in.</strong><br>We take a closer look at your business to help you understand what&rsquo;s working, what&rsquo;s not, and what may need to change.</p>
+      <p class="sol-rust">Before spending more money trying to fix a problem, understand what&rsquo;s causing it.</p>
+      <a class="btn-gold sec-cta" href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00">Get Your Diagnostic &mdash; $297 &nbsp;&rarr;</a>
+    </div>
+    <div class="sol-card">
+      <h3>Big Businesses Have Teams Looking at Every Part of Their Business.</h3>
+      <p class="sol-sub">Large companies have entire departments helping them understand what is happening inside their business.</p>
+      <div class="teams">
+        <div class="teams-col">
+<div class="team"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="#a05a2a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V13M10 20V8M16 20v-9M21 20V4"/></svg></span><div><strong>Marketing teams</strong><span>attract customers and build visibility.</span></div></div><div class="team"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="#a05a2a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.3"/><path d="M16.5 14.2c2.7 0 4.5 2 4.5 5"/></svg></span><div><strong>Sales teams</strong><span>track leads, conversions, and revenue.</span></div></div><div class="team"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="#a05a2a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></span><div><strong>Operations teams</strong><span>improve efficiency and productivity.</span></div></div><div class="team"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="#a05a2a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M14.5 9.2c-.5-.9-1.4-1.3-2.5-1.3-1.4 0-2.4.7-2.4 1.8 0 2.5 5 1.2 5 3.8 0 1.1-1 1.9-2.6 1.9-1.1 0-2.1-.5-2.6-1.4M12 6.5v1.4M12 16v1.5"/></svg></span><div><strong>Finance teams</strong><span>monitor costs, pricing, and profitability.</span></div></div>
+        </div>
+        <div class="teams-col">
+<div class="team"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="#a05a2a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.3"/><path d="M16.5 14.2c2.7 0 4.5 2 4.5 5"/></svg></span><div><strong>Customer-experience teams</strong><span>keep customers coming back.</span></div></div><div class="team"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="#a05a2a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V13M10 20V8M16 20v-9M21 20V4"/></svg></span><div><strong>Data and analytics teams</strong><span>find patterns, problems, and opportunities.</span></div></div><div class="team"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="#a05a2a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16.5V20"/></svg></span><div><strong>Technology and AI teams</strong><span>evaluate tools, systems, and automation.</span></div></div>
+          <p class="sol-expect">Small-business owners are often expected to figure all of that out themselves.</p>
+        </div>
+      </div>
+      <div class="sol-bring">
+        <h4>B&amp;BI Brings Those Perspectives Together in One Place.</h4>
+        <p>You may not have seven different departments analyzing your business. Business &amp; Brand Intelligence gives you one place to look across the major areas of your business together.</p>
+        <p>Instead of looking at one issue in isolation, we help you see where problems may be connected, what may actually be causing them, and where your attention should go first.</p>
+      </div>
+      <p class="sol-tag">One business. One diagnostic. Multiple perspectives.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 — WHY CHOOSE B&BI -->
+<section class="whole" id="why-bbi">
+  <div class="whole-in">
+    <div>
+      <p class="reality-eyebrow">Why Choose B&amp;BI?</p>
+      <h2>We Look at the Whole Business &mdash; Not Just the Problem You Can See.</h2>
+      <p>Big businesses have teams that can look at different parts of the company and figure out how they affect each other.</p>
+      <p>B&amp;BI does the same thing for your small business in one diagnostic.</p>
+      <p>We look across the business so we can see what may actually be causing the problem &mdash; not just what appears to be wrong on the surface.</p>
+      <p>For example, if sales are down, it may look like you need more marketing.</p>
+      <p class="pull"><strong>But marketing may not be the real problem.</strong></p>
+      <p>What looks like the problem may only be the symptom.</p>
+      <p>Our job is to look deeper, connect the pieces, and help you identify the root of the problem that actually needs to be solved.</p>
+      <a class="btn-gold sec-cta" href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00">Get Your Diagnostic &mdash; $297 &nbsp;&rarr;</a>
+    </div>
+    <div class="found-card">
+      <h3>Then We Show You What We Found.</h3>
+      <p class="found-lead">Your diagnostic explains:</p>
+      <ul class="found-list">
+        <li><strong>What we found</strong><span>The biggest problems or opportunities we identified.</span></li>
+        <li><strong>What may be causing it</strong><span>What appears to be behind the problem &mdash; not just the symptom you can already see.</span></li>
+        <li><strong>Why it matters</strong><span>How it may be affecting your business.</span></li>
+        <li><strong>What to do next</strong><span>The actions we recommend you focus on.</span></li>
+        <li><strong>What to do first</strong><span>Your recommendations are prioritized into a 30 / 60 / 90-day plan.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE OF WHAT YOU RECEIVE -->
+<section class="sample" id="sample">
+  <div class="sample-in">
+    <p class="reality-eyebrow">A Sample of What You Receive</p>
+    <h2>Real Analysis. Real Recommendations. A Clear Plan.</h2>
+    <p class="sample-sub">Your Business Optimization Diagnostic includes three reports, each with multiple pages. Below is a one-page preview of each so you can see the format and level of detail. <strong>These are examples only &mdash; not the full reports.</strong></p>
+    <div class="docs">
+    <div class="doc">
+      <div class="doc-head"><span class="doc-num">1</span><div><h3>Executive Summary</h3><span class="doc-kicker">HIGH-LEVEL OVERVIEW &amp; RECOMMENDATIONS</span><p>A clear summary of your business, key findings, and the recommended next steps.</p></div></div>
+      <img src="assets/sample-executive-summary.png" alt="Preview of the Executive Summary document" loading="lazy">
+    </div>
+    <div class="doc">
+      <div class="doc-head"><span class="doc-num">2</span><div><h3>Diagnostic Findings &amp; Supporting Evidence</h3><span class="doc-kicker">DETAILED ANALYSIS &amp; RECOMMENDATIONS</span><p>A deeper look at each finding, including evidence, why it matters, and specific recommendations.</p></div></div>
+      <img src="assets/sample-diagnostic-findings.png" alt="Preview of the Diagnostic Findings and Supporting Evidence document" loading="lazy">
+    </div>
+    <div class="doc">
+      <div class="doc-head"><span class="doc-num">3</span><div><h3>30 / 60 / 90-Day Action Plan</h3><span class="doc-kicker">PRIORITIZED IMPLEMENTATION PLAN</span><p>A clear, step-by-step plan so you know what to focus on first, what comes next, and what can wait.</p></div></div>
+      <img src="assets/sample-action-plan.png" alt="Preview of the 30/60/90-Day Action Plan document" loading="lazy">
+    </div>
+    </div>
+    <p class="sample-note"><strong>These are shortened previews of each report.</strong> Your actual report includes more detail, additional findings, evidence, and personalized recommendations based on your specific business.</p>
+    <div class="sample-cta"><a class="btn-gold sec-cta" href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00">Get Your Diagnostic &mdash; $297 &nbsp;&rarr;</a></div>
+  </div>
+</section>
 
 <!-- REASONS -->
 
@@ -2353,231 +2316,6 @@
 
 
       </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- COMPASS -->
-
-<section
-  class="compass"
-  id="about"
->
-
-  <img
-    src="assets/bbi-compass.png"
-    alt="Compass symbolizing business direction"
-  >
-
-  <div class="wrap">
-
-    <div class="compass-copy">
-
-      <h2>
-        Think of us as<br>
-        your compass.
-      </h2>
-
-      <p>
-        You tell us where you want to go.<br>
-        We help you find a clearer path forward.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- DARK BANNER -->
-
-<section
-  class="banner"
-  id="challenges"
->
-
-  <div class="wrap">
-
-    <div class="banner-top">
-
-      <div>
-
-        <div class="banner-heading">
-
-          <span class="rule"></span>
-
-          <h2>
-            More Isn&rsquo;t Always the Answer.
-          </h2>
-
-        </div>
-
-        <p class="sub">
-          More advertising. More content. More software. More automation.
-          More leads. More help. Before you add more, find out what the
-          evidence inside your own business actually shows.
-        </p>
-
-      </div>
-
-
-      <div class="banner-divider"></div>
-
-
-      <div class="banner-cta">
-
-        <a
-          class="btn"
-          href="https://buy.stripe.com/6oU6oG26v1EL1F43V3gUM00"
-          onclick="gtag('event','diagnostic_checkout_click',{'link_location':'home_banner'});"
-        >
-          Get Your Diagnostic →
-        </a>
-
-        <small>
-          A clearer view. A stronger next step.
-        </small>
-
-      </div>
-
-    </div>
-
-
-    <div class="banner-points">
-
-
-      <div class="banner-point">
-
-        <span class="ico">
-
-          <svg
-            width="17"
-            height="17"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-
-            <circle
-              cx="12"
-              cy="12"
-              r="9"
-            />
-
-            <circle
-              cx="12"
-              cy="12"
-              r="4"
-            />
-
-            <path d="M12 3v2M12 19v2"/>
-
-          </svg>
-
-        </span>
-
-        <span>
-          Understand what&rsquo;s really going on
-        </span>
-
-      </div>
-
-
-      <div class="banner-point">
-
-        <span class="ico">
-
-          <svg
-            width="17"
-            height="17"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-
-            <circle
-              cx="12"
-              cy="12"
-              r="9"
-            />
-
-            <path d="M12 7v5l3 3"/>
-
-          </svg>
-
-        </span>
-
-        <span>
-          Avoid wasting time and money
-        </span>
-
-      </div>
-
-
-      <div class="banner-point">
-
-        <span class="ico">
-
-          <svg
-            width="17"
-            height="17"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-
-            <path d="M4 20V10M12 20V4M20 20v-7"/>
-
-          </svg>
-
-        </span>
-
-        <span>
-          Focus on what will make the biggest impact
-        </span>
-
-      </div>
-
-
-      <div class="banner-point">
-
-        <span class="ico">
-
-          <svg
-            width="17"
-            height="17"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-
-            <circle
-              cx="12"
-              cy="12"
-              r="9"
-            />
-
-            <path d="M8 12l3 3 5-6"/>
-
-          </svg>
-
-        </span>
-
-        <span>
-          Make smarter, more confident decisions
-        </span>
-
-      </div>
-
 
     </div>
 
@@ -3359,7 +3097,7 @@
           Note from Founder
         </a>
 
-        <a href="#about">
+        <a href="#why-bbi">
           About
         </a>
 
